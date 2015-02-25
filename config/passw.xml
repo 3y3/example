@@ -1,0 +1,76 @@
+<KIPP_3>
+  <Passwords>
+    <Item>
+      <uid>0</uid>
+      <Login>user0</Login>
+      <Password>123</Password>
+      <WwwRoot />
+    </Item>
+
+    <Item>
+      <uid>0</uid>
+      <Login>user</Login>
+      <Password>123</Password>
+      <WwwRoot />
+    </Item>
+
+    <Item>
+      <uid>0</uid>
+      <Login>min</Login>
+      <Password>123</Password>
+      <WwwRoot>ftp:/www_min/</WwwRoot>
+    </Item>
+
+    <Item>
+      <uid>0</uid>
+      <Login>prm</Login>
+      <Password>123</Password>
+      <WwwRoot>ftp:/www_param/</WwwRoot>
+    </Item>
+    
+    <Item>    
+      <uid>1</uid>
+      <Login>ftp</Login>
+      <Password>123</Password>
+      <WwwRoot />
+    </Item>
+  </Passwords>
+
+  <Access>
+    <Item>
+    <Name>sys</Name>
+    <List>0,1</List>
+    </Item>
+
+    <Item>
+    <Name>db</Name>
+    <List>0,1</List>
+    </Item>
+
+    <Item>
+    <Name>svg</Name>
+    <List>0,1</List>
+    </Item>
+
+    <Item>
+    <Name>files</Name>
+    <List>0,1</List>
+    </Item>
+
+    <Item>
+    <Name>xmlrd</Name>
+    <List>0</List>
+    </Item>
+
+    <Item>
+    <Name>xmlwr</Name>
+    <List>0</List>
+    </Item>
+
+    <Item>
+    <Name>tu</Name>
+    <List>0</List>
+    </Item>
+
+  </Access>
+</KIPP_3>

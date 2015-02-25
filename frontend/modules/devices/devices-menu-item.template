@@ -1,0 +1,4 @@
+<li class="menu-item {{state.activeMenuTab == 'devices' ? 'active' : ''}}" ng-click="click()">
+  <div class="menu-item-icon icon-tree"></div>
+  <div class="menu-item-title">{{title}}</div>
+</li>

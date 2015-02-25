@@ -1,0 +1,19 @@
+﻿<li class="coproc-menu-item">
+  <div class="coproc-menu-title">Сопроцессор {{state.activeCoproc}}</div>
+  <div class="coproc-menu-button" title="Закрыть окно информации сопроцессора"
+    ng-click="closeCoproc()">
+    <div class="coproc-menu-button-icon icon-close"></div>
+  </div>
+  <div class="coproc-menu-button" title="Удалить конфигурацию сопроцессора"
+    ng-click="deleteCoproc()">
+    <div class="coproc-menu-button-icon icon-trashcan"></div>
+  </div>
+  <div class="coproc-menu-button" title="Загрузить внешнюю конфигурацию сопроцессора"
+    ng-click="loadCoproc()">
+    <div class="coproc-menu-button-icon icon-folder-open"></div>
+  </div>
+  <div class="coproc-menu-button" title="Сохранить конфигурацию сопроцессора"
+    ng-click="saveCoproc()">
+    <div class="coproc-menu-button-icon icon-download"></div>
+  </div>
+</li>

@@ -1,0 +1,9 @@
+{
+  "device"    : "TM3COM",
+  "version"   : "0.1.48",
+  "serial"    : "00094736277",
+  "macaddr"   : "0ED4-EA23-0000-25F1-E000",
+  "curtime"   : "<!--#time-->",
+  "termo"     : "<!--#termo-->",
+  "voltage"   : "<!--#voltage-->"
+}

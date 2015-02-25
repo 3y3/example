@@ -1,0 +1,308 @@
+﻿<div class="channel {{state.editChannel ? 'enter' : 'exit'}}">
+  <div ng-if="state.editChannel">
+    <div class="channel-type" ng-if="(state.channel.type=='IEC104'||state.channel.type=='IEC101')&&state.channel.role=='INPUT'">
+      <form class="channel-options column-options">
+        <div ng-click="collapseMains=!collapseMains">
+          <div class="column-options-collapser icon-triangle-{{collapseMains ? 'right' : 'down'}}"></div>
+          <div class="column-options-title">Основные настройки</div>
+        </div>
+        <div class="column-options-collapsible" style="height:{{collapseMains ? '0': 'calc(3.5em * 5)'}}">
+          <div class="column-option">
+            <div class="column-option-title">Название канала</div>
+            <input class="column-option-value" type="text" name="Desc" id="Desc"
+              ng-model="state.channel.model.Desc.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-disabled="state.fromTypeDevice"
+              autofocus/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Начальный адрес</div>
+            <input class="column-option-value" type="text" name="FirstChanNum" id="FirstChanNum"
+              ng-model="state.channel.model.FirstChanNum.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-disabled="state.fromTypeDevice"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Тип канала</div>
+            <select class="column-option-value" name="DataType" id="DataType"
+              ng-model="state.channel.model.DataType.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-options="o as o|channelDataType for o in state.channel.model.DataType.options"
+              ng-disabled="state.fromTypeDevice"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Группа опроса</div>
+            <input class="column-option-value" type="text" name="GroupNumber" id="GroupNumber"
+              ng-model="state.channel.model.GroupNumber.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-disabled="state.fromTypeDevice"/>
+          </div>
+          <div class="column-option-switcher" style="margin-top:.5em;">
+            <div class="column-option-switcher-title left">Индивидуальные<br/>имена переменных</div>
+            <div class="column-option-switcher-hidden-container">
+              <input class="column-option-switcher-hidden" type="checkbox"
+                ng-model="state.channel.model.customNames.value"
+                ng-disabled="state.fromTypeDevice"/>
+            </div>
+            <div class="column-option-switcher-value {{state.fromTypeDevice || !state.channel.collapsible ? 'disabled' : ''}} {{state.channel.model.customNames.value ? 'checked': ''}}"
+              ng-click="toggleCustomNames();">
+              <div class="column-option-switcher-slider">
+                <div class="column-option-switcher-slider-inner"></div>
+                <div class="column-option-switcher-checker"></div>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div ng-click="collapseStruct=!collapseStruct"
+          style="overflow:hidden; transition:height .3s; height:{{state.channel.model.customNames.value ? '0': 'auto'}}">
+          <div class="column-options-collapser icon-triangle-{{collapseStruct || state.channel.model.customNames.value ? 'right' : 'down'}}"></div>
+          <div class="column-options-title">Состав канала</div>
+        </div>
+        <div class="column-options-collapsible" style="height:{{collapseStruct || state.channel.model.customNames.value ? '0': 'calc(3.5em * 4)'}}">
+          <div class="column-option">
+            <div class="column-option-title">Шаблон имен переменных</div>
+            <input class="column-option-value" type="text" name="namePattern" id="namePattern"
+              ng-model="state.channel.model.itemPattern.value"
+              ng-model-options="{updateOn: 'blur'}"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Длина канала</div>
+            <input class="column-option-value" type="text" name="namePattern" id="namePattern"
+              ng-model="state.channel.model.itemGroup.value"
+              ng-model-options="{updateOn: 'blur'}"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Тип данных</div>
+            <input class="column-option-value" type="text" name="namePattern" id="namePattern"
+              ng-model="state.channel.model.itemCfg.value"
+              ng-model-options="{updateOn: 'blur'}"/>
+          </div>
+        </div>
+      </form>
+      <div class="channel-items">
+        <div class="channel-items-title">Состав канала</div>
+        <div class="channel-items-navigation-container">
+          <div class="channel-items-navigation {{state.channel.model.customNames.value && !state.fromTypeDevice ? 'enter' : 'exit'}}">
+            <button class="channel-nav-button" title="Добавить новый сигнал в канал"
+                ng-click="newItemDialog()">
+              <div class="channel-nav-button-icon icon-plus"></div>
+              <div class="channel-nav-button-title">Добавить сигнал</div>
+            </button>
+          </div>
+        </div>
+        <div class="channel-items-table">
+          <table class="channel-items-table-header">
+            <th class="channel-items-table-header-column" id="Address">
+              <span class="small-text">Адрес</span>
+            </th>
+            <th class="channel-items-table-header-column" id="Desc">Наименование параметра</th>
+            <th class="channel-items-table-header-column" id="Cfg">Тип данных</th>
+          </table>
+          <div class="channel-items-table-body-box">
+            <div class="channel-items-table-body">
+              <div class="channel-items-table-item"
+                ng-repeat="item in state.channel.items"
+                ng-right-click="toggleItemState(item)"
+                ng-click="openItemDialog(item)">
+                <div class="channel-items-table-item-cell" id="Address" title="{{$index + state.channel.model.FirstChanNum.value*1}}">
+                  {{$index + state.channel.model.FirstChanNum.value*1}}
+                </div>
+                <div class="channel-items-table-item-cell" id="Desc" title="{{state.channel.model.customNames.value ? item.model.DescString.value : item.model.Desc.value}} ({{item.model.Name.value}})">
+                  {{state.channel.model.customNames.value ? item.model.DescString.value : item.model.Desc.value}}
+                </div>
+                <div class="channel-items-table-item-cell" id="Cfg" title="{{subitem.model.Cfg.value}}">
+                  {{item.model.Cfg.value}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="channel-controls">
+          <div class="channel-controls-button submit"
+            ng-if="!state.channel.created"
+            ng-click="addChannel(state.channel)">
+            <span class="channel-controls-button-icon icon-checkmark"></span>
+            <span class="channel-controls-title">Добавить канал</span>
+          </div>
+          <div class="channel-controls-button cancel"
+            ng-if="!state.channel.created"
+            ng-click="state.back(true)">
+            <span class="channel-controls-button-icon icon-blocked" style="font-size: 1.2em;margin: .1em .1em 0 0;"></span>
+            <span class="channel-controls-title">Отмена</span>
+          </div>
+          <div class="channel-controls-button submit"
+            ng-if="state.channel.created"
+            ng-click="state.back()">
+            <span class="channel-controls-button-icon icon-arrow-left"></span>
+            <span class="channel-controls-title">Назад</span>
+          </div>
+          <div class="channel-controls-button cancel"
+            ng-if="state.channel.created && !state.fromTypeDevice"
+            ng-click="deleteChannel(state.channel)">
+            <span class="channel-controls-button-icon icon-trashcan"></span>
+            <span class="channel-controls-title">Удалить</span>
+          </div>
+        </div>
+        <div class="channel-new-item-dialog" ng-if="state.editItem">
+          <div class="channel-new-item-dialog-header">Новый сигнал</div>
+          <div class="channel-new-item-dialog-body">
+            <div class="column-option">
+              <div class="column-option-title">Наименование сигнала</div>
+              <input class="column-option-value" type="text" name="FirstChanNum" id="FirstChanNum"
+                ng-model="state.item.model.DescString.value"
+                ng-model-options="{updateOn: 'blur'}"/>
+            </div>
+            <div class="column-option">
+              <div class="column-option-title">Тип данных</div>
+              <input class="column-option-value" type="text" name="FirstChanNum" id="FirstChanNum"
+                ng-model="state.item.model.Cfg.value"
+                ng-model-options="{updateOn: 'blur'}"/>
+            </div>
+            <div class="item-controls">
+              <div class="channel-controls-button submit"
+                ng-if="!state.item.created"
+                ng-click="addItem(state.item)">
+                <span class="channel-controls-button-icon icon-checkmark"></span>
+                <span class="channel-controls-title">Добавить</span>
+              </div>
+              <div class="channel-controls-button cancel"
+                ng-if="!state.item.created"
+                ng-click="state.back(true)">
+                <span class="channel-controls-button-icon icon-blocked" style="font-size: 1.2em;margin: .1em .1em 0 0;"></span>
+                <span class="channel-controls-title">Отмена</span>
+              </div>
+              <div class="channel-controls-button submit"
+                ng-if="state.item.created"
+                ng-click="state.back()">
+                <span class="channel-controls-button-icon icon-arrow-left"></span>
+                <span class="channel-controls-title">Назад</span>
+              </div>
+              <div class="channel-controls-button cancel"
+                ng-if="state.item.created"
+                ng-click="deleteItem(state.item)">
+                <span class="channel-controls-button-icon icon-trashcan"></span>
+                <span class="channel-controls-title">Удалить</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="channel-type" ng-if="(state.channel.type=='IEC104'||state.channel.type=='IEC101')&&state.channel.role=='OUTPUT'">
+      <form class="channel-options column-options {{state.editItem ? 'next' : ''}}">
+        <div ng-click="collapseMains=!collapseMains">
+          <div class="column-options-collapser icon-triangle-{{collapseMains ? 'right' : 'down'}}"></div>
+          <div class="column-options-title">Основные настройки</div>
+        </div>
+        <div class="column-options-collapsible" style="height:{{collapseMains ? '0': 'calc(3.5em * 5)'}}">
+          <div class="column-option">
+            <div class="column-option-title">Название канала</div>
+            <input class="column-option-value" type="text" name="Desc" id="Desc"
+              ng-model="state.channel.model.Desc.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-disabled="state.fromTypeDevice"
+              autofocus/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Начальный адрес</div>
+            <input class="column-option-value" type="text" name="FirstChanNum" id="FirstChanNum"
+              ng-model="state.channel.model.FirstChanNum.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-disabled="state.fromTypeDevice"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Тип канала</div>
+            <select class="column-option-value" name="DataType" id="DataType"
+              ng-model="state.channel.model.DataType.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-options="o as o|channelDataType for o in state.channel.model.DataType.options"
+              ng-disabled="state.fromTypeDevice"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Группа опроса</div>
+            <input class="column-option-value" type="text" name="GroupList" id="GroupList"
+              ng-model="state.channel.model.GroupList.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-disabled="state.fromTypeDevice"/>
+          </div>
+        </div>
+      </form>
+      <div class="channel-items {{state.editItem ? 'enter' : ''}}">
+        <div class="channel-items-title">Состав канала</div>
+        <div class="channel-items-navigation-container">
+          <div class="channel-items-navigation {{state.editItem ? 'next' : 'enter'}}">
+            <button class="channel-nav-button" title="Редактировать состав канал"
+                ng-click="openDatabase()">
+              <div class="channel-nav-button-icon icon-pencil"></div>
+              <div class="channel-nav-button-title">Редактировать состав</div>
+            </button>
+          </div>
+          <div class="channel-items-navigation {{state.editItem ? 'enter' : 'exit'}}">
+            <button class="channel-nav-button" title="Основные настройки канала"
+                ng-click="openMainOptions()">
+              <div class="channel-nav-button-icon icon-cog" style="font-size: 1em;padding: .2em;border: solid .1em;"></div>
+              <div class="channel-nav-button-title">Основные настройки</div>
+            </button>
+          </div>
+        </div>
+        <div class="channel-items-table">
+          <table class="channel-items-table-header">
+            <th class="channel-items-table-header-column" id="Address">
+              <span class="small-text">Адрес</span>
+            </th>
+            <th class="channel-items-table-header-column" id="Desc">Наименование параметра</th>
+            <th class="channel-items-table-header-column" id="Cfg">Тесткейсы</th>
+          </table>
+          <div class="channel-items-table-body-box">
+            <div class="channel-items-table-body">
+              <div class="channel-items-table-item"
+                ng-repeat="item in state.channel.items"
+                ng-right-click="toggleItemState(item)"
+                ng-click="openItemDialog(item)">
+                <div class="channel-items-table-item-cell" id="Address" title="{{$index + state.channel.model.FirstChanNum.value*1}}">
+                  {{$index + state.channel.model.FirstChanNum.value*1}}
+                </div>
+                <div class="channel-items-table-item-cell" id="Desc" title="{{state.channel.model.customNames.value ? item.model.DescString.value : item.model.Desc.value}} ({{item.model.Name.value}})">
+                  <div class="channel-items-table-item-Desc">{{item.model.Desc.value}}</div>
+                  <div class="channel-items-table-item-Path">{{item.getSourcePath().join(' / ')}}</div>
+                </div>
+                <div class="channel-items-table-item-cell" id="Cfg" title="{{subitem.model.Cfg.value}}">
+                  {{item.model.Sign.value}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="channel-controls">
+          <div class="channel-controls-button submit"
+            ng-if="!state.channel.created"
+            ng-click="addChannel(state.channel)">
+            <span class="channel-controls-button-icon icon-checkmark"></span>
+            <span class="channel-controls-title">Добавить канал</span>
+          </div>
+          <div class="channel-controls-button cancel"
+            ng-if="!state.channel.created"
+            ng-click="state.back(true)">
+            <span class="channel-controls-button-icon icon-blocked" style="font-size: 1.2em;margin: .1em .1em 0 0;"></span>
+            <span class="channel-controls-title">Отмена</span>
+          </div>
+          <div class="channel-controls-button submit"
+            ng-if="state.channel.created"
+            ng-click="state.back()">
+            <span class="channel-controls-button-icon icon-arrow-left"></span>
+            <span class="channel-controls-title">Назад</span>
+          </div>
+          <div class="channel-controls-button cancel"
+            ng-if="state.channel.created && !state.fromTypeDevice"
+            ng-click="deleteChannel(state.channel)">
+            <span class="channel-controls-button-icon icon-trashcan"></span>
+            <span class="channel-controls-title">Удалить</span>
+          </div>
+        </div>
+      </div>
+      <div class="channel-database-container {{state.editItem ? 'enter' : ''}}">
+        <app-database></app-database>
+      </div>
+    </div>
+  </div>
+</div>

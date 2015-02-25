@@ -1,0 +1,39 @@
+﻿<div class="devices {{state.fromTypeDevice ? 'enter' : 'exit'}}">
+  <div class="devices-protocols {{state.editTypeDevice ? 'next' : 'enter'}}">
+    <div class="devices-protocol"
+      ng-click="toggleProtocolsState(state.typeProtocol)">
+      <div class="devices-protocol-type">Протокол {{state.typeProtocol.type}}</div>
+      <div class="devices-protocol-navigation">
+        <div class="typedevices-search">
+          <input class="typedevices-search-text" type="text" ng-model="search.model.Desc.value"/>
+          <div class="button typedevices-search-icon icon-filter" title="Показать только устройства содержащие заданный текст"></div>
+        </div>
+      </div>
+      <div class="devices-protocol-devices">
+        <div class="devices-protocol-device {{device.state}}"
+          ng-repeat="device in state.typeProtocol.devices | filter:search"
+          ng-right-click="protocol.toggleDeviceState($event, device)"
+          ng-click="openTypeDevice(device)">
+          <div class="devices-protocol-device-checkmark icon-done"></div>
+          <div ng-if="(device.type=='IEC104'||device.type=='IEC101')&&device.role=='INPUT'">
+            <div class="devices-protocol-device-logo">
+              <div class="devices-protocol-device-icon icon-extension"></div>
+            </div>
+            <div class="devices-protocol-device-info">
+              <div class="devices-protocol-device-info-part h4">{{device.model.Desc.value}}</div>
+              <div class="devices-protocol-device-info-part">
+                <i>Каналов в устройстве:</i>
+                <span style="padding-left: .4em">{{device.channels.length}}</span>
+              </div>
+              <div class="devices-protocol-device-info-part">
+                <i>Переменных в устройстве:</i>
+                <span style="padding-left: .4em">{{device.itemsCount}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-type-device></app-type-device>
+</div>

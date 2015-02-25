@@ -1,0 +1,122 @@
+﻿<div class="devices">
+  <div class="devices-protocols {{state.editDevice ? 'next' : 'enter'}}">
+    <div class="devices-protocol"
+        ng-if="!state.editDevice">
+      <div class="devices-protocol-type">Протокол {{state.protocol.type}}</div>
+      <div class="devices-protocol-navigation">
+        <div class="devices-protocol-devices-counter">Устройства {{state.protocol.devices.length}}/{{state.protocol.devicesLimit}}</div>
+        <div class="button devices-protocol-button-add icon-plus" title="Добавить новое устройство"
+          ng-click="newDevice()"
+        ></div>
+        <div class="button devices-protocol-button-add icon-cog" style="font-size: 1.57em;padding: .2em;border: solid 1px #ccc; title="Настройки протокола"
+          ng-click="toggleProtocolOptions()"
+          ng-if="state.protocol.type!=='IEC104'"
+        ></div>
+        <div class="devices-protocol-context-menu {{state.protocol.hasSelectedDevices ? 'expanded' : 'collapsed'}}">
+          <div class="button devices-protocol-button-duplicate icon-fork" title="Дублировать выделенные устройства"
+            ng-click="state.protocol.selectionCopy()"
+          ></div>
+          <div class="button devices-protocol-button-delete icon-trashcan" title="Удалить выделенные устройства"
+            ng-click="state.protocol.selectionRemove()"
+          ></div>
+          <div class="button devices-protocol-button-cancel icon-blocked" title="Сбросить выделение"
+            ng-click="state.protocol.selectionCancel()"
+          ></div>
+        </div>
+      </div>
+      <div class="devices-protocol-devices">
+        <div class="devices-protocol-device {{device.state}}"
+          ng-repeat="device in state.protocol.devices"
+          ng-right-click="state.protocol.toggleDeviceState(device)"
+          ng-click="openDevice(device)">
+          <div class="devices-protocol-device-checkmark icon-done"></div>
+          <div ng-if="device.type=='IEC104'&&device.role=='INPUT'">
+            <div class="devices-protocol-device-logo">
+              <div class="devices-protocol-device-icon icon-extension"></div>
+            </div>
+            <div class="devices-protocol-device-info" title="
+Название присоединения:  {{device.model.Desc.value}}
+Типовое устройство:   {{device.model.TypeDevice.value}}
+IP адрес присоединения:  {{device.model.RemoteIP.value}}
+              ">
+              <div class="devices-protocol-device-info-part h4">{{device.model.Desc.value}}</div>
+              <div class="devices-protocol-device-info-part">
+                <i>IP адрес:</i><br/>
+                <span style="padding-left: .4em">{{device.model.RemoteIP.value}}</span>
+              </div>
+              <div class="devices-protocol-device-info-part"
+                  ng-if="device.model.TypeDeviceName.value">
+                <i>Типовое устройство:</i><br/>
+                <span style="padding-left: .4em">{{device.model.TypeDeviceName.value}}</span>
+              </div>
+            </div>
+          </div>
+          <div ng-if="device.type=='IEC101'&&device.role=='INPUT'">
+            <div class="devices-protocol-device-logo">
+              <div class="devices-protocol-device-icon icon-extension"></div>
+            </div>
+            <div class="devices-protocol-device-info" title="
+Типовое устройство:   {{device.model.TypeDevice.value}}
+Название присоединения:  {{device.model.Desc.value}}
+Адрес устройства в канале: {{device.model.ChanAddress.value}}
+              ">
+              <div class="devices-protocol-device-info-part h4">{{device.model.Desc.value}}</div>
+              <div class="devices-protocol-device-info-part">
+                <i>Канальный адрес:</i><br/>
+                <span style="padding-left: .4em">{{device.model.ChanAddress.value}}</span>
+              </div>
+              <div class="devices-protocol-device-info-part"
+                  ng-if="device.model.TypeDeviceName.value">
+                <i>Типовое устройство:</i><br/>
+                <span style="padding-left: .4em">{{device.model.TypeDeviceName.value}}</span>
+              </div>
+            </div>
+          </div>
+          <div ng-if="device.type=='IEC104'&&device.role=='OUTPUT'">
+            <div class="devices-protocol-device-logo">
+              <div class="devices-protocol-device-icon icon-extension"></div>
+            </div>
+            <div class="devices-protocol-device-info" title="
+Название присоединения:  {{device.model.Desc.value}}
+Порт:  {{device.model.MyPort.value}}
+              ">
+              <div class="devices-protocol-device-info-part h4">{{device.model.Desc.value}}</div>
+              <div class="devices-protocol-device-info-part">
+                <i>Порт:</i><span style="padding-left: .4em">{{device.model.MyPort.value}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="devices-protocol-options {{state.editProtocol ? 'enter' : 'exit'}}"
+          ng-if="state.protocol.type=='IEC101'">
+        <div class="devices-protocol-options-overlay"
+            ng-click="toggleProtocolOptions()"></div>
+        <form class="devices-protocol-options-container">
+          <div class="devices-protocol-options-header">
+            <div class="devices-protocol-options-header-button-back icon-arrow-left"
+                ng-click="toggleProtocolOptions()"></div>
+            <div class="devices-protocol-options-header-title">
+              <div class="devices-protocol-options-header-title-big">Настройки протокола</div>
+              <div class="devices-protocol-options-header-title-small">({{state.protocol.type}})</div>
+            </div>
+          </div>
+          <div class="devices-protocol-options-options">
+            <div class="devices-protocol-option">
+              <div class="devices-protocol-option-title">Скорость передачи данных</div>
+              <select class="devices-protocol-option-value" type="text" name="BaudRate" id="BaudRate"
+                ng-model="state.protocol.model.BaudRate.value"
+                ng-options="c.value as c.name for c in state.protocol.model.BaudRate.options"/>
+            </div>
+            <div class="devices-protocol-option">
+              <div class="devices-protocol-option-title">Адрес в канале</div>
+              <input class="devices-protocol-option-value" type="number" name="ChanAddr" id="ChanAddr"
+                ng-model="state.protocol.model.ChanAddr.value"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-device></app-device>
+</div>

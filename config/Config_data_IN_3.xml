@@ -1,0 +1,1603 @@
+﻿<KIPP_3 prm_type="IEC101" prm_role="INPUT">
+   <RealTime>
+      <Limitation>0</Limitation>
+      <Shift>3600</Shift>
+      <LossTime>5</LossTime>
+      <SlavePeriod>0</SlavePeriod>
+      <Propagation>300</Propagation>
+      <PPS_source>GPS</PPS_source>
+      <TimeZone>4</TimeZone>
+      <SummerTimeEnable>0</SummerTimeEnable>
+      <EssentialShift>3</EssentialShift>
+   </RealTime>
+   
+   <AdapterPPP>
+       <SPORT connect="0"/>
+   </AdapterPPP>
+   <TCPIP>
+      <Ethernet>
+         <Enable>1</Enable>
+         <Address>192.168.150.13</Address>
+         <Mask>255.255.255.0</Mask>
+         <Gateway>192.168.150.1</Gateway>
+      </Ethernet>
+      <SSL>
+         <Enable>0</Enable>
+         <CACert>sd:/SSL-1024/KIPP3-CA.cer</CACert>
+         <Cert>sd:/SSL-1024/server.cer</Cert>
+         <Key>sd:/SSL-1024/server.key</Key>
+      </SSL>
+        <Route>
+            <Item Addr="192.168.99.0" Mask="255.255.255.0" Gateway="10.0.0.100"/>
+        </Route>
+      <PPP>
+         <Enable>1</Enable>
+         <List>
+            <Item>
+               <Name>ppp</Name>
+               <Device>_UART2_</Device>
+               <BaudRate>9600</BaudRate>
+               <Flags>0</Flags>
+               <Server>1</Server>
+               <Address>192.168.1.2</Address>
+               <DNS>0.0.0.0</DNS>
+               <Client>192.168.1.1</Client>
+            </Item>
+         </List>
+      </PPP>
+   </TCPIP>
+   <Console>
+      <Echo>1</Echo>
+      <Device>Telnet</Device>
+      <Flags>0</Flags>
+      <Timeout>0</Timeout>
+   </Console>
+   <Protocols>
+      <Protocol desc="" type="IEC101">
+         <Type>IEC101</Type>
+         <Device>UART0</Device>
+         <Reservation>Main</Reservation>
+         <BaudRate>460800</BaudRate>
+         <LinkTimeout>100</LinkTimeout>
+         <Beforehand>3</Beforehand>
+         <InputSynchro>Disabled</InputSynchro>
+         <Role>Master</Role>
+         <ChanAddr>1</ChanAddr>
+         <ASDU_Addr>1</ASDU_Addr>
+         <ASDU_Size>243</ASDU_Size>
+         <COT_Size>1</COT_Size>
+         <ASDU_AddrSize>1</ASDU_AddrSize>
+         <ObjAddrSize>2</ObjAddrSize>
+         <PppFramesTotal>10</PppFramesTotal>
+         <PppFramesPerAbon>3</PppFramesPerAbon>
+         <AbonentList>
+            <!-- Счетчик 1 -->
+            <Abonent desc="Станция 1">
+               <Blocked>0</Blocked>
+               <ChanAddress>1</ChanAddress>
+               <IECAddress>1</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <PppFramesPerInterrogCycle>4</PppFramesPerInterrogCycle>
+               <InChans>
+                  <InChan desc="1_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>1_mTI</List>
+                  </InChan>
+                  <InChan desc="1_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>1_aTI</List>
+                  </InChan>
+                  <InChan desc="1_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>1_eTI</List>
+                  </InChan>
+                  <InChan desc="1_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>1_mTS</List>
+                  </InChan>
+                  <InChan desc="1_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>1_sTS</List>
+                  </InChan>
+                  <InChan desc="1_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>1_sTIT</List>
+                  </InChan>
+               </InChans>
+            </Abonent>
+
+            <!-- Счетчик 2 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>2</ChanAddress>
+               <IECAddress>2</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <PppFramesPerInterrogCycle>4</PppFramesPerInterrogCycle>
+               <InChans>
+                  <InChan desc="2_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>2_mTI</List>
+                  </InChan>
+                  <InChan desc="2_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>2_aTI</List>
+                  </InChan>
+                  <InChan desc="2_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>2_eTI</List>
+                  </InChan>
+                  <InChan desc="2_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>2_mTS</List>
+                  </InChan>
+                  <InChan desc="2_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>2_sTS</List>
+                  </InChan>
+                  <InChan desc="2_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>2_sTIT</List>
+                  </InChan>
+               </InChans>
+            </Abonent>
+
+            <!-- Счетчик 3 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>3</ChanAddress>
+               <IECAddress>3</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <PppFramesPerInterrogCycle>4</PppFramesPerInterrogCycle>
+               <InChans>
+                  <InChan desc="3_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>3_mTI</List>
+                  </InChan>
+                  <InChan desc="3_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>3_aTI</List>
+                  </InChan>
+                  <InChan desc="3_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>3_eTI</List>
+                  </InChan>
+                  <InChan desc="3_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>3_mTS</List>
+                  </InChan>
+                  <InChan desc="3_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>3_sTS</List>
+                  </InChan>
+                  <InChan desc="3_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>3_sTIT</List>
+                  </InChan>
+               </InChans>
+            </Abonent>
+
+            <!-- Счетчик 4 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>4</ChanAddress>
+               <IECAddress>4</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <PppFramesPerInterrogCycle>4</PppFramesPerInterrogCycle>
+               <InChans>
+                  <InChan desc="4_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>4_mTI</List>
+                  </InChan>
+                  <InChan desc="4_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>4_aTI</List>
+                  </InChan>
+                  <InChan desc="4_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>4_eTI</List>
+                  </InChan>
+                  <InChan desc="4_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>4_mTS</List>
+                  </InChan>
+                  <InChan desc="4_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>4_sTS</List>
+                  </InChan>
+                  <InChan desc="4_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>4_sTIT</List>
+                  </InChan>
+               </InChans>
+            </Abonent>
+
+            <!-- Счетчик 5 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>5</ChanAddress>
+               <IECAddress>5</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <PppFramesPerInterrogCycle>4</PppFramesPerInterrogCycle>
+               <InChans>
+                  <InChan desc="5_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>5_mTI</List>
+                  </InChan>
+                  <InChan desc="5_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>5_aTI</List>
+                  </InChan>
+                  <InChan desc="5_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>5_eTI</List>
+                  </InChan>
+                  <InChan desc="5_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>5_mTS</List>
+                  </InChan>
+                  <InChan desc="5_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>5_sTS</List>
+                  </InChan>
+                  <InChan desc="5_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>5_sTIT</List>
+                  </InChan>
+               </InChans>
+            </Abonent>
+
+            <!-- Счетчик 6 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>6</ChanAddress>
+               <IECAddress>6</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="6_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>6_mTI</List>
+                  </InChan>
+                  <InChan desc="6_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>6_aTI</List>
+                  </InChan>
+                  <InChan desc="6_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>6_eTI</List>
+                  </InChan>
+                  <InChan desc="6_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>6_mTS</List>
+                  </InChan>
+                  <InChan desc="6_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>6_sTS</List>
+                  </InChan>
+                  <InChan desc="6_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>6_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 7 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>7</ChanAddress>
+               <IECAddress>7</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="7_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>7_mTI</List>
+                  </InChan>
+                  <InChan desc="7_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>7_aTI</List>
+                  </InChan>
+                  <InChan desc="7_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>7_eTI</List>
+                  </InChan>
+                  <InChan desc="7_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>7_mTS</List>
+                  </InChan>
+                  <InChan desc="7_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>7_sTS</List>
+                  </InChan>
+                  <InChan desc="7_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>7_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 8 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>8</ChanAddress>
+               <IECAddress>8</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="8_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>8_mTI</List>
+                  </InChan>
+                  <InChan desc="8_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>8_aTI</List>
+                  </InChan>
+                  <InChan desc="8_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>8_eTI</List>
+                  </InChan>
+                  <InChan desc="8_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>8_mTS</List>
+                  </InChan>
+                  <InChan desc="8_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>8_sTS</List>
+                  </InChan>
+                  <InChan desc="8_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>8_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 9 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>9</ChanAddress>
+               <IECAddress>9</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="9_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>9_mTI</List>
+                  </InChan>
+                  <InChan desc="9_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>9_aTI</List>
+                  </InChan>
+                  <InChan desc="9_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>9_eTI</List>
+                  </InChan>
+                  <InChan desc="9_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>9_mTS</List>
+                  </InChan>
+                  <InChan desc="9_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>9_sTS</List>
+                  </InChan>
+                  <InChan desc="9_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>9_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 10 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>10</ChanAddress>
+               <IECAddress>10</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="10_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>10_mTI</List>
+                  </InChan>
+                  <InChan desc="10_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>10_aTI</List>
+                  </InChan>
+                  <InChan desc="10_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>10_eTI</List>
+                  </InChan>
+                  <InChan desc="10_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>10_mTS</List>
+                  </InChan>
+                  <InChan desc="10_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>10_sTS</List>
+                  </InChan>
+                  <InChan desc="10_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>10_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 11 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>11</ChanAddress>
+               <IECAddress>11</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="11_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>11_mTI</List>
+                  </InChan>
+                  <InChan desc="11_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>11_aTI</List>
+                  </InChan>
+                  <InChan desc="11_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>11_eTI</List>
+                  </InChan>
+                  <InChan desc="11_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>11_mTS</List>
+                  </InChan>
+                  <InChan desc="11_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>11_sTS</List>
+                  </InChan>
+                  <InChan desc="11_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>11_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 12 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>12</ChanAddress>
+               <IECAddress>12</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="12_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>12_mTI</List>
+                  </InChan>
+                  <InChan desc="12_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>12_aTI</List>
+                  </InChan>
+                  <InChan desc="12_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>12_eTI</List>
+                  </InChan>
+                  <InChan desc="12_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>12_mTS</List>
+                  </InChan>
+                  <InChan desc="12_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>12_sTS</List>
+                  </InChan>
+                  <InChan desc="12_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>12_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 13 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>13</ChanAddress>
+               <IECAddress>13</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="13_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>13_mTI</List>
+                  </InChan>
+                  <InChan desc="13_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>13_aTI</List>
+                  </InChan>
+                  <InChan desc="13_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>13_eTI</List>
+                  </InChan>
+                  <InChan desc="13_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>13_mTS</List>
+                  </InChan>
+                  <InChan desc="13_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>13_sTS</List>
+                  </InChan>
+                  <InChan desc="13_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>13_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 14 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>14</ChanAddress>
+               <IECAddress>14</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="14_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>14_mTI</List>
+                  </InChan>
+                  <InChan desc="14_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>14_aTI</List>
+                  </InChan>
+                  <InChan desc="14_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>14_eTI</List>
+                  </InChan>
+                  <InChan desc="14_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>14_mTS</List>
+                  </InChan>
+                  <InChan desc="14_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>14_sTS</List>
+                  </InChan>
+                  <InChan desc="14_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>14_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 15 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>15</ChanAddress>
+               <IECAddress>15</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="15_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>15_mTI</List>
+                  </InChan>
+                  <InChan desc="15_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>15_aTI</List>
+                  </InChan>
+                  <InChan desc="15_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>15_eTI</List>
+                  </InChan>
+                  <InChan desc="15_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>15_mTS</List>
+                  </InChan>
+                  <InChan desc="15_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>15_sTS</List>
+                  </InChan>
+                  <InChan desc="15_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>15_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 16 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>16</ChanAddress>
+               <IECAddress>16</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="16_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>16_mTI</List>
+                  </InChan>
+                  <InChan desc="16_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>16_aTI</List>
+                  </InChan>
+                  <InChan desc="16_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>16_eTI</List>
+                  </InChan>
+                  <InChan desc="16_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>16_mTS</List>
+                  </InChan>
+                  <InChan desc="16_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>16_sTS</List>
+                  </InChan>
+                  <InChan desc="16_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>16_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 17 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>17</ChanAddress>
+               <IECAddress>17</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="17_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>17_mTI</List>
+                  </InChan>
+                  <InChan desc="17_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>17_aTI</List>
+                  </InChan>
+                  <InChan desc="17_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>17_eTI</List>
+                  </InChan>
+                  <InChan desc="17_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>17_mTS</List>
+                  </InChan>
+                  <InChan desc="17_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>17_sTS</List>
+                  </InChan>
+                  <InChan desc="17_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>17_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 18 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>18</ChanAddress>
+               <IECAddress>18</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="18_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>18_mTI</List>
+                  </InChan>
+                  <InChan desc="18_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>18_aTI</List>
+                  </InChan>
+                  <InChan desc="18_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>18_eTI</List>
+                  </InChan>
+                  <InChan desc="18_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>18_mTS</List>
+                  </InChan>
+                  <InChan desc="18_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>18_sTS</List>
+                  </InChan>
+                  <InChan desc="18_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>18_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 19 -->
+            <Abonent desc="">
+               <Blocked>0</Blocked>
+               <ChanAddress>19</ChanAddress>
+               <IECAddress>19</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="19_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>19_mTI</List>
+                  </InChan>
+                  <InChan desc="19_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>19_aTI</List>
+                  </InChan>
+                  <InChan desc="19_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>19_eTI</List>
+                  </InChan>
+                  <InChan desc="19_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>19_mTS</List>
+                  </InChan>
+                  <InChan desc="19_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>19_sTS</List>
+                  </InChan>
+                  <InChan desc="19_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>19_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+            <!-- Счетчик 20 -->
+            <Abonent desc="">
+               <Blocked>1</Blocked>
+               <ChanAddress>20</ChanAddress>
+               <IECAddress>20</IECAddress>
+               <SynchroSlave>1</SynchroSlave>
+               <InterrogationPattern>Schedule</InterrogationPattern>
+               <InChans>
+                  <InChan desc="20_mTI">
+                     <FirstObjAddr>192</FirstObjAddr>
+                     <List>20_mTI</List>
+                  </InChan>
+                  <InChan desc="20_aTI">
+                     <FirstObjAddr>256</FirstObjAddr>
+                     <List>20_aTI</List>
+                  </InChan>
+                  <InChan desc="20_eTI">
+                     <FirstObjAddr>320</FirstObjAddr>
+                     <List>20_eTI</List>
+                  </InChan>
+                  <InChan desc="20_mTS">
+                     <FirstObjAddr>64</FirstObjAddr>
+                     <List>20_mTS</List>
+                  </InChan>
+                  <InChan desc="20_sTS">
+                     <FirstObjAddr>0</FirstObjAddr>
+                     <List>20_sTS</List>
+                  </InChan>
+                  <InChan desc="20_sTIT">
+                     <FirstObjAddr>160</FirstObjAddr>
+                     <List>20_sTIT</List>
+                  </InChan>
+               </InChans>
+            <PppFramesPerInterrogCycle/></Abonent>
+
+         </AbonentList>
+      </Protocol>                             
+   </Protocols>
+   <HTTP>
+      <Port>80</Port>
+      <SSL>0</SSL>
+      <MaxConnect>5</MaxConnect>
+      <ExtThread>1</ExtThread>
+      <KeepAlive>30</KeepAlive>
+      <WwwRoot>sd:/www/</WwwRoot>
+      <Auth>1</Auth>
+      <TimeSession>200</TimeSession>
+      <Passwords>
+         <Item>
+            <uid>0</uid>
+            <Login>user0</Login>
+            <Password>123</Password>
+         </Item>
+         <Item>
+            <uid>1</uid>
+            <Password>mas1</Password>
+            <WwwRoot>sd:/www/rd1/</WwwRoot>
+         </Item>
+         <Item>
+            <uid>2</uid>
+            <Password>mas2</Password>
+            <WwwRoot>sd:/www/rd2/</WwwRoot>
+         </Item>
+         <Item>
+            <uid>3</uid>
+            <Password>mas3</Password>
+            <WwwRoot>sd:/www/dp/</WwwRoot>
+         </Item>
+      </Passwords>
+      <Access>
+         <Item>
+            <Name>net</Name>
+            <List>0,1,2,3,4,5</List>
+         </Item>
+         <Item>
+            <Name>sys</Name>
+            <List>0,1,2,3,4,5</List>
+         </Item>
+         <Item>
+            <Name>db</Name>
+            <List>0,1,2,3,4,5</List>
+         </Item>
+         <Item>
+            <Name>svg</Name>
+            <List>0,1</List>
+         </Item>
+      </Access>
+   </HTTP>
+   <SVG>
+      <SvgFile>sd:/www/svg/RU600.svg</SvgFile>
+      <InfoFile>sd:/www/svg/corresp.xml</InfoFile>
+      <LinkFile>sd:/www/svg/info.xml</LinkFile>
+   </SVG>
+   <DB>
+      <ListDbModify>
+      </ListDbModify>
+      <ListDbTest>
+         <DbTest name="intAppe_5" id="1" class="Appe" appe="5"/>
+         <DbTest name="intAppe_2" id="2" class="Appe" appe="2"/>
+         <DbTest name="intAppe_1" id="3" class="Appe" appe="1"/>
+         <DbTest name="flAppe_5" id="4" class="Appe" appe="5.0"/>
+         <DbTest name="flAppe_0" id="5" class="Appe" appe="0."/>
+         <DbTest name="flAppe_1" id="6" class="Appe" appe="1.0"/>
+         <DbTest name="flAppe_0.1" id="7" class="Appe" appe="0.1"/>
+         <DbTest name="flAppe_0.01" id="8" class="Appe" appe="0.01"/>
+         <DbTest name="flAppe_2.5" id="9" class="Appe" appe="2.5"/>
+         <DbTest name="timer_1s" id="10" class="Timer" period="1000"/>
+         <DbTest name="timer_10s" id="10" class="Timer" period="10000"/>
+         <DbTest name="timer_30s" id="11" class="Timer" period="30000"/>
+         <DbTest name="level_250" id="13" class="Level" value="250" hist="2"/>
+         <DbTest name="range_1.2_0" id="12" class="Range" max_value="1.2" max_hist="0.02" min_value="-0.1" min_hist="0.02"/>
+         <DbTest name="range_0.2_-0.2" id="14" class="Range" max_value="0.2" max_hist="0.03" min_value="-0.2" min_hist="0.03"/>
+         <DbTest name="range_0.4_-0.4" id="15" class="Range" max_value="0.4" max_hist="0.04" min_value="-0.2" min_hist="0.03"/>
+         <DbTest name="range_4_2" id="16" class="Range" max_value="4" max_hist="0.5" min_value="2" min_hist="0.5"/>
+         <DbTest name="range_60.6_54.8" id="17" class="Range" max_value="60.6" max_hist="0.6" min_value="54.8" min_hist="0.6"/>
+         <DbTest name="range_63.5_51.9" id="18" class="Range" max_value="63.5" max_hist="0.6" min_value="51.9" min_hist="0.6"/>
+         <DbTest name="gate_F" id="19" class="Gate" ext_max_value="50.4" ext_max_hist="0.04" ext_min_value="49.6" ext_min_hist="0.04" int_max_value="50.2" int_max_hist="0.04" int_min_value="49.8" int_min_hist="0.04"/>
+         <DbTest name="gate_U57" id="20" class="Gate" ext_max_value="63.5" ext_max_hist="0.6" ext_min_value="51.9" ext_min_hist="0.6" int_max_value="60.6" int_max_hist="0.6" int_min_value="54.8" int_min_hist="0.6"/>
+         <DbTest name="Write" id="21" class="Write"/>
+         <DbTest name="Validity" id="22" class="Quality" bits="128"/>
+      </ListDbTest>
+      <!-- Инициализация БД: параметры ячеек  -->
+      <ListConfig>
+         <Item name="ts" type="TS" format="DBOUT_INT" unit="" size="30"/>
+         <Item name="byte" type="TIT8U" format="DBOUT_INT" unit="" size="30"/>
+         <Item name="int" type="TIT32S" format="DBOUT_INT" unit="" size="30"/>
+         <Item name="uint" type="TII32U" format="DBOUT_UINT4" unit="" size="30"/>
+         <Item name="float.0" type="TITfl" format="DBOUT_FLT0" unit="" size="30"/>
+         <Item name="float.1" type="TITfl" format="DBOUT_FLT1" unit="" size="30"/>
+         <Item name="float.3" type="TITfl" format="DBOUT_FLT3" unit="" size="30"/>
+         <Item name="Voltage" type="TITfl" format="DBOUT_FLT3" unit="В" size="30"/>
+         <Item name="Current" type="TITfl" format="DBOUT_FLT3" unit="А" size="30"/>
+         <Item name="ActivePower" type="TITfl" format="DBOUT_FLT3" unit="Вт" size="30"/>
+         <Item name="ReactivePower" type="TITfl" format="DBOUT_FLT3" unit="вар" size="30"/>
+         <Item name="ApparentPower" type="TITfl" format="DBOUT_FLT3" unit="ВА" size="30"/>
+         <Item name="PowerFactor" type="TITfl" format="DBOUT_FLT3" unit="" size="30"/>
+         <Item name="Frequency" type="TITfl" format="DBOUT_FLT3" unit="Гц" size="30"/>
+         <Item name="Percentage" type="TITfl" format="DBOUT_FLT3" unit="%" size="30"/>
+         <Item name="Duration" type="TITfl" format="DBOUT_FLT3" unit="сек" size="30"/>
+         <Item name="ushort" type="TIT16U" format="DBOUT_INT" unit="" size="30"/>
+      </ListConfig>
+      <!-- каналы ввода БД -->
+      <ListInChans>
+         <InChan name="system" prm_type="system">
+            <Item name="Restart" cfg="int"/>
+            <Item name="termo.up" cfg="float.1"/>
+            <Item name="termo.down" cfg="float.1"/>
+         </InChan>
+         <InChan name="HTTP" prm_type="system">
+            <Item name="HTTP.close" cfg="uint"/>
+            <Item name="HTTP.open" cfg="uint"/>
+         </InChan>
+         <InChan name="WEB_TU" prm_type="system">
+            <Item name="TU.WEB_Cmd" cfg="uint"/>
+            <Item name="WEB.TU_Res" cfg="uint"/>
+         </InChan>
+         <InChan name="Link" prm_type="system">
+            <Item group="14" name_from="1" name="Link_%02i" cfg="ts"/>
+         </InChan>   
+         <InChan name="LinkErrors" prm_type="system">
+            <Item group="14" name_from="1" name="LiEr_%02i" cfg="byte"/>
+         </InChan>
+         
+         <InChan name="Link104" prm_type="system">
+            <Item group="14" name_from="1" name="Link104_%i" cfg="ts"/>
+         </InChan>
+		 
+		 <InChan name="1_mTI" desc="1_mTI">
+            <Item group="29" name_from="1" name="1_mTI_%i" cfg="float.3" desc="1_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="1_aTI" desc="1_aTI">
+            <Item group="26" name_from="1" name="1_aTI_%i" cfg="float.3" desc="1_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="1_eTI" desc="1_eTI">
+            <Item group="4" name_from="1" name="1_eTI_%i" cfg="uint" desc="1_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="1_mTS" desc="1_mTS">            
+            <Item group="32" name_from="1" name="1_mTS_%i" cfg="ts" desc="1_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="1_sTS" desc="1_sTS">
+            <Item group="24" name_from="1" name="1_sTS_%i" cfg="ts" desc="1_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="1_sTIT" desc="1_sTIT">
+            <Item group="5" name_from="1" name="1_sTI_%i" cfg="float.1" desc="1_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 1 -->
+
+      <!-- Описание групп входных данных счетчика 2 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="2_mTI" desc="2_mTI">
+            <Item group="29" name_from="1" name="2_mTI_%i" cfg="float.3" desc="2_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="2_aTI" desc="2_aTI">
+            <Item group="26" name_from="1" name="2_aTI_%i" cfg="float.3" desc="2_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="2_eTI" desc="2_eTI">
+            <Item group="4" name_from="1" name="2_eTI_%i" cfg="uint" desc="2_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="2_mTS" desc="2_mTS">
+            <Item group="32" name_from="1" name="2_mTS_%i" cfg="ts" desc="2_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="2_sTS" desc="2_sTS">
+            <Item group="24" name_from="1" name="2_sTS_%i" cfg="ts" desc="2_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="2_sTIT" desc="2_sTIT">
+            <Item group="5" name_from="1" name="2_sTI_%i" cfg="float.1" desc="2_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 2 -->
+
+      <!-- Описание групп входных данных счетчика 3 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="3_mTI" desc="3_mTI">
+            <Item group="29" name_from="1" name="3_mTI_%i" cfg="float.3" desc="3_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="3_aTI" desc="3_aTI">
+            <Item group="26" name_from="1" name="3_aTI_%i" cfg="float.3" desc="3_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="3_eTI" desc="3_eTI">
+            <Item group="4" name_from="1" name="3_eTI_%i" cfg="uint" desc="3_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="3_mTS" desc="3_mTS">
+            <Item group="32" name_from="1" name="3_mTS_%i" cfg="ts" desc="3_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="3_sTS" desc="3_sTS">
+            <Item group="24" name_from="1" name="3_sTS_%i" cfg="ts" desc="3_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="3_sTIT" desc="3_sTIT">
+            <Item group="5" name_from="1" name="3_sTI_%i" cfg="float.1" desc="3_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 3 -->
+
+      <!-- Описание групп входных данных счетчика 4 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="4_mTI" desc="4_mTI">
+            <Item group="29" name_from="1" name="4_mTI_%i" cfg="float.3" desc="4_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="4_aTI" desc="4_aTI">
+            <Item group="26" name_from="1" name="4_aTI_%i" cfg="float.3" desc="4_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="4_eTI" desc="4_eTI">
+            <Item group="4" name_from="1" name="4_eTI_%i" cfg="uint" desc="4_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="4_mTS" desc="4_mTS">
+            <Item group="32" name_from="1" name="4_mTS_%i" cfg="ts" desc="4_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="4_sTS" desc="4_sTS">
+            <Item group="24" name_from="1" name="4_sTS_%i" cfg="ts" desc="4_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="4_sTIT" desc="4_sTIT">
+            <Item group="5" name_from="1" name="4_sTI_%i" cfg="float.1" desc="4_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 4 -->
+
+      <!-- Описание групп входных данных счетчика 5 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="5_mTI" desc="5_mTI">
+            <Item group="29" name_from="1" name="5_mTI_%i" cfg="float.3" desc="5_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="5_aTI" desc="5_aTI">
+            <Item group="26" name_from="1" name="5_aTI_%i" cfg="float.3" desc="5_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="5_eTI" desc="5_eTI">
+            <Item group="4" name_from="1" name="5_eTI_%i" cfg="uint" desc="5_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="5_mTS" desc="5_mTS">
+            <Item group="32" name_from="1" name="5_mTS_%i" cfg="ts" desc="5_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="5_sTS" desc="5_sTS">
+            <Item group="24" name_from="1" name="5_sTS_%i" cfg="ts" desc="5_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="5_sTIT" desc="5_sTIT">
+            <Item group="5" name_from="1" name="5_sTI_%i" cfg="float.1" desc="5_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 5 -->
+
+      <!-- Описание групп входных данных счетчика 6 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="6_mTI" desc="6_mTI">
+            <Item group="29" name_from="1" name="6_mTI_%i" cfg="float.3" desc="6_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="6_aTI" desc="6_aTI">
+            <Item group="26" name_from="1" name="6_aTI_%i" cfg="float.3" desc="6_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="6_eTI" desc="6_eTI">
+            <Item group="4" name_from="1" name="6_eTI_%i" cfg="uint" desc="6_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="6_mTS" desc="6_mTS">
+            <Item group="32" name_from="1" name="6_mTS_%i" cfg="ts" desc="6_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="6_sTS" desc="6_sTS">
+            <Item group="24" name_from="1" name="6_sTS_%i" cfg="ts" desc="6_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="6_sTIT" desc="6_sTIT">
+            <Item group="5" name_from="1" name="6_sTI_%i" cfg="float.1" desc="6_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 6 -->
+
+      <!-- Описание групп входных данных счетчика 7 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="7_mTI" desc="7_mTI">
+            <Item group="29" name_from="1" name="7_mTI_%i" cfg="float.3" desc="7_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="7_aTI" desc="7_aTI">
+            <Item group="26" name_from="1" name="7_aTI_%i" cfg="float.3" desc="7_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="7_eTI" desc="7_eTI">
+            <Item group="4" name_from="1" name="7_eTI_%i" cfg="uint" desc="7_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="7_mTS" desc="7_mTS">
+            <Item group="32" name_from="1" name="7_mTS_%i" cfg="ts" desc="7_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="7_sTS" desc="7_sTS">
+            <Item group="24" name_from="1" name="7_sTS_%i" cfg="ts" desc="7_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="7_sTIT" desc="7_sTIT">
+            <Item group="5" name_from="1" name="7_sTI_%i" cfg="float.1" desc="7_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 7 -->
+
+      <!-- Описание групп входных данных счетчика 8 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="8_mTI" desc="8_mTI">
+            <Item group="29" name_from="1" name="8_mTI_%i" cfg="float.3" desc="8_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="8_aTI" desc="8_aTI">
+            <Item group="26" name_from="1" name="8_aTI_%i" cfg="float.3" desc="8_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="8_eTI" desc="8_eTI">
+            <Item group="4" name_from="1" name="8_eTI_%i" cfg="uint" desc="8_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="8_mTS" desc="8_mTS">
+            <Item group="32" name_from="1" name="8_mTS_%i" cfg="ts" desc="8_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="8_sTS" desc="8_sTS">
+            <Item group="24" name_from="1" name="8_sTS_%i" cfg="ts" desc="8_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="8_sTIT" desc="8_sTIT">
+            <Item group="5" name_from="1" name="8_sTI_%i" cfg="float.1" desc="8_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 8 -->
+
+      <!-- Описание групп входных данных счетчика 9 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="9_mTI" desc="9_mTI">
+            <Item group="29" name_from="1" name="9_mTI_%i" cfg="float.3" desc="9_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="9_aTI" desc="9_aTI">
+            <Item group="26" name_from="1" name="9_aTI_%i" cfg="float.3" desc="9_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="9_eTI" desc="9_eTI">
+            <Item group="4" name_from="1" name="9_eTI_%i" cfg="uint" desc="9_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="9_mTS" desc="9_mTS">
+            <Item group="32" name_from="1" name="9_mTS_%i" cfg="ts" desc="9_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="9_sTS" desc="9_sTS">
+            <Item group="24" name_from="1" name="9_sTS_%i" cfg="ts" desc="9_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="9_sTIT" desc="9_sTIT">
+            <Item group="5" name_from="1" name="9_sTI_%i" cfg="float.1" desc="9_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 9 -->
+
+      <!-- Описание групп входных данных счетчика 10 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="10_mTI" desc="10_mTI">
+            <Item group="29" name_from="1" name="10_mTI_%i" cfg="float.3" desc="10_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="10_aTI" desc="10_aTI">
+            <Item group="26" name_from="1" name="10_aTI_%i" cfg="float.3" desc="10_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="10_eTI" desc="10_eTI">
+            <Item group="4" name_from="1" name="10_eTI_%i" cfg="uint" desc="10_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="10_mTS" desc="10_mTS">
+            <Item group="32" name_from="1" name="10_mTS_%i" cfg="ts" desc="10_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="10_sTS" desc="10_sTS">
+            <Item group="24" name_from="1" name="10_sTS_%i" cfg="ts" desc="10_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="10_sTIT" desc="10_sTIT">
+            <Item group="5" name_from="1" name="10_sTI_%i" cfg="float.1" desc="10_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 10 -->
+
+      <!-- Описание групп входных данных счетчика 11 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="11_mTI" desc="11_mTI">
+            <Item group="29" name_from="1" name="11_mTI_%i" cfg="float.3" desc="11_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="11_aTI" desc="11_aTI">
+            <Item group="26" name_from="1" name="11_aTI_%i" cfg="float.3" desc="11_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="11_eTI" desc="11_eTI">
+            <Item group="4" name_from="1" name="11_eTI_%i" cfg="uint" desc="11_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="11_mTS" desc="11_mTS">
+            <Item group="32" name_from="1" name="11_mTS_%i" cfg="ts" desc="11_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="11_sTS" desc="11_sTS">
+            <Item group="24" name_from="1" name="11_sTS_%i" cfg="ts" desc="11_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="11_sTIT" desc="11_sTIT">
+            <Item group="5" name_from="1" name="11_sTI_%i" cfg="float.1" desc="11_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 11 -->
+
+      <!-- Описание групп входных данных счетчика 12 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="12_mTI" desc="12_mTI">
+            <Item group="29" name_from="1" name="12_mTI_%i" cfg="float.3" desc="12_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="12_aTI" desc="12_aTI">
+            <Item group="26" name_from="1" name="12_aTI_%i" cfg="float.3" desc="12_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="12_eTI" desc="12_eTI">
+            <Item group="4" name_from="1" name="12_eTI_%i" cfg="uint" desc="12_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="12_mTS" desc="12_mTS">
+            <Item group="32" name_from="1" name="12_mTS_%i" cfg="ts" desc="12_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="12_sTS" desc="12_sTS">
+            <Item group="24" name_from="1" name="12_sTS_%i" cfg="ts" desc="12_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="12_sTIT" desc="12_sTIT">
+            <Item group="5" name_from="1" name="12_sTI_%i" cfg="float.1" desc="12_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 12 -->
+
+      <!-- Описание групп входных данных счетчика 13 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="13_mTI" desc="13_mTI">
+            <Item group="29" name_from="1" name="13_mTI_%i" cfg="float.3" desc="13_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="13_aTI" desc="13_aTI">
+            <Item group="26" name_from="1" name="13_aTI_%i" cfg="float.3" desc="13_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="13_eTI" desc="13_eTI">
+            <Item group="4" name_from="1" name="13_eTI_%i" cfg="uint" desc="13_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="13_mTS" desc="13_mTS">
+            <Item group="32" name_from="1" name="13_mTS_%i" cfg="ts" desc="13_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="13_sTS" desc="13_sTS">
+            <Item group="24" name_from="1" name="13_sTS_%i" cfg="ts" desc="13_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="13_sTIT" desc="13_sTIT">
+            <Item group="5" name_from="1" name="13_sTI_%i" cfg="float.1" desc="13_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 13 -->
+
+      <!-- Описание групп входных данных счетчика 14 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="14_mTI" desc="14_mTI">
+            <Item group="29" name_from="1" name="14_mTI_%i" cfg="float.3" desc="14_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="14_aTI" desc="14_aTI">
+            <Item group="26" name_from="1" name="14_aTI_%i" cfg="float.3" desc="14_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="14_eTI" desc="14_eTI">
+            <Item group="4" name_from="1" name="14_eTI_%i" cfg="uint" desc="14_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="14_mTS" desc="14_mTS">
+            <Item group="32" name_from="1" name="14_mTS_%i" cfg="ts" desc="14_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="14_sTS" desc="14_sTS">
+            <Item group="24" name_from="1" name="14_sTS_%i" cfg="ts" desc="14_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="14_sTIT" desc="14_sTIT">
+            <Item group="5" name_from="1" name="14_sTI_%i" cfg="float.1" desc="14_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 14 -->
+
+      <!-- Описание групп входных данных счетчика 15 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="15_mTI" desc="15_mTI">
+            <Item group="29" name_from="1" name="15_mTI_%i" cfg="float.3" desc="15_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="15_aTI" desc="15_aTI">
+            <Item group="26" name_from="1" name="15_aTI_%i" cfg="float.3" desc="15_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="15_eTI" desc="15_eTI">
+            <Item group="4" name_from="1" name="15_eTI_%i" cfg="uint" desc="15_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="15_mTS" desc="15_mTS">
+            <Item group="32" name_from="1" name="15_mTS_%i" cfg="ts" desc="15_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="15_sTS" desc="15_sTS">
+            <Item group="24" name_from="1" name="15_sTS_%i" cfg="ts" desc="15_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="15_sTIT" desc="15_sTIT">
+            <Item group="5" name_from="1" name="15_sTI_%i" cfg="float.1" desc="15_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 15 -->
+
+      <!-- Описание групп входных данных счетчика 16 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="16_mTI" desc="16_mTI">
+            <Item group="29" name_from="1" name="16_mTI_%i" cfg="float.3" desc="16_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="16_aTI" desc="16_aTI">
+            <Item group="26" name_from="1" name="16_aTI_%i" cfg="float.3" desc="16_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="16_eTI" desc="16_eTI">
+            <Item group="4" name_from="1" name="16_eTI_%i" cfg="uint" desc="16_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="16_mTS" desc="16_mTS">
+            <Item group="32" name_from="1" name="16_mTS_%i" cfg="ts" desc="16_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="16_sTS" desc="16_sTS">
+            <Item group="24" name_from="1" name="16_sTS_%i" cfg="ts" desc="16_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="16_sTIT" desc="16_sTIT">
+            <Item group="5" name_from="1" name="16_sTI_%i" cfg="float.1" desc="16_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 16 -->
+
+      <!-- Описание групп входных данных счетчика 17 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="17_mTI" desc="17_mTI">
+            <Item group="29" name_from="1" name="17_mTI_%i" cfg="float.3" desc="17_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="17_aTI" desc="17_aTI">
+            <Item group="26" name_from="1" name="17_aTI_%i" cfg="float.3" desc="17_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="17_eTI" desc="17_eTI">
+            <Item group="4" name_from="1" name="17_eTI_%i" cfg="uint" desc="17_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="17_mTS" desc="17_mTS">
+            <Item group="32" name_from="1" name="17_mTS_%i" cfg="ts" desc="17_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="17_sTS" desc="17_sTS">
+            <Item group="24" name_from="1" name="17_sTS_%i" cfg="ts" desc="17_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="17_sTIT" desc="17_sTIT">
+            <Item group="5" name_from="1" name="17_sTI_%i" cfg="float.1" desc="17_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 17 -->
+
+      <!-- Описание групп входных данных счетчика 18 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="18_mTI" desc="18_mTI">
+            <Item group="29" name_from="1" name="18_mTI_%i" cfg="float.3" desc="18_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="18_aTI" desc="18_aTI">
+            <Item group="26" name_from="1" name="18_aTI_%i" cfg="float.3" desc="18_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="18_eTI" desc="18_eTI">
+            <Item group="4" name_from="1" name="18_eTI_%i" cfg="uint" desc="18_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="18_mTS" desc="18_mTS">
+            <Item group="32" name_from="1" name="18_mTS_%i" cfg="ts" desc="18_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="18_sTS" desc="18_sTS">
+            <Item group="24" name_from="1" name="18_sTS_%i" cfg="ts" desc="18_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="18_sTIT" desc="18_sTIT">
+            <Item group="5" name_from="1" name="18_sTI_%i" cfg="float.1" desc="18_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 18 -->
+
+      <!-- Описание групп входных данных счетчика 19 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="19_mTI" desc="19_mTI">
+            <Item group="29" name_from="1" name="19_mTI_%i" cfg="float.3" desc="19_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="19_aTI" desc="19_aTI">
+            <Item group="26" name_from="1" name="19_aTI_%i" cfg="float.3" desc="19_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="19_eTI" desc="19_eTI">
+            <Item group="4" name_from="1" name="19_eTI_%i" cfg="uint" desc="19_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="19_mTS" desc="19_mTS">
+            <Item group="32" name_from="1" name="19_mTS_%i" cfg="ts" desc="19_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="19_sTS" desc="19_sTS">
+            <Item group="24" name_from="1" name="19_sTS_%i" cfg="ts" desc="19_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="19_sTIT" desc="19_sTIT">
+            <Item group="5" name_from="1" name="19_sTI_%i" cfg="float.1" desc="19_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 19 -->
+
+      <!-- Описание групп входных данных счетчика 20 -->
+              <!-- Основные ТелеИзмерения -->
+         <InChan name="20_mTI" desc="20_mTI">
+            <Item group="29" name_from="1" name="20_mTI_%i" cfg="float.3" desc="20_mTI_%i"/>
+         </InChan>
+              <!-- Вспомогательные ТелеИзмерения -->
+         <InChan name="20_aTI" desc="20_aTI">
+            <Item group="26" name_from="1" name="20_aTI_%i" cfg="float.3" desc="20_aTI_%i"/>
+         </InChan>
+              <!-- Энергия ТелеИзмерения -->
+         <InChan name="20_eTI" desc="20_eTI">
+            <Item group="4" name_from="1" name="20_eTI_%i" cfg="uint" desc="20_eTI_%i"/>
+         </InChan>
+              <!-- Основные ТелеСигналы -->
+         <InChan name="20_mTS" desc="20_mTS">
+            <Item group="32" name_from="1" name="20_mTS_%i" cfg="ts" desc="20_mTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеСигналы -->
+         <InChan name="20_sTS" desc="20_sTS">
+            <Item group="24" name_from="1" name="20_sTS_%i" cfg="ts" desc="20_sTS_%i"/>
+         </InChan>
+              <!-- Служебные ТелеИзмерения -->
+         <InChan name="20_sTIT" desc="20_sTIT">
+            <Item group="5" name_from="1" name="20_sTI_%i" cfg="float.1" desc="20_sTI_%i"/>
+         </InChan>
+      <!-- Конец описания групп входных данных счетчика 20 -->
+         
+      </ListInChans>
+
+      <ListOutChans>
+         
+         <OutChan name="OutChan1" sign="Write Validity">
+            <Item group="29" name_from="1" name="1_mTI_%i"/>
+            <Item group="26" name_from="1" name="1_aTI_%i"/>
+            <Item group="4" name_from="1" name="1_eTI_%i"/>
+            <Item group="5" name_from="1" name="1_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan2" sign="Write Validity">
+            <Item group="29" name_from="1" name="2_mTI_%i"/>
+            <Item group="26" name_from="1" name="2_aTI_%i"/>
+            <Item group="4" name_from="1" name="2_eTI_%i"/>
+            <Item group="5" name_from="1" name="2_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan3" sign="Write Validity">
+            <Item group="29" name_from="1" name="3_mTI_%i"/>
+            <Item group="26" name_from="1" name="3_aTI_%i"/>
+            <Item group="4" name_from="1" name="3_eTI_%i"/>
+            <Item group="5" name_from="1" name="3_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan4" sign="Write Validity">
+            <Item group="29" name_from="1" name="4_mTI_%i"/>
+            <Item group="26" name_from="1" name="4_aTI_%i"/>
+            <Item group="4" name_from="1" name="4_eTI_%i"/>
+            <Item group="5" name_from="1" name="4_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan5" sign="Write Validity">
+            <Item group="29" name_from="1" name="5_mTI_%i"/>
+            <Item group="26" name_from="1" name="5_aTI_%i"/>
+            <Item group="4" name_from="1" name="5_eTI_%i"/>
+            <Item group="5" name_from="1" name="5_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan6" sign="Write Validity">
+            <Item group="29" name_from="1" name="6_mTI_%i"/>
+            <Item group="26" name_from="1" name="6_aTI_%i"/>
+            <Item group="4" name_from="1" name="6_eTI_%i"/>
+            <Item group="5" name_from="1" name="6_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan7" sign="Write Validity">
+            <Item group="29" name_from="1" name="7_mTI_%i"/>
+            <Item group="26" name_from="1" name="7_aTI_%i"/>
+            <Item group="4" name_from="1" name="7_eTI_%i"/>
+            <Item group="5" name_from="1" name="7_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan8" sign="Write Validity">
+            <Item group="29" name_from="1" name="8_mTI_%i"/>
+            <Item group="26" name_from="1" name="8_aTI_%i"/>
+            <Item group="4" name_from="1" name="8_eTI_%i"/>
+            <Item group="5" name_from="1" name="8_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan9" sign="Write Validity">
+            <Item group="29" name_from="1" name="9_mTI_%i"/>
+            <Item group="26" name_from="1" name="9_aTI_%i"/>
+            <Item group="4" name_from="1" name="9_eTI_%i"/>
+            <Item group="5" name_from="1" name="9_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan10" sign="Write Validity">
+            <Item group="29" name_from="1" name="10_mTI_%i"/>
+            <Item group="26" name_from="1" name="10_aTI_%i"/>
+            <Item group="4" name_from="1" name="10_eTI_%i"/>
+            <Item group="5" name_from="1" name="10_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan11" sign="Write Validity">
+            <Item group="29" name_from="1" name="11_mTI_%i"/>
+            <Item group="26" name_from="1" name="11_aTI_%i"/>
+            <Item group="4" name_from="1" name="11_eTI_%i"/>
+            <Item group="5" name_from="1" name="11_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan12" sign="Write Validity">
+            <Item group="29" name_from="1" name="12_mTI_%i"/>
+            <Item group="26" name_from="1" name="12_aTI_%i"/>
+            <Item group="4" name_from="1" name="12_eTI_%i"/>
+            <Item group="5" name_from="1" name="12_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan13" sign="Write Validity">
+            <Item group="29" name_from="1" name="13_mTI_%i"/>
+            <Item group="26" name_from="1" name="13_aTI_%i"/>
+            <Item group="4" name_from="1" name="13_eTI_%i"/>
+            <Item group="5" name_from="1" name="13_sTI_%i"/>
+         </OutChan>
+
+         <OutChan name="OutChan14" sign="Write Validity">
+            <Item group="29" name_from="1" name="14_mTI_%i"/>
+            <Item group="26" name_from="1" name="14_aTI_%i"/>
+            <Item group="4" name_from="1" name="14_eTI_%i"/>
+            <Item group="5" name_from="1" name="14_sTI_%i"/>
+         </OutChan>
+         
+         <OutChan name="OutChan15" sign="Write Validity">
+            <Item group="29" name_from="1" name="15_mTI_%i"/>
+            <Item group="26" name_from="1" name="15_aTI_%i"/>
+            <Item group="4" name_from="1" name="15_eTI_%i"/>
+            <Item group="5" name_from="1" name="15_sTI_%i"/>
+         </OutChan>
+         
+         <OutChan name="OutChan16" sign="Write Validity">
+            <Item group="29" name_from="1" name="16_mTI_%i"/>
+            <Item group="26" name_from="1" name="16_aTI_%i"/>
+            <Item group="4" name_from="1" name="16_eTI_%i"/>
+            <Item group="5" name_from="1" name="16_sTI_%i"/>
+         </OutChan>
+         
+         <OutChan name="OutChan17" sign="Write Validity">
+            <Item group="29" name_from="1" name="17_mTI_%i"/>
+            <Item group="26" name_from="1" name="17_aTI_%i"/>
+            <Item group="4" name_from="1" name="17_eTI_%i"/>
+            <Item group="5" name_from="1" name="17_sTI_%i"/>
+         </OutChan>
+         
+         <OutChan name="OutChan18" sign="Write Validity">
+            <Item group="29" name_from="1" name="18_mTI_%i"/>
+            <Item group="26" name_from="1" name="18_aTI_%i"/>
+            <Item group="4" name_from="1" name="18_eTI_%i"/>
+            <Item group="5" name_from="1" name="18_sTI_%i"/>
+         </OutChan>
+         
+         <OutChan name="OutChan19" sign="Write Validity">
+            <Item group="29" name_from="1" name="19_mTI_%i"/>
+            <Item group="26" name_from="1" name="19_aTI_%i"/>
+            <Item group="4" name_from="1" name="19_eTI_%i"/>
+            <Item group="5" name_from="1" name="19_sTI_%i"/>
+         </OutChan>
+         
+         <OutChan name="OutChan20" sign="Write Validity">
+            <Item group="29" name_from="1" name="20_mTI_%i"/>
+            <Item group="26" name_from="1" name="20_aTI_%i"/>
+            <Item group="4" name_from="1" name="20_eTI_%i"/>
+            <Item group="5" name_from="1" name="20_sTI_%i"/>
+         </OutChan>
+         
+         <OutChan name="Links" sign="Write" desc="Links">
+            <Item group="14" name_from="1" name="Link104_%i" desc="Link104_%i" sign=""/>
+         </OutChan>
+         
+      </ListOutChans>
+   </DB>
+   <SportSyncDB>
+      <ListOutDB>
+      </ListOutDB>
+   </SportSyncDB>
+</KIPP_3>

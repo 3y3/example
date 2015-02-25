@@ -1,0 +1,475 @@
+﻿<svg 
+  xmlns:svg="http://www.w3.org/2000/svg" 
+  xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xml:space="preserve" preserveAspectRatio="xMidYMid meet" 
+  viewBox="310 59 85 362" width="100%" height="100%">
+	
+  <defs id="style">
+		<style type="text/css" id="style" xml:space="preserve">
+    
+      #rootLayer{fill:#aaa}
+      .mainC{fill:#aaa;stop-color:#aaa}
+      .background {fill:inherit;}
+			text{
+				writing-mode:lr-tb;
+				font-style:normal;
+				font-variant:normal;
+				font-weight:normal;
+				font-stretch:normal;
+				font-family:Calibri;
+				text-align:center;
+				text-anchor:start;
+				line-height:125%;						
+				fill:#000;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: default;
+			}
+			text.zagl {font-size:24px;}
+			text.name {font-size:12px;}
+			text.name_orange {font-size:12px;fill:#F07F3C;}
+			text.name_10px_orange {font-size:10px;fill:#F07F3C;}
+			text.nadp {font-size:6px;}
+			text.nadp_end {font-size:6px;text-anchor:end;}
+			text.nadp_white {font-size:6px;fill:#FFF;}
+			text.nadp_4px {font-size:4px;}
+			text.nadp_blue {font-size:6px;fill:#0094FF;}
+			text.nadp_4px_end {font-size:4px;text-anchor:end;}
+			text.nadp_bold {font-size:7px;font-weight:bold}
+						
+      circle.black {fill:black;stroke:black;stroke-width:0}	
+      circle.black_round {fill:none;stroke:black;stroke-width:0.5}
+		
+      #P1,    #P2,    #P3,    #P4,    #P5,    #P6,    #P7,    #P8,    #P9,    #P10,
+      #P1-ETH,#P2-ETH,#P3-ETH,#P4-ETH,#P5-ETH,#P6-ETH,#P7-ETH,#P8-ETH,#P9-ETH,#P10-ETH,
+      #P1-485,#P2-485,#P3-485,#P4-485,#P5-485,#P6-485,#P7-485,#P8-485,#P9-485,#P10-485 { display: none; }
+    
+      svg.P1-ETH #P1  ,svg.P1-485 #P1,  svg.P1-ETH #P1-ETH  ,svg.P1-485 #P1-485,
+      svg.P2-ETH #P2  ,svg.P2-485 #P2,  svg.P2-ETH #P2-ETH  ,svg.P2-485 #P2-485,
+      svg.P3-ETH #P3  ,svg.P3-485 #P3,  svg.P3-ETH #P3-ETH  ,svg.P3-485 #P3-485,
+      svg.P4-ETH #P4  ,svg.P4-485 #P4,  svg.P4-ETH #P4-ETH  ,svg.P4-485 #P4-485,
+      svg.P5-ETH #P5  ,svg.P5-485 #P5,  svg.P5-ETH #P5-ETH  ,svg.P5-485 #P5-485,
+      svg.P6-ETH #P6  ,svg.P6-485 #P6,  svg.P6-ETH #P6-ETH  ,svg.P6-485 #P6-485,
+      svg.P7-ETH #P7  ,svg.P7-485 #P7,  svg.P7-ETH #P7-ETH  ,svg.P7-485 #P7-485,
+      svg.P8-ETH #P8  ,svg.P8-485 #P8,  svg.P8-ETH #P8-ETH  ,svg.P8-485 #P8-485,
+      svg.P9-ETH #P9  ,svg.P9-485 #P9,  svg.P9-ETH #P9-ETH  ,svg.P9-485 #P9-485,
+      svg.P10-ETH #P10,svg.P10-485 #P10,svg.P10-ETH #P10-ETH,svg.P10-485 #P10-485 
+        { display: block; }
+    </style>
+	</defs> 
+	<defs id="df_grad">
+		<linearGradient x1="0" y1="1" x2="0" y2="0" id="PowerKeyGrad">
+			<stop style="stop-color:#000;stop-opacity:1" offset="0"/>
+			<stop style="stop-color:#444;stop-opacity:1" offset="0.1"/>
+			<stop style="stop-color:#000;stop-opacity:1" offset="0.3"/>
+			<stop style="stop-color:#999;stop-opacity:1" offset="0.33"/>
+			<stop style="stop-color:#777;stop-opacity:1" offset="0.38"/>
+			<stop style="stop-color:#222;stop-opacity:1" offset="0.95"/>
+			<stop style="stop-color:#000;stop-opacity:1" offset="1"/>
+		</linearGradient>
+	</defs>
+	<defs id="Symbol"> 
+	  <symbol id="TM3_module">	
+			<path d="M 4,25 v 324 h 2 v -324 h -2 M 601,25 v 324 h 2 v -324 h -2" style="fill:#b1b1b1;stroke:#808284;stroke-width:0.5;stroke-linejoin:round"/>
+			<g id="Fill">
+        <path d="M 6.25,269.25 h 594.5 v 79.5 h -594.5 z" style="fill:#dadada;stroke:none;stroke-width:0"/>
+        <path d="M 6.25,306.5 h 594.5 v 25.5 h -594.5 z" style="fill:#DDCDBB;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 6.25,210 h 594.5 v -131.5 h -594.5 z" style="fill:#DDCDBB;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 6.25,114.5 h 594.5 v -14 h -594.5 z" style="fill:#C6C6C6;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 6.25,55 h 594.5 v -4 h -594.5 z" style="fill:#C6C6C6;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 6.25,268.75 h 594.5 v -30.5 h -594.5 z" style="fill:#C6C6C6;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 6.25,25.75 h 594.5 v 8 h -594.5 z" style="fill:#f2f2f2;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 6.25,55 h 594.5 v 23 h -594.5 z" style="fill:#f2f2f2;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 6.25,238 h 594.5 v -29 h -594.5 z" style="fill:#f2f2f2;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 6.25,33 h 594.5 v 18 h -594.5 z M 22.5,114.5 h 194 v 65 h -194 z M 233.5,114.5 h 223 v 65 h -223 z M 472.5,114.5 h 125 v 65 h -125 z" style="fill:#E3E3E3;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 205,187 h 25 v 14 h -25 z " style="fill:#DADADA;stroke:#7C7A7A;stroke-width:0.5;stroke-linejoin:round"/>
+			</g>
+      
+			<path d="M 6,25.5 h 595 M 6,31 h 595 M 6,34 h 595 M 6,60 h 595 M 6,64 h 595 M 6,66 h 595 M 6,67.5 h 595 M 6,69 h 595 M 6,73 h 595 M 6,78 h 595 M 6,220.5 h 595 M 6,223 h 595 M 6,225.5 h 595 M 6,228 h 595 M 6,230.5 h 595 M 6,233 h 595 M 6,235.5 h 595 M 6,238 h 595 M 6,240.5 h 595 M 6,243 h 595 M 6,249 h 595 M 6,269 h 595 M 6,274 h 595 M 6,293 h 595 M 6,303 h 595 M 6,306 h 595 M 6,332 h 595 M 6,335 h 595 M 6,337 h 595 M 6,342 h 595 M 6,346 h 595 M 4,349 h 599" style="fill:#808284;stroke:#808284;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 22,114 h 195 v 66 h -195 z M 233,114 h 224 v 66 h -224 z M 472,114 h 126 v 66 h -126 z M 491.5,138.5 h 36 v 17.5 h -36 z M 6.25,210 h 594.5 v -0.5 h -594.5 v 0.5" style="fill:none;stroke:#279C38;stroke-width:1;stroke-linejoin:round"/>
+			
+      <g id="Display">
+        <path d="M 42,103.25 h 158 v 40 h -158 z" style="fill:#99A37F;stroke:#6F6E6E;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 42,150.25 h 158 v 53 h -158 z" style="fill:#C6C6C6;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+        <path d="M 44,151.25 h 14 v 5 h -14 z M 64,151.25 h 14 v 5 h -14 z M 84,151.25 h 14 v 5 h -14 z M 104,151.25 h 14 v 5 h -14 z M 124,151.25 h 14 v 5 h -14 z M 144,151.25 h 14 v 5 h -14 z M 164,151.25 h 14 v 5 h -14 z M 184,151.25 h 14 v 5 h -14 z" style="fill:#F2F2F2;stroke:#9D9D9C;stroke-width:0.5;stroke-linejoin:round"/>
+        <path d="M 44,158.25 h 14 v 5 h -14 z M 64,158.25 h 14 v 5 h -14 z M 84,158.25 h 14 v 5 h -14 z M 104,158.25 h 14 v 5 h -14 z M 124,158.25 h 14 v 5 h -14 z M 144,158.25 h 14 v 5 h -14 z M 164,158.25 h 14 v 5 h -14 z M 184,158.25 h 14 v 5 h -14 z" style="fill:#F2F2F2;stroke:#9D9D9C;stroke-width:0.5;stroke-linejoin:round"/>
+        <path d="M 44,165.25 h 14 v 5 h -14 z M 64,165.25 h 14 v 5 h -14 z M 84,165.25 h 14 v 5 h -14 z M 104,165.25 h 14 v 5 h -14 z M 124,165.25 h 14 v 5 h -14 z M 144,165.25 h 14 v 5 h -14 z M 164,165.25 h 14 v 5 h -14 z M 184,165.25 h 14 v 5 h -14 z" style="fill:#F2F2F2;stroke:#9D9D9C;stroke-width:0.5;stroke-linejoin:round"/>
+        <path d="M 44,196.25 h 14 v 5 h -14 z M 64,196.25 h 14 v 5 h -14 z M 84,196.25 h 14 v 5 h -14 z M 104,196.25 h 14 v 5 h -14 z M 124,196.25 h 14 v 5 h -14 z M 144,196.25 h 14 v 5 h -14 z M 164,196.25 h 14 v 5 h -14 z M 184,196.25 h 14 v 5 h -14 z" style="fill:#F2F2F2;stroke:#9D9D9C;stroke-width:0.5;stroke-linejoin:round"/>
+        <path d="M 42,172 h 158 M 42,174.25 h 158 M 42,176.5 h 158 M 42,178.75 h 158 M 42,186.5 h 158 M 42,188.75 h 158 M 42,191 h 158 M 42,193.25 h 158" style="fill:none;stroke:#F2F2F2;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 61,170 v 25 M 81,170 v 25 M 101,170 v 25 M 121,170 v 25 M 141,170 v 25 M 161,170 v 25 M 181,170 v 25" style="fill:none;stroke:#C6C6C6;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 48.5,173 h 5 v 5 h -5 z M 68.5,173 h 5 v 5 h -5 z M 88.5,173 h 5 v 5 h -5 z M 108.5,173 h 5 v 5 h -5 z M 128.5,173 h 5 v 5 h -5 z M 148.5,173 h 5 v 5 h -5 z M 168.5,173 h 5 v 5 h -5 z M 188.5,173 h 5 v 5 h -5 z M 48.5,187.5 h 5 v 5 h -5 z M 68.5,187.5 h 5 v 5 h -5 z M 88.5,187.5 h 5 v 5 h -5 z M 108.5,187.5 h 5 v 5 h -5 z M 128.5,187.5 h 5 v 5 h -5 z M 148.5,187.5 h 5 v 5 h -5 z M 168.5,187.5 h 5 v 5 h -5 z M 188.5,187.5 h 5 v 5 h -5 z" style="fill:#878786;stroke:#9D9D9C;stroke-width:1;stroke-linejoin:round"/>
+			</g>
+			<g id="Design">
+        <path d="M 233,104.5 h 222" style="fill:none;stroke:#279C38;stroke-width:4.5;stroke-linejoin:round"/>
+        <path d="M 254,127.5 h 151.75" style="fill:none;stroke:#279C38;stroke-width:3.5;stroke-linejoin:round;stroke-dasharray:10 10.25;"/>
+        <path d="M 233,88.75 h 222 M 233,91 h 222 M 233,93.25 h 222 M 233,95.5 h 222 M 233,97.75 h 222 M 233,100 h 222 M 233,102.25 h 222" style="fill:none;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 281,184.5 h 31.5 M 279.5,186.75 h 31.5 M 278,189 h 31.5 M 276.5,191.25 h 31.5 M 275,193.5 h 31.5 M 273.5,195.75 h 31.5" style="fill:none;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 281,141.5 h 31.5 M 279.5,143.75 h 31.5 M 278,146 h 31.5 M 276.5,148.25 h 31.5 M 275,150.5 h 31.5 M 273.5,152.75 h 31.5" style="fill:none;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 247.5,163 h 31.5 M 246,165.25 h 31.5 M 244.5,167.5 h 31.5 M 243,169.75 h 31.5 M 241.5,172 h 31.5 M 240,174.25 h 31.5" style="fill:none;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 314.5,163 h 31.5 M 313,165.25 h 31.5 M 311.5,167.5 h 31.5 M 310,169.75 h 31.5 M 308.5,172 h 31.5 M 307,174.25 h 31.5" style="fill:none;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 348,137.25 h 15 M 348,139.5 h 15 M 348,141.75 h 15 M 348,144 h 15 M 348,146.25 h 15 M 348,148.5 h 15 M 348,150.75 h 15 M 348,153 h 15 M 348,155.25 h 15 M 348,157.5 h 15 M 348,159.75 h 15 M 348,162 h 15 M 348,164.25 h 15 M 348,166.5 h 15 M 348,168.75 h 15 M 348,171 h 15 M 348,173.25 h 15 M 348,175.5 h 15 M 348,177.75 h 15 M 348,180 h 15 M 348,182.25 h 15 M 348,184.5 h 15 M 348,186.75 h 15 M 348,189 h 15 M 348,191.25 h 15 M 348,193.5 h 15 M 348,195.75 h 15" style="fill:none;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 368,137.25 h 82.5 M 368,139.5 h 82.5 M 368,141.75 h 82.5 M 368,144 h 82.5 M 368,146.25 h 82.5 M 368,148.5 h 82.5 M 368,150.75 h 82.5 M 368,153 h 82.5 M 368,155.25 h 82.5 M 368,157.5 h 82.5 M 368,159.75 h 82.5 M 368,162 h 82.5 M 368,164.25 h 82.5 M 368,166.5 h 82.5 M 368,168.75 h 82.5 M 368,171 h 82.5 M 368,173.25 h 82.5 M 368,175.5 h 82.5 M 368,177.75 h 82.5 M 368,180 h 82.5 M 368,182.25 h 82.5 M 368,184.5 h 82.5 M 368,186.75 h 82.5 M 368,189 h 82.5 M 368,191.25 h 82.5 M 368,193.5 h 82.5 M 368,195.75 h 82.5" style="fill:none;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 472,180 h 45 M 472,182.25 h 45 M 472,184.5 h 45 M 472,186.75 h 45 M 472,189 h 45 M 472,191.25 h 45 M 472,193.5 h 45 M 472,195.75 h 45" style="fill:none;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 507,144 h 15 v 7 h -15 z M 517,180 h 83 v 15.75 h -83 z" style="fill:white;stroke:white;stroke-width:1;stroke-linejoin:round"/>
+        <path d="M 353,144 h 10 M 353,165.5 h 10 M 353,187 h 10" style="fill:none;stroke:#279C38;stroke-width:2.5;stroke-linejoin:round;stroke-dasharray:0 0;"/>
+			</g>
+			<g id="Text">
+				<text class="nadp">
+					<tspan x="48.5" y="185">1</tspan>
+					<tspan x="68.5" y="185">2</tspan>
+					<tspan x="88.5" y="185">3</tspan>
+					<tspan x="108.5" y="185">4</tspan>
+					<tspan x="128.5" y="185">5</tspan>
+					<tspan x="148.5" y="185">6</tspan>
+					<tspan x="168.5" y="185">7</tspan>
+					<tspan x="188.5" y="185">8</tspan>
+				</text>
+				
+				<text class="nadp">
+					<tspan x="257.5" y="124">F1</tspan>
+					<tspan x="277.75" y="124">F2</tspan>
+					<tspan x="298" y="124">F3</tspan>
+					<tspan x="318.25" y="124">F4</tspan>
+					<tspan x="338.5" y="124">F5</tspan>
+					<tspan x="358.75" y="124">F6</tspan>
+					<tspan x="379" y="124">F7</tspan>
+					<tspan x="399.25" y="124">F8</tspan>
+				</text>
+				
+				<text class="nadp_4px" transform="matrix(0,-1,1,0,415.5,100)">
+					<tspan x="0" y="0">3.3 V</tspan>
+					<tspan x="0" y="20.25">+5V</tspan>
+				</text>
+				
+				<text class="nadp">
+					<tspan x="355" y="142">M1</tspan>
+					<tspan x="355" y="163.5">M2</tspan>
+					<tspan x="355" y="185">M3</tspan>
+				</text>
+				
+				<text class="nadp">
+					<tspan x="380" y="145">1</tspan>
+					<tspan x="380" y="166.5">4</tspan>
+					<tspan x="380" y="188">7</tspan>
+					<tspan x="400.25" y="145">2</tspan>
+					<tspan x="400.25" y="166.5">5</tspan>
+					<tspan x="400.25" y="188">8</tspan>
+					<tspan x="420.5" y="145">3</tspan>
+					<tspan x="420.5" y="166.5">6</tspan>
+					<tspan x="420.5" y="188">9</tspan>
+					<tspan x="440.75" y="166.5">0</tspan>
+				</text>
+				
+				<path d="M 448.75,147 h -7 l 3 -1.5 l 0 3 l -3 -1.5" style="fill:#27513B;stroke:#27513B;stroke-width:0.75;stroke-linejoin:round;stroke-dasharray:0 0;"/>
+				<path d="M 448.75,190 h -7 l 3 -1.5 l 0 3 l -3 -1.5 M 448.75,187.25 v 3 " style="fill:#27513B;stroke:#27513B;stroke-width:0.75;stroke-linejoin:round;stroke-dasharray:0 0;"/>
+				
+				<text class="nadp">
+					<tspan x="510.5" y="149.5">A</tspan>
+				</text>
+        
+				<text class="nadp_4px">
+					<tspan x="515" y="149">ON</tspan>
+				</text>
+				
+				<text class="nadp_bold">
+					<tspan x="558" y="127.5">|</tspan>
+					<tspan x="557.5" y="171.5">O</tspan>
+				</text>
+				
+				<text class="name">
+					<tspan x="528" y="191">TM</tspan>
+				</text>
+				
+        <circle cx="546" cy="187" r="1.5" class="black"></circle>
+				
+        <text class="name_orange">
+					<tspan x="548" y="193">3</tspan>
+				</text>
+				
+        <text class="nadp">
+					<tspan x="555" y="190">COM</tspan>
+				</text>
+				
+			</g>
+			<g id="Indication">
+        <path d="M 250,88.5 v 12 h 4.5 v -12 z M 270.25,88.5 v 12 h 4.5 v -12 z M 290.5,88.5 v 12 h 4.5 v -12 z M 310.75,88.5 v 12 h 4.5 v -12 z M 331,88.5 v 12 h 4.5 v -12 z M 351.25,88.5 v 12 h 4.5 v -12 z M 371.5,88.5 v 12 h 4.5 v -12 z M 391.75,88.5 v 12 h 4.5 v -12 z" style="fill:#F2F2F2;stroke:#9D9D9C;stroke-width:0.5;stroke-linejoin:round"/>
+        <path d="M 250.25,102.75 v 3.75 h 3.75 v -3.75 z M 270.5,102.75 v 3.75 h 3.75 v -3.75 z M 290.75,102.75 v 3.75 h 3.75 v -3.75 z M 311,102.75 v 3.75 h 3.75 v -3.75 z M 331.25,102.75 v 3.75 h 3.75 v -3.75 z M 351.5,102.75 v 3.75 h 3.75 v -3.75 z M 371.75,102.75 v 3.75 h 3.75 v -3.75 z M 392,102.75 v 3.75 h 3.75 v -3.75 z" style="fill:#878786;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+        <circle cx="414.5" cy="104.5" r="1.5" style="fill:#878786;stroke:#000;stroke-width:0.5"></circle>
+        <circle cx="434.75" cy="104.5" r="1.5" style="fill:#878786;stroke:#000;stroke-width:0.5"></circle>
+			</g>
+			<g id="key">
+        <g id="FunctionKey">
+          <circle cx="252.5" cy="125.5" r="4.5" class="black"></circle>
+          <circle cx="272.75" cy="125.5" r="4.5" class="black"></circle>
+          <circle cx="293" cy="125.5" r="4.5" class="black"></circle>
+          <circle cx="313.25" cy="125.5" r="4.5" class="black"></circle>
+          <circle cx="333.5" cy="125.5" r="4.5" class="black"></circle>
+          <circle cx="353.75" cy="125.5" r="4.5" class="black"></circle>
+          <circle cx="374" cy="125.5" r="4.5" class="black"></circle>
+          <circle cx="394.25" cy="125.5" r="4.5" class="black"></circle>
+        </g>
+        <g id="NavigationKey">
+          <circle cx="252.5" cy="168.5" r="4.5" class="black"></circle>
+          <circle cx="293" cy="147" r="4.5" class="black"></circle>
+          <circle cx="293" cy="190" r="4.5" class="black"></circle>
+          <circle cx="333.5" cy="168.5" r="4.5" class="black"></circle>
+        </g>
+        <g id="Keybord">
+          <circle cx="353.75" cy="147" r="4.5" class="black"></circle>
+          <circle cx="374" cy="147" r="4.5" class="black"></circle>
+          <circle cx="394.25" cy="147" r="4.5" class="black"></circle>
+          <circle cx="414.5" cy="147" r="4.5" class="black"></circle>
+          <circle cx="434.75" cy="147" r="4.5" class="black"></circle>
+          <circle cx="353.75" cy="168.5" r="4.5" class="black"></circle>
+          <circle cx="374" cy="168.5" r="4.5" class="black"></circle>
+          <circle cx="394.25" cy="168.5" r="4.5" class="black"></circle>
+          <circle cx="414.5" cy="168.5" r="4.5" class="black"></circle>
+          <circle cx="434.75" cy="168.5" r="4.5" class="black"></circle>
+          <circle cx="353.75" cy="190" r="4.5" class="black"></circle>
+          <circle cx="374" cy="190" r="4.5" class="black"></circle>
+          <circle cx="394.25" cy="190" r="4.5" class="black"></circle>
+          <circle cx="414.5" cy="190" r="4.5" class="black"></circle>
+          <circle cx="434.75" cy="190" r="4.5" class="black"></circle>
+        </g>
+        <circle cx="501.75" cy="147" r="8" class="black_round"></circle>
+        <circle cx="501.75" cy="147" r="6.5" class="black"></circle>
+        <path d="M 544,129.5 h 32 v 35 h -32 z" style="fill:url(#PowerKeyGrad);stroke:black;stroke-width:1;stroke-linejoin:round"/>
+		  </g>
+	  </symbol>
+	
+		<symbol id="RJ45">
+			<path d="M 3.5,3.5 h 31 v 20 h -31 z" style="fill:#ECECEC;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+			<path d="M 12,18.5 C 12,20 15,20 15,18.5 l 0.1, -2 C 15,18 12,18 12,16.5 l -0.1,2" style="fill:#9C9D9D;stroke:none;stroke-width:0;stroke-linejoin:round"/>
+			<path d="M 23,18.5 C 23,20 26,20 26,18.5 l 0.1, -2 C 26,18 23,18 23,16.5 l -0.1,2" style="fill:#9C9D9D;stroke:none;stroke-width:0;stroke-linejoin:round"/>						
+			<path d="M 3.5,3.5 C 2.5,3.5 2.5,6.5 3.5,6.5 M 3.5,8.5 C 2,8.5 2,17.5 3,17.5 M 34.5,3.5 C 35.5,3.5 35.5,6.5 34.5,6.5 M 34.5,8.5 C 36,8.5 36,17.5 35,17.5 M 3.5,3.5 h 31 v 20 h -31 z M 5.5,3 h 8 M 24.5,3 h 8 M 11.5,3.5 l 0.5,15 M 15.5,3.5 l -0.5,15 M 12,18.5 C 12,20 15,20 15,18.5 M 12,16.5 C 12,18 15,18 15,16.5 M 22.5,3.5 l 0.5,15 M 26.5,3.5 l -0.5,15 M 23,18.5 C 23,20 26,20 26,18.5 M 23,16.5 C 23,18 26,18 26,16.5" style="fill:none;stroke:#333;stroke-width:0.5;stroke-linejoin:round"/>	
+		</symbol>
+	
+		<symbol id="Ethernet">
+			<path d="M 1,2 h 30 v 14 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 3,2.5 h 26 v 2 C 29,3.5 3,3.5 3,4.5 z " style="fill:#FFF;stroke:#FFF;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp">
+				<tspan x="5.5" y="12.5">Ethernet</tspan>
+			</text>
+		</symbol>
+		
+		<symbol id="SD_card">
+			<path d="M 1,2 h 60 v 14 h -60 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 3,2.5 h 56 v 2 C 59,3.5 3,3.5 3,4.5 z " style="fill:#FFF;stroke:#FFF;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp">
+				<tspan x="14" y="12.5">SD/MMC Card</tspan>
+			</text>
+		</symbol>
+	
+		<symbol id="SD">
+			<path d="M 1,2.5 h 62 v 5.5 h -62 z" style="fill:#706F6F;stroke:#706F6F;stroke-width:1;stroke-linejoin:round"/>
+		</symbol>	
+		
+		<symbol id="RS">
+			<path d="M 2.5,1.75 h 31.5 v 9.5 h -31.5 z" style="fill:#9D9D9C;stroke:#333;stroke-width:0.5;stroke-linejoin:round"/>
+		</symbol>
+
+		<symbol id="RS485/422">
+			<path d="M 1,2 h 33 v 14 h -33 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 3,2.5 h 29 v 2 C 32,3.5 3,3.5 3,4.5 z " style="fill:#FFF;stroke:#FFF;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp">
+				<tspan x="5" y="12.5">RS485/422</tspan>
+			</text>
+		</symbol>
+	
+		<symbol id="RS232">
+			<path d="M 1,2 h 30 v 14 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 3,2.5 h 26 v 2 C 29,3.5 3,3.5 3,4.5 z " style="fill:#FFF;stroke:#FFF;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp">
+				<tspan x="9" y="12.5">RS232</tspan>
+			</text>
+		</symbol>
+		
+		<symbol id="PWR">
+			<path d="M 1,2 h 68 v 14 h -68 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 3,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z M 32,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z M 61,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z" style="fill:#FFF;stroke:#FFF;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp">
+				<tspan x="4" y="9.5">N</tspan>
+				<tspan x="34" y="9.5">L</tspan>
+				<tspan x="60.5" y="9.5">PE</tspan>
+			</text>
+			<text class="nadp_4px">
+				<tspan x="27" y="14">220 VAC</tspan>
+			</text>
+		</symbol>
+				
+		<symbol id="Accumulator_rotate">
+			<path d="M 0,2 h 45 v 14 h -45 z " style="fill:#C6C6C6;stroke:#C6C6C6;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 45,2 h 24 v 14 h -24 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 48,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z M 60,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z" style="fill:#FFF;stroke:#FFF;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp">
+				<tspan x="7" y="12.5">Accumulator</tspan>
+			</text>
+			<text class="nadp">
+				<tspan x="46" y="14">12 VDC</tspan>
+				<tspan x="49" y="8.5">+</tspan>
+				<tspan x="61" y="8.5">–</tspan>
+			</text>
+		</symbol>
+		
+		<symbol id="Sync_6">
+			<path d="M 0,2 h 8 v 14 h -8 z " style="fill:#C6C6C6;stroke:#C6C6C6;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 8,2 h 60 v 14 h -60 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 10,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z M 20,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z M 30,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z M 40,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z M 50,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z M 60,2.5 h 6 v 2 c 0,-1 -6,-1 -6,0 z" style="fill:#FFF;stroke:#FFF;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp_4px_end" transform="matrix(0,-1,1,0,5,0)">
+				<tspan x="-5" y="0">Sync</tspan>
+			</text>
+			<text class="nadp_4px_end" transform="matrix(0,-1,1,0,14.5,0)">
+				<tspan x="-5" y="0">OUT1</tspan>
+				<tspan x="-5" y="10">GND</tspan>
+				<tspan x="-5" y="20">OUT2</tspan>
+				<tspan x="-5" y="30">GND</tspan>
+				<tspan x="-5" y="40">IN</tspan>
+				<tspan x="-6" y="50">GND</tspan>
+			</text>
+		</symbol>
+		
+		<symbol id="Screw_s">
+			<path d="M 3.5,13.25 A 3.75,3.75 0 1,0 11,13.25 M 3.5,13.25 A 3.75,3.75 0 0,1 11,13.25 M 4,15 l 5, -5 M 5.5,16.5 l 5,-5" style="fill:#B3B2B2;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 5.25,6 h 4 v 2 h -4 z" style="fill:none;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+		</symbol>
+	
+		<symbol id="Screw_s_f">
+			<path d="M 3.5,13.25 A 3.75,3.75 0 1,0 11,13.25 M 3.5,13.25 A 3.75,3.75 0 0,1 11,13.25 M 4,15 l 5, -5 M 5.5,16.5 l 5,-5" style="fill:#B3B2B2;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+		</symbol>
+	
+		<symbol id="Screw">
+			<path d="M 4,15 A 4.25,4.25 0 1,0 12.5,15 M 4,15 A 4.25,4.25 0 0,1 12.5,15 M 4.75,17 l 5.75, -5.75 M 6.25,18.5 l 5.75,-5.75" style="fill:#B3B2B2;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+			<path d="M 6,6.5 h 4 v 2 h -4 z" style="fill:none;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+		</symbol>
+		
+		<symbol id="Screw_f">
+			<path d="M 4,15 A 4.25,4.25 0 1,0 12.5,15 M 4,15 A 4.25,4.25 0 0,1 12.5,15 M 4.75,17 l 5.75, -5.75 M 6.25,18.5 l 5.75,-5.75" style="fill:#B3B2B2;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+		</symbol>
+		
+		<symbol id="Clamp_s_6">
+			<path d="M 2.5,3 h 60 v 19 h -60 z M 2.5,19.5 h 60" style="fill:#C1D6AD;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+      <g id="Screw_s_6">	
+        <use transform="matrix(1,0,0,1,0,0)" xlink:href="#Screw_s" width="12" height="20"/>
+        <use transform="matrix(1,0,0,1,10,0)" xlink:href="#Screw_s" width="12" height="20"/>
+        <use transform="matrix(1,0,0,1,20,0)" xlink:href="#Screw_s" width="12" height="20"/>
+        <use transform="matrix(1,0,0,1,30,0)" xlink:href="#Screw_s" width="12" height="20"/>
+        <use transform="matrix(1,0,0,1,40,0)" xlink:href="#Screw_s" width="12" height="20"/>
+        <use transform="matrix(1,0,0,1,50,0)" xlink:href="#Screw_s" width="12" height="20"/>
+      </g>
+		</symbol>
+	
+		<symbol id="Clamp_5">
+			<path d="M 2.5,3 h 69 v 21 h -69 z M 2.5,21.5 h 69" style="fill:#C1D6AD;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+      <g id="Screw_5">	
+        <use transform="matrix(1,0,0,1,0,0)" xlink:href="#Screw" width="15" height="20"/>
+        <use transform="matrix(1,0,0,1,14.25,0)" xlink:href="#Screw" width="15" height="20"/>
+        <use transform="matrix(1,0,0,1,28.5,0)" xlink:href="#Screw" width="15" height="20"/>
+        <use transform="matrix(1,0,0,1,42.75,0)" xlink:href="#Screw" width="15" height="20"/>
+        <use transform="matrix(1,0,0,1,57,0)" xlink:href="#Screw" width="15" height="20"/>
+      </g>
+		</symbol>
+		
+		<symbol id="Clamp_2">
+			<path d="M 2.5,3 h 24.25 v 21 h -24.25 z M 2.5,21.5 h 24.25" style="fill:#C1D6AD;stroke:#000;stroke-width:0.5;stroke-linejoin:round"/>
+      <g id="Screw_2">	
+        <use transform="matrix(1,0,0,1,0,0)" xlink:href="#Screw" width="15" height="20"/>
+        <use transform="matrix(1,0,0,1,12.25,0)" xlink:href="#Screw" width="15" height="20"/>
+      </g>
+		</symbol>
+
+		<symbol id="Sport1">
+			<path id="P9" d="M 5,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path id="P10" d="M 65,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp">
+				<tspan id="P9" x="17.5" y="17.5">1</tspan>
+				<tspan id="P10" x="77.5" y="17.5">2</tspan>
+				<tspan x="9" y="27.5" id="P9-ETH">Ethernet</tspan>
+				<tspan x="12.5" y="27.5" id="P9-485">RS485</tspan>
+				<tspan x="69" y="27.5" id="P10-ETH">Ethernet</tspan>
+				<tspan x="72.5" y="27.5" id="P10-485">RS485</tspan>
+			</text>
+			<text class="nadp_blue">
+				<tspan x="37.5" y="16">SPORT 1</tspan>
+			</text>
+			<path d="m 1,30 v -22 h 98 v 22" style="fill:none;stroke:#fff;stroke-width:1.2;stroke-linejoin:round"/>
+		</symbol>
+		
+		<symbol id="Sport2">
+			<path id="P1" d="M 5,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path id="P2" d="M 65,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path id="P3" d="M 125,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path id="P4" d="M 185,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path id="P5" d="M 245,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path id="P6" d="M 305,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path id="P7" d="M 365,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<path id="P8" d="M 425,20 h 30 v 10 h -30 z " style="fill:#279C38;stroke:#279C38;stroke-width:0.5;stroke-linejoin:round"/>
+			<text class="nadp">
+				<tspan x="18" y="17.5" id="P1">1</tspan>
+				<tspan x="78" y="17.5" id="P2">2</tspan>
+				<tspan x="138" y="17.5" id="P3">3</tspan>
+				<tspan x="198" y="17.5" id="P4">4</tspan>
+				<tspan x="258" y="17.5" id="P5">5</tspan>
+				<tspan x="318" y="17.5" id="P6">6</tspan>
+				<tspan x="378" y="17.5" id="P7">7</tspan>
+				<tspan x="438" y="17.5" id="P8">8</tspan>
+				<tspan x="9" y="27.5" id="P1-ETH">Ethernet</tspan>
+				<tspan x="12.5" y="27.5" id="P1-485">RS485</tspan>
+				<tspan x="69" y="27.5" id="P2-ETH">Ethernet</tspan>
+				<tspan x="72.5" y="27.5" id="P2-485">RS485</tspan>
+				<tspan x="129" y="27.5" id="P3-ETH">Ethernet</tspan>
+				<tspan x="132.5" y="27.5" id="P3-485">RS485</tspan>
+				<tspan x="189" y="27.5" id="P4-ETH">Ethernet</tspan>
+				<tspan x="192.5" y="27.5" id="P4-485">RS485</tspan>
+				<tspan x="249" y="27.5" id="P5-ETH">Ethernet</tspan>
+				<tspan x="252.5" y="27.5" id="P5-485">RS485</tspan>
+				<tspan x="309" y="27.5" id="P6-ETH">Ethernet</tspan>
+				<tspan x="312.5" y="27.5" id="P6-485">RS485</tspan>
+				<tspan x="369" y="27.5" id="P7-ETH">Ethernet</tspan>
+				<tspan x="372.5" y="27.5" id="P7-485">RS485</tspan>
+				<tspan x="429" y="27.5" id="P8-ETH">Ethernet</tspan>
+				<tspan x="432.5" y="27.5" id="P8-485">RS485</tspan>
+			</text>
+			<text class="nadp_blue">
+				<tspan x="217.5" y="16">SPORT 2</tspan>
+			</text>
+			<path d="m 1,30 v -22 h 458 v 22" style="fill:none;stroke:#fff;stroke-width:1.2;stroke-linejoin:round"/>
+		</symbol>
+	</defs>
+  
+	<g id="rootLayer">
+		<g id="Info">
+      <g id="TM3com" transform="matrix(1,0,0,1,50,50)">	
+				<use transform="matrix(1,0,0,1,0,0)" xlink:href="#TM3_module" width="610" height="355"/>
+				<use transform="matrix(1,0,0,1,15,7)" xlink:href="#RJ45" width="40" height="30"/>
+				<use transform="matrix(1,0,0,1,18,32)" xlink:href="#Ethernet" width="35" height="30"/> 				
+				<use transform="matrix(1,0,0,1,60,22.5)" xlink:href="#SD" width="70" height="10"/>
+				<use transform="matrix(1,0,0,1,61,32)" xlink:href="#SD_card" width="70" height="30"/> 					
+				<use transform="matrix(1,0,0,1,130,19.5)" xlink:href="#RS" width="35" height="12"/>
+				<use transform="matrix(1,0,0,1,131,32)" xlink:href="#RS485/422" width="35" height="30"/> 
+				<use transform="matrix(1,0,0,1,170,19.5)" xlink:href="#RS" width="35" height="12"/>
+				<use transform="matrix(1,0,0,1,172.5,32)" xlink:href="#RS232" width="35" height="30"/>
+				<use transform="matrix(1,0,0,1,250,8.5)" xlink:href="#Clamp_s_6" width="65" height="30"/>
+				<use transform="matrix(1,0,0,1,245,32)" xlink:href="#Sync_6" width="75" height="30"/>
+				<use transform="matrix(1,0,0,1,452,6.5)" xlink:href="#Clamp_2" width="35" height="30"/>
+				<use transform="matrix(1,0,0,1,410,32)" xlink:href="#Accumulator_rotate" width="75" height="30"/>					
+				<use transform="matrix(1,0,0,1,505,6.5)" xlink:href="#Clamp_5" width="75" height="30"/>
+				<use transform="matrix(1,0,0,1,507,32)" xlink:href="#PWR" width="75" height="30"/>
+				
+        <use transform="matrix(1,0,0,-1,15,356)" xlink:href="#RJ45" width="40" height="30" id="P9" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,75,356)" xlink:href="#RJ45" width="40" height="30" id="P10" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,135,356)" xlink:href="#RJ45" width="40" height="30" id="P1" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,195,356)" xlink:href="#RJ45" width="40" height="30" id="P2" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,255,356)" xlink:href="#RJ45" width="40" height="30" id="P3" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,315,356)" xlink:href="#RJ45" width="40" height="30" id="P4" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,375,356)" xlink:href="#RJ45" width="40" height="30" id="P5" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,435,356)" xlink:href="#RJ45" width="40" height="30" id="P6" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,495,356)" xlink:href="#RJ45" width="40" height="30" id="P7" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,-1,555,356)" xlink:href="#RJ45" width="40" height="30" id="P8" style="opacity:.4"/>
+				<use transform="matrix(1,0,0,1,14,301.5)" xlink:href="#Sport1" width="105" height="50"/>
+				<use transform="matrix(1,0,0,1,134,301.5)" xlink:href="#Sport2" width="500" height="50"/>
+			</g>
+    </g>
+	</g>
+	
+</svg>

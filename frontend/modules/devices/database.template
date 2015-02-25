@@ -1,0 +1,92 @@
+﻿<div class="database">
+  <div class="database-title pointer"
+      ng-click="db.close('coprocs')">
+    <span class="database-path-part-icon icon-chevron-right {{db.show=='coprocs' ? 'enter' : 'exit'}}"></span>  
+    <span>База данных</span>
+  </div>
+  <div class="database-path no-select"> 
+    <div class="database-path-part {{db.device ? 'pointer' : ''}}"
+        ng-if="db.coproc"
+        ng-click="db.close('devices')">
+      <span class="database-path-part-icon icon-chevron-right {{db.show=='devices' ? 'enter' : 'exit'}}"></span>
+      <span>Сопроцессор: {{db.coproc.num}}</span>
+    </div>
+    <div class="database-path-part {{db.channel ? 'pointer' : ''}}"
+        ng-if="db.device"
+        ng-click="db.close('channels')">
+      <span class="database-path-part-icon icon-chevron-right {{db.show=='channels' ? 'enter' : 'exit'}}"></span>
+      <span>Устройство: {{db.device.model.Desc.value}}</span>
+    </div>
+    <div class="database-path-part"
+        ng-if="db.channel">
+      <span class="database-path-part-icon icon-chevron-right {{db.show=='items' ? 'enter' : 'exit'}}"></span>
+      <span>Канал: {{db.channel.model.Desc.value}}</span>
+    </div>
+  </div>
+  <div class="database-flex-container">
+    <div class="database-data-container {{db.show=='coprocs' ? 'enter' : db.devices ? 'next' : 'exit'}}">
+      <div class="database-coprocs" ng-if="db.show=='coprocs'">
+        <div class="database-desk"
+             ng-repeat="coproc in db.coprocs | filter:{role: 'INPUT', type: '!TYPEDEVICES'}"
+             ng-click="db.openCoproc(coproc)">
+          <div class="database-desk-icon">{{coproc.type}}</div>
+          <div class="database-desk-info">
+            <div class="database-desk-name">Сопроцессор {{coproc.num}}</div>
+            <div class="database-desk-info-category">
+              <div class="database-desk-info-category-title">Устройств:</div>
+              <div class="progress" ng-init="
+                curr = coproc.modules.devices.protocols[coproc.type].devices.length;
+                full = coproc.modules.devices.protocols[coproc.type].devicesLimit;
+              ">
+                <div class="progress-result" style="width:{{curr/full*100}}%;"></div>
+                <div class="progress-value">{{curr}}/{{full}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="database-data-container {{db.show=='devices' ? 'enter' : db.channels ? 'next' : 'exit'}}">
+      <div class="database-devices" ng-if="db.show=='devices'">
+        <div class="database-desk"
+             ng-repeat="device in db.devices"
+             ng-click="db.openDevice(device)">
+          <div class="database-desk-icon icon-extension"></div>
+          <div class="database-desk-info">
+            <div class="database-desk-name">{{device.model.Desc.value}}</div>
+            <div ng-if="device.type=='IEC104'">
+              <span class="database-desk-info-category-title">Адрес:</span>
+              <span class="database-desk-info-category-value">{{device.model.RemoteIP.value}}:{{device.model.RemotePort.value}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="database-data-container {{db.show=='channels' ? 'enter' : db.items ? 'next' : 'exit'}}">
+      <div class="database-channels" ng-if="db.show=='channels'">
+        <div class="database-desk"
+             ng-repeat="channel in db.channels"
+             ng-click="db.openChannel(channel)">
+          <div class="database-desk-info">
+            <div class="database-desk-name">{{channel.model.Desc.value}}</div>
+            <span class="database-desk-info-category-title">Начальный адрес в канале:</span>
+            <span class="database-desk-info-category-value">{{channel.model.FirstChanNum.value}}</span>
+            <br/>
+            <span class="database-desk-info-category-title">Переменных в канале:</span>
+            <span class="database-desk-info-category-value">{{channel.items.length}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="database-data-container {{db.show=='items' ? 'enter' : 'exit'}}">
+      <div class="database-channels" ng-if="db.show=='items'">
+        <div class="database-item {{db.isInChannel(item) ? 'selected' : ''}}"
+             ng-repeat="item in db.items"
+             ng-click="db.isInChannel(item) ? db.deleteItem(item) : db.exportItem(item)">
+            <div class="database-item-addr">{{db.channel.model.FirstChanNum.value*1 + $index}}</div>
+            <div class="database-item-name">{{item.model.DescString.value || item.model.Desc.value}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

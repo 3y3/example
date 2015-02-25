@@ -1,0 +1,14 @@
+<div class="coproc">
+  <app-window app-window-content="app-coproc-types"
+      ng-if="xml.state=='empty'"></app-window>
+      
+  <app-window app-window-content="app-input-devices"
+      ng-if="state.activeMenuTab=='devices' && xml.role=='INPUT'"></app-window>
+  
+  <app-window app-window-content="app-output-devices"
+      ng-if="state.activeMenuTab=='devices' && xml.role=='OUTPUT'"></app-window>
+      
+  <div class="coproc-loading" ng-if="xml.state=='loading'">
+    <app-window-loading></app-window-loading>
+  </div>
+</div>

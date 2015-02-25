@@ -1,0 +1,99 @@
+﻿<div class="device {{state.editTypeDevice ? 'enter' : 'exit'}}">
+  <div ng-if="state.editTypeDevice">
+    <div class="device-type {{state.editChannel ? 'next' : 'enter'}}">
+      <form class="device-options column-options">
+        <div ng-click="collapseMains=!collapseMains">
+          <div class="column-options-collapser icon-triangle-{{collapseMains ? 'right' : 'down'}}"></div>
+          <div class="column-options-title">Основные настройки</div>
+        </div>
+        <div class="column-options-collapsible" style="height:{{collapseMains ? '0': 'calc(3.5em * 6)'}}">
+          <div class="column-option">
+            <div class="column-option-title">Название устройства</div>
+            <input class="column-option-value" type="text" name="Desc" id="Desc"
+              ng-model="state.typeDevice.model.Desc.value"
+              ng-model-options="{updateOn: 'blur'}"
+              ng-disabled="state.fromTypeDevice"
+              tabindex="1"
+              autofocus/>
+          </div>
+        </div>
+      </form>
+      <div class="device-channels">
+        <div class="device-channels-title">Каналы вывода типового устройства</div>
+        <div class="channel-items-navigation-container"></div>
+        <div class="device-channels-table">
+          <table class="device-channels-table-header">
+            <th class="device-channels-table-header-column" id="GroupNumber">
+              <span class="small-text">Группа</span>
+            </th>
+            <th class="device-channels-table-header-column" id="Desc">Название</th>
+            <th class="device-channels-table-header-column" id="DataType">Тип данных</th>
+            <th class="device-channels-table-header-column" id="FirstChanNum">
+              <span class="small-text">Первый адрес<br/>в канале</span>
+            </th>
+          </table>
+          <div class="device-channels-table-body-box">
+            <div class="device-channels-table-body">
+              <div class="device-channels-table-item {{channel.state}}"
+                ng-repeat="channel in state.typeDevice.channels"
+                ng-right-click="toggleChannelsState(channel)"
+                ng-click="openChannel(channel)">
+                <div class="device-channels-table-item-cell" id="GroupNumber" title="{{channel.model.GroupNumber.value}}">
+                  {{channel.model.GroupNumber.value}}
+                </div>
+                <div class="device-channels-table-item-cell" id="Desc" title="{{channel.model.Desc.value}}">
+                  {{channel.model.Desc.value}}
+                </div>
+                <div class="device-channels-table-item-cell" id="DataType" title="{{channel.model.DataType.value|channelDataType}}">
+                  {{channel.model.DataType.value|channelDataType}}
+                </div>
+                <div class="device-channels-table-item-cell" id="FirstChanNum" title="{{channel.model.FirstChanNum.value}}">
+                  {{channel.model.FirstChanNum.value}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="device-controls">
+        <div class="device-controls-button submit"
+          ng-if="!state.typeDevice.created"
+          ng-click="addDevice(device)">
+          <span class="device-controls-button-icon icon-done-circle"></span>
+          <span class="device-controls-title">Добавить устройство</span>
+        </div>
+        <div class="device-controls-button cancel"
+          ng-if="!state.typeDevice.created"
+          ng-click="window.back()">
+          <span class="device-controls-button-icon icon-cancel-circle"></span>
+          <span class="device-controls-title">Отмена</span>
+        </div>
+        <div class="device-controls-button submit"
+          ng-if="state.typeDevice.created && state.fromTypeDevice"
+          ng-click="selectTypeDevice(state.typeDevice)">
+          <span class="device-controls-button-icon icon-submit-circle"></span>
+          <span class="device-controls-title">Выбрать</span>
+        </div>
+        <div class="device-controls-button cancel"
+          ng-if="state.typeDevice.created && state.fromTypeDevice"
+          ng-click="window.back()">
+          <span class="device-controls-button-icon icon-arrow-left"></span>
+          <span class="device-controls-title">Назад</span>
+        </div>
+        <div class="device-controls-button submit"
+          ng-if="state.typeDevice.created && !state.fromTypeDevice"
+          ng-click="window.back()">
+          <span class="device-controls-button-icon icon-arrow-left"></span>
+          <span class="device-controls-title">Назад</span>
+        </div>
+        <div class="device-controls-button cancel"
+          ng-if="state.typeDevice.created && !state.fromTypeDevice"
+          ng-click="deleteDevice(device)">
+          <span class="device-controls-button-icon icon-trashcan"></span>
+          <span class="device-controls-title">Удалить</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-channel></app-channel>
+</div>

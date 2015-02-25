@@ -1,0 +1,21 @@
+<div class="app-window" ng-style="window.style">
+  <div class="app-window-content">
+    <div class="app-window-content-header">
+      <div class="app-window-content-header-button" ng-click="state.close()"><i class="icon-close"></i></div>
+      <div class="app-window-content-header-button-back icon-arrow-left {{state.title.length > 1 ? 'active' : ''}}"
+        ng-click="state.title.length > 1 && state.back()"
+        ng-if="state.back"></div>
+      <div class="app-window-content-header-title-container">
+        <span class="app-window-title"
+            ng-repeat="title in state.title">
+          <span class="app-window-content-header-title-delimiter">//</span>
+          <div class="app-window-content-header-box">
+            <span class="app-window-content-header-title" ng-if="title.title">{{title.title}}</span>
+            <span class="app-window-content-header-info" ng-if="title.info">{{title.info}}</span>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="app-window-content-body"></div>
+  </div>
+</div>

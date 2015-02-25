@@ -1,0 +1,163 @@
+.database {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.database-title {
+  flex: none;
+  font-size: 1.4em;
+  margin: .7em 0 .4em .4em;
+  min-height: 1.2em;
+}
+.database-path {
+  flex: none;
+}
+.database-path-part {
+  font-size: .7em;
+  padding: 1em;
+  margin-top: -1.5em;
+}
+.database-path-part-icon {
+  margin: 0 .6em 0 0;
+  transition: opacity .3s;
+}
+.database-title > .database-path-part-icon {
+  margin: 0;
+}
+.enter.database-path-part-icon {
+  opacity: 1;
+}
+.exit.database-path-part-icon {
+  opacity: 0;
+}
+.database-path-part:hover .database-path-part-icon:not(.enter),
+.database-title:hover .database-path-part-icon:not(.enter) {
+  opacity: .5;
+}
+
+.database-flex-container {
+  flex: auto;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+.database-data-container {
+  background: #999;
+  overflow: hidden;
+  overflow-y: auto;
+  height: calc(100% - .5em);
+  box-shadow: inset .1em .2em .3em rgba(0,0,0,.2);
+  transition: margin .3s;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 0 .5em 0;
+  box-sizing: border-box;
+  border-top: solid 1px #aaa;
+  border-bottom: solid 1px #ccc;
+}
+.enter.database-data-container {
+  margin-left: 0;
+}
+.exit.database-data-container {
+  margin-left: 100%;
+}
+
+.database-desk {
+  overflow: hidden;
+  margin: .5em 0 .5em .5em;
+  border: solid 1px #eee;
+  height: 6em;
+  width: 18em;
+  background: #fff;
+  box-shadow: .1em .2em .3em rgba(0,0,0,.2);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.database-desk-icon {
+  width: 5em;
+  height: 5em;
+  float: left;
+  border: solid 1px #ee7d00;
+  box-sizing: border-box;
+  margin: .5em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 5em;
+  font-weight: bold;
+  background: #ffcd60;
+  color: #ee7d00;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.database-desk-icon:before {
+  font-size: 4em;
+}
+
+.database-desk-info {
+  width: 100%;
+  height: 5em;
+  float: left;
+  padding: .5em;
+  box-sizing: border-box;
+}
+.database-desk-icon + .database-desk-info {
+  padding: .5em .5em .5em 0;
+  width: calc(12em - 2px);
+}
+.database-desk-name {
+  font-weight: bold;
+  color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.database-desk-info-category-title {
+  font-size: .7em;
+  padding-left: .5em;
+  color: #888;
+}
+.database-desk-info-category-value {
+  font-size: .9em;
+  padding-left: .2em;
+}
+
+.database-item {
+  overflow: hidden;
+  margin: .5em 0 0 .5em;
+  border: solid 1px #ccc;
+  width: 17.5em;
+  background: #fff;
+  box-shadow: .1em .2em .3em rgba(0,0,0,.2);
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+  transition: all .3s;
+}
+.database-item.selected {
+  box-shadow: none;
+  transform: translate(.2em, .1em);
+  background: #ddd;
+  color: #666;
+}
+.database-item-addr {
+  float: left;
+  padding: .54em .2em;
+  border-right: solid #bbb 1px;
+  min-width: 3em;
+  text-align: center;
+  color: #999;
+  font-size: .8em;
+  box-sizing: border-box;
+}
+.database-item-name {
+  float: left;
+  padding: .3em .5em;
+}

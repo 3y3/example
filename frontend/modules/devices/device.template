@@ -1,0 +1,265 @@
+﻿<div class="device {{state.editDevice ? 'enter' : 'exit'}}">
+  <div ng-if="state.editDevice">
+    <div class="device-type {{state.editChannel||state.fromTypeDevice ? 'next' : 'enter'}}">
+      <form class="device-options column-options" ng-if="state.device.type=='IEC104'&&state.device.role=='INPUT'">
+        <div ng-click="collapseMains=!collapseMains">
+          <div class="column-options-collapser icon-triangle-{{collapseMains ? 'right' : 'down'}}"></div>
+          <div class="column-options-title">Основные настройки</div>
+        </div>
+        <div class="column-options-collapsible" style="height:{{collapseMains ? '0': 'calc(3.6em * 6)'}}">
+          <div class="column-option">
+            <div class="column-option-title">Название присоединения</div>
+            <input class="column-option-value" type="text" name="Desc" id="Desc"
+              ng-model="state.device.model.Desc.value"
+              ng-model-options="{updateOn: 'blur'}"
+              tabindex="1"
+              autofocus/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Типовое устройство</div>
+            <input class="column-option-value" type="text" name="TypeDevice" id="TypeDevice"
+              ng-model="state.device.model.TypeDeviceName.value"
+              disabled="disabled"
+              placeholder="Не определено"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">IP адрес</div>
+            <input class="column-option-value" type="text" name="RemoteIP" id="RemoteIP"
+              ng-model="state.device.model.RemoteIP.value"
+              tabindex="2"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">IP порт</div>
+            <input class="column-option-value" type="text" name="RemotePort" id="RemotePort"
+              ng-model="state.device.model.RemotePort.value"
+              ng-model-options="{updateOn: 'blur'}"
+              tabindex="3"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Адрес ASDU</div>
+            <input class="column-option-value" type="text" name="ASDU_Addr" id="ASDU_Addr"
+              ng-model="state.device.model.ASDU_Addr.value"
+              ng-model-options="{updateOn: 'blur'}"
+              tabindex="4"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Размер ASDU</div>
+            <input class="column-option-value" type="text" name="ASDU_Size" id="ASDU_Size"
+              ng-model="state.device.model.ASDU_Size.value"
+              tabindex="5"/>
+          </div>
+        </div>
+        
+        <div ng-click="collapseSynchro=!collapseSynchro" style="margin-top:1em;">
+          <div class="column-options-collapser icon-triangle-{{collapseSynchro ? 'right' : 'down'}}"></div>
+          <div class="column-options-title">Синхронизация</div>
+        </div>
+        <div class="column-options-collapsible" style="height:{{collapseSynchro ? '0': 'calc(3.6em * 3)'}}">
+          <div class="column-option-switcher">
+            <div class="column-option-switcher-title left">Локальное время</div>
+            <div class="column-option-switcher-hidden-container">
+              <input class="column-option-switcher-hidden" type="checkbox"
+                ng-model="state.device.model.LocalTime.value"
+                tabindex="6"/>
+            </div>
+            <div class="column-option-switcher-value {{state.device.model.LocalTime.value ? 'checked': ''}}" ng-click="toggleParam(state.device.model.LocalTime.name)">
+              <div class="column-option-switcher-slider">
+                <div class="column-option-switcher-slider-inner"></div>
+                <div class="column-option-switcher-checker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="column-option-switcher">
+            <div class="column-option-switcher-title left">Использовать<br/>импульсный выход</div>
+            <div class="column-option-switcher-hidden-container">
+              <input class="column-option-switcher-hidden" type="checkbox"
+                ng-model="state.device.model.UsePulsSync.value"
+                tabindex="7"/>
+            </div>
+            <div class="column-option-switcher-value {{state.device.model.UsePulsSync.value ? 'checked': ''}}" ng-click="toggleParam(state.device.model.UsePulsSync.name)">
+              <div class="column-option-switcher-slider">
+                <div class="column-option-switcher-slider-inner"></div>
+                <div class="column-option-switcher-checker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="column-option-switcher">
+            <div class="column-option-switcher-title left">Синхронизировать<br/>устройство</div>
+            <div class="column-option-switcher-hidden-container">
+              <input class="column-option-switcher-hidden" type="checkbox"
+                ng-model="state.device.model.SynchroSlave.value"
+                tabindex="8"/>
+            </div>
+            <div class="column-option-switcher-value {{state.device.model.SynchroSlave.value ? 'checked': ''}}" ng-click="toggleParam(state.device.model.SynchroSlave.name)">
+              <div class="column-option-switcher-slider">
+                <div class="column-option-switcher-slider-inner"></div>
+                <div class="column-option-switcher-checker"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <form class="device-options column-options" ng-if="state.device.type=='IEC101'&&state.device.role=='INPUT'">
+        <div ng-click="collapseMains=!collapseMains">
+          <div class="column-options-collapser icon-triangle-{{collapseMains ? 'right' : 'down'}}"></div>
+          <div class="column-options-title">Основные настройки</div>
+        </div>
+        <div class="column-options-collapsible" style="height:{{collapseMains ? '0': 'calc(3.5em * 6)'}}">
+          <div class="column-option">
+            <div class="column-option-title">Название присоединения</div>
+            <input class="column-option-value" type="text" name="Desc" id="Desc"
+              ng-model="state.device.model.Desc.value"
+              ng-model-options="{updateOn: 'blur'}"
+              tabindex="1"
+              autofocus/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Типовое устройство</div>
+            <input class="column-option-value" type="text" name="TypeDevice" id="TypeDevice"
+              ng-model="state.device.model.TypeDeviceName.value"
+              disabled="disabled"
+              placeholder="Не определено"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Адрес в канале</div>
+            <input class="column-option-value" type="text" name="ChanAddress" id="ChanAddress"
+              ng-model="state.device.model.ChanAddress.value"
+              ng-model-options="{updateOn: 'blur'}"/>
+          </div>
+        </div>
+      </form>
+      <form class="device-options column-options" ng-if="state.device.type=='IEC104'&&state.device.role=='OUTPUT'">
+        <div ng-click="collapseMains=!collapseMains">
+          <div class="column-options-collapser icon-triangle-{{collapseMains ? 'right' : 'down'}}"></div>
+          <div class="column-options-title">Основные настройки</div>
+        </div>
+        <div class="column-options-collapsible" style="height:{{collapseMains ? '0': 'calc(3.5em * 6)'}}">
+          <div class="column-option">
+            <div class="column-option-title">Название присоединения</div>
+            <input class="column-option-value" type="text" name="Desc" id="Desc"
+              ng-model="state.device.model.Desc.value"
+              ng-model-options="{updateOn: 'blur'}"
+              autofocus/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Типовое устройство</div>
+            <input class="column-option-value" type="text" name="TypeDevice" id="TypeDevice"
+              ng-model="state.device.model.TypeDeviceName.value"
+              disabled="disabled"
+              placeholder="Не определено"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Порт</div>
+            <input class="column-option-value" type="text" name="RemotePort" id="RemotePort"
+              ng-model="state.device.model.MyPort.value"
+              ng-model-options="{updateOn: 'blur'}"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Адрес ASDU</div>
+            <input class="column-option-value" type="text" name="ASDU_Addr" id="ASDU_Addr"
+              ng-model="state.device.model.ASDU_Addr.value"
+              ng-model-options="{updateOn: 'blur'}"/>
+          </div>
+          <div class="column-option">
+            <div class="column-option-title">Размер ASDU</div>
+            <input class="column-option-value" type="text" name="ASDU_Size" id="ASDU_Size"
+              ng-model="state.device.model.ASDU_Size.value"/>
+          </div>
+        </div>
+        
+      </form>
+      <div class="device-channels">
+        <div class="device-channels-title">Каналы вывода подключаемого устройства</div>
+        <div class="channel-items-navigation-container">
+          <div class="channel-items-navigation enter">
+            <button class="channel-nav-button" title="Добавить новый канал в устройство"
+                ng-click="newChannel()">
+              <div class="channel-nav-button-icon icon-plus"></div>
+              <div class="channel-nav-button-title">Добавить канал</div>
+            </button>
+            <button class="channel-nav-button correct" title="Загрузить каналы данных из типового устройства"
+                ng-if="!state.device.created && state.device.role=='INPUT'"
+                ng-click="fromTypeDevices()">
+              <div class="channel-nav-button-icon icon-repo-pull" style="padding: .4em .3em .4em .5em;"></div>
+              <div class="channel-nav-button-title">Из типового устройства</div>
+            </button>
+            <!--button class="channel-nav-button correct" title="Выбрать канал данных из ранее созданных"
+                ng-if="state.device.role=='OUTPUT'"
+                ng-click="fromExistedChannels()">
+              <div class="channel-nav-button-icon icon-playlist-add" style="font-size: 1em;padding: .2em .1em .2em .3em;border: solid .1em;"></div>
+              <div class="channel-nav-button-title">Из существующих</div>
+            </button-->
+          </div>
+        </div>
+        <div class="device-channels-table">
+          <table class="device-channels-table-header">
+            <th class="device-channels-table-header-column" id="GroupNumber">
+              <span class="small-text">Группа</span>
+            </th>
+            <th class="device-channels-table-header-column" id="Desc">Название</th>
+            <th class="device-channels-table-header-column" id="DataType">Тип данных</th>
+            <th class="device-channels-table-header-column" id="FirstChanNum">
+              <span class="small-text">Первый адрес<br/>в канале</span>
+            </th>
+          </table>
+          <div class="device-channels-table-body-box">
+            <div class="device-channels-table-body">
+              <div class="device-channels-table-item {{channel.state}}"
+                ng-repeat="channel in state.device.channels"
+                ng-right-click="toggleChannelsState(channel)"
+                ng-click="openChannel(channel)">
+                <div class="device-channels-table-item-cell" id="GroupNumber" title="{{channel.model.GroupNumber.value}}">
+                  {{channel.model.GroupNumber.value}}
+                </div>
+                <div class="device-channels-table-item-cell" id="Desc" title="{{channel.model.Desc.value}}">
+                  {{channel.model.Desc.value}}
+                </div>
+                <div class="device-channels-table-item-cell" id="DataType" title="{{channel.model.DataType.value|channelDataType}}">
+                  {{channel.model.DataType.value|channelDataType}}
+                </div>
+                <div class="device-channels-table-item-cell" id="FirstChanNum" title="{{channel.model.FirstChanNum.value}}">
+                  {{channel.model.FirstChanNum.value}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="device-controls">
+        <button type="button" class="device-controls-button submit"
+          ng-click="addDevice(state.device)"
+          ng-if="!state.device.created">
+          <span class="device-controls-button-icon icon-checkmark"></span>
+          <span class="device-controls-title">Добавить устройство</span>
+        </button>
+        <button type="button" class="device-controls-button cancel"
+          ng-click="state.back(true)"
+          ng-if="!state.device.created">
+          <span class="device-controls-button-icon icon-blocked" style="font-size: 1.2em;margin: .1em .1em 0 0;"></span>
+          <span class="device-controls-title">Отмена</span>
+        </button>
+        <button class="device-controls-button submit"
+          ng-if="state.device.created"
+          ng-click="state.back()">
+          <span class="device-controls-button-icon icon-arrow-left"></span>
+          <span class="device-controls-title">Сохранить</span>
+        </button>
+        <button class="device-controls-button cancel"
+          ng-if="state.device.created"
+          ng-click="deleteDevice(state.device)"
+          tabindex="9">
+          <span class="device-controls-button-icon icon-trashcan"></span>
+          <span class="device-controls-title">Удалить</span>
+        </button>
+        <button type="button" class="device-controls-button"
+          ng-click="saveAsTypeDeviceDialog()"
+          ng-if="!state.device.model.TypeDevice.value && state.device.role=='INPUT'">
+          <span class="device-controls-button-icon icon-repo-force-push"></span>
+          <span class="device-controls-title">Сохранить как типовое</span>
+        </button>
+      </div>
+    </div>
+    <app-channel></app-channel>
+    <app-type-devices></app-type-devices>
+  </div>
+</div>

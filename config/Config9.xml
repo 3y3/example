@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><KIPP_3 prm_type="IEC104" prm_role="OUTPUT">
+	<Protocols>
+		<Protocol name="9_IEC104_1" type="IEC104" role="Server" desc="Новое устройство 1">
+			<MyPort>2404</MyPort>
+			<InputSynchro>Disabled</InputSynchro>
+			<LocalTime>1</LocalTime>
+			<ASDU_Addr>1</ASDU_Addr>
+			<ASDU_Size>253</ASDU_Size>
+			<AbonentList>
+				<Abonent>
+					<OutChans>
+						<OutChan desc="Новый канал 1" data-type="TI">
+							<List>9_IEC104_1_1</List>
+							<FirstChanNum>0</FirstChanNum>
+							<GroupList group=""/>
+						</OutChan>
+					</OutChans>
+				</Abonent>
+			</AbonentList>
+		</Protocol>
+	</Protocols>
+	<DB>
+		<ListOutChans>
+			<OutChan name="9_IEC104_1_1">
+				<Item desc="Переменная 1" name="1_IEC104_1_1_1"/>
+				<Item desc="Переменная 2" name="1_IEC104_1_1_2"/>
+				<Item desc="Переменная 3" name="1_IEC104_1_1_3"/>
+				<Item desc="Переменная 4" name="1_IEC104_1_1_4"/>
+				<Item desc="Переменная 5" name="1_IEC104_1_1_5"/>
+				<Item desc="Переменная 6" name="1_IEC104_1_1_6"/>
+				<Item desc="Переменная 7" name="1_IEC104_1_1_7"/>
+				<Item desc="Переменная 8" name="1_IEC104_1_1_8"/>
+			</OutChan>
+		</ListOutChans>
+		<ListInChans/>
+	</DB>
+</KIPP_3>

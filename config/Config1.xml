@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?><KIPP_3 prm_type="IEC104" prm_role="INPUT">
+	<Protocols>
+		<Protocol name="1_IEC104_1" type="IEC104" role="Client" desc="Тестовое устройство" typedevice="11_IEC104_1">
+			<RemoteIP>192.168.200.11</RemoteIP>
+			<RemotePort>2404</RemotePort>
+			<ASDU_Addr>11</ASDU_Addr>
+			<AbonentList>
+				<Abonent>
+					<IECAddress>11</IECAddress>
+					<SynchroSlave>0</SynchroSlave>
+					<InChans>
+						<InChan desc="Чистый канал" data-type="TI">
+							<List>1_IEC104_1_1</List>
+							<FirstObjAddr>0</FirstObjAddr>
+							<GroupNumber>1</GroupNumber>
+							<FirstChanNum>0</FirstChanNum>
+						</InChan>
+						<InChan desc="Комбинированный канал" data-type="TI">
+							<List>1_IEC104_1_2</List>
+							<FirstObjAddr>128</FirstObjAddr>
+							<GroupNumber>2</GroupNumber>
+							<FirstChanNum>0</FirstChanNum>
+						</InChan>
+					</InChans>
+				</Abonent>
+			</AbonentList>
+			<ASDU_Size>253</ASDU_Size>
+			<LocalTime>1</LocalTime>
+			<UsePulsSync>0</UsePulsSync>
+		</Protocol>
+		<Protocol name="1_IEC104_2" type="IEC104" role="Client" desc="Из типового 1" typedevice="11_IEC104_1">
+			<RemoteIP>192.168.110.32</RemoteIP>
+			<RemotePort>2404</RemotePort>
+			<ASDU_Addr>32</ASDU_Addr>
+			<AbonentList>
+				<Abonent>
+					<IECAddress>32</IECAddress>
+					<SynchroSlave>0</SynchroSlave>
+					<InChans>
+						<InChan desc="Чистый канал" data-type="TI">
+							<List>1_IEC104_2_1</List>
+							<FirstChanNum>0</FirstChanNum>
+							<GroupNumber>1</GroupNumber>
+						</InChan>
+						<InChan desc="Комбинированный канал" data-type="TI">
+							<List>1_IEC104_2_2</List>
+							<FirstChanNum>0</FirstChanNum>
+							<GroupNumber>2</GroupNumber>
+						</InChan>
+					</InChans>
+				</Abonent>
+			</AbonentList>
+			<ASDU_Size>253</ASDU_Size>
+			<LocalTime>1</LocalTime>
+			<UsePulsSync>0</UsePulsSync>
+		</Protocol>
+		<Protocol name="1_IEC104_3" type="IEC104" role="Client" desc="Новое устройство 3" typedevice="11_IEC104_1">
+			<RemoteIP>192.168.110.15</RemoteIP>
+			<RemotePort>2404</RemotePort>
+			<ASDU_Addr>15</ASDU_Addr>
+			<AbonentList>
+				<Abonent>
+					<IECAddress>15</IECAddress>
+					<SynchroSlave>0</SynchroSlave>
+					<InChans>
+						<InChan desc="Чистый канал" data-type="TI">
+							<List>1_IEC104_3_1</List>
+							<FirstChanNum>0</FirstChanNum>
+							<GroupNumber>1</GroupNumber>
+						</InChan>
+						<InChan desc="Комбинированный канал" data-type="TI">
+							<List>1_IEC104_3_2</List>
+							<FirstChanNum>0</FirstChanNum>
+							<GroupNumber>2</GroupNumber>
+						</InChan>
+					</InChans>
+				</Abonent>
+			</AbonentList>
+			<ASDU_Size>253</ASDU_Size>
+			<LocalTime>1</LocalTime>
+			<UsePulsSync>0</UsePulsSync>
+		</Protocol>
+	</Protocols>
+	<DB>
+		<ListInChans>
+			<InChan name="1_IEC104_1_1">
+				<Item desc="Переменная %i" name="1_IEC104_1_1_%i" group="12" name_from="1" cfg="float.3" sign=""></Item>
+			</InChan>
+			<InChan name="1_IEC104_1_2">
+				<Item desc="%s" desc_string="Переменная 1;Переменная 2;Переменная 3;Переменная 4;Переменная 5" name="1_IEC104_1_2_%i" group="5" name_from="1" cfg="qe" sign=""></Item>
+				<Item desc="%s" desc_string="asd" name="1_IEC104_1_2_%i" group="1" name_from="6" cfg="qr" sign=""></Item>
+			</InChan>
+			<InChan name="1_IEC104_2_1">
+				<Item desc="Переменная %i" name="1_IEC104_2_1_%i" group="12" name_from="1" cfg="float.3" sign=""></Item>
+			</InChan>
+			<InChan name="1_IEC104_2_2">
+				<Item desc="%s" desc_string="Переменная 1;Переменная 2;Переменная 3;Переменная 4;Переменная 5" name="1_IEC104_2_2_%i" group="5" name_from="1" cfg="qe" sign=""></Item>
+				<Item desc="%s" desc_string="asd" name="1_IEC104_2_2_%i" group="1" name_from="6" cfg="qr" sign=""></Item>
+			</InChan>
+			<InChan name="1_IEC104_3_1">
+				<Item desc="Переменная %i" name="1_IEC104_3_1_%i" group="12" name_from="1" cfg="float.3" sign=""></Item>
+			</InChan>
+			<InChan name="1_IEC104_3_2">
+				<Item desc="%s" desc_string="Переменная 1;Переменная 2;Переменная 3;Переменная 4;Переменная 5" name="1_IEC104_3_2_%i" group="5" name_from="1" cfg="qe" sign=""></Item>
+				<Item desc="%s" desc_string="asd" name="1_IEC104_3_2_%i" group="1" name_from="6" cfg="qr" sign=""></Item>
+			</InChan>
+		</ListInChans>
+	</DB>
+</KIPP_3>

@@ -1,0 +1,156 @@
+﻿<KIPP_3 prm_type="IEC104" prm_role="OUTPUT">
+   <RealTime>
+      <Limitation>0</Limitation>
+      <Shift>3600</Shift>
+      <LossTime>5</LossTime>
+      <SlavePeriod>0</SlavePeriod>
+      <Propagation>300</Propagation>
+      <PPS_source>GPS</PPS_source>
+      <TimeZone>4</TimeZone>
+      <SummerTimeEnable>0</SummerTimeEnable>
+      <EssentialShift>3</EssentialShift>
+   </RealTime>
+
+   <AdapterPPP>
+       <SPORT connect="0"/>
+   </AdapterPPP>
+   <TCPIP>
+      <Ethernet>
+         <Enable>1</Enable>
+         <Address>192.168.150.20</Address>
+         <Mask>255.255.255.0</Mask>
+         <Gateway>192.168.150.1</Gateway>
+      </Ethernet>
+      <SSL>
+         <Enable>0</Enable>
+         <CACert>sd:/SSL-1024/KIPP3-CA.cer</CACert>
+         <Cert>sd:/SSL-1024/server.cer</Cert>
+         <Key>sd:/SSL-1024/server.key</Key>
+      </SSL>
+      <PPP>
+         <Enable>1</Enable>
+         <List>
+            <Item>
+               <Name>ppp</Name>
+               <Device>_UART2_</Device>
+               <BaudRate>9600</BaudRate>
+               <Flags>0</Flags>
+               <Server>1</Server>
+               <Address>192.168.1.2</Address>
+               <DNS>0.0.0.0</DNS>
+               <Client>192.168.1.1</Client>
+            </Item>
+         </List>
+      </PPP>
+   </TCPIP>
+   <Console>
+      <Echo>1</Echo>
+      <Device>Telnet</Device>
+      <Flags>0</Flags>
+      <Timeout>0</Timeout>
+   </Console>
+   <Protocols/>
+   <HTTP>
+      <Port>80</Port>
+      <SSL>0</SSL>
+      <MaxConnect>5</MaxConnect>
+      <ExtThread>1</ExtThread>
+      <KeepAlive>30</KeepAlive>
+      <WwwRoot>sd:/www/</WwwRoot>
+      <Auth>1</Auth>
+      <TimeSession>200</TimeSession>
+   </HTTP>
+   <SVG/>
+   <DB>
+      <ListDbModify>
+         <DbModify name="Ku1" priority="1" class="ScaleAscue" a="1." b="0."/>
+         <DbModify name="Ki1" priority="1" class="ScaleAscue" a="1." b="0."/>
+         <DbModify name="KuKi1" priority="1" class="ScaleAscue" a="1." b="0."/>
+         <DbModify name="div500" priority="1" class="Scale" a=".002" b="0."/>
+         <DbModify name="test" priority="1" class="Scale" a="100." b="1."/>
+      </ListDbModify>
+      <ListDbTest>
+         <DbTest name="intAppe_5" id="1" class="Appe" appe="5"/>
+         <DbTest name="intAppe_2" id="2" class="Appe" appe="2"/>
+         <DbTest name="intAppe_1" id="3" class="Appe" appe="1"/>
+         <DbTest name="flAppe_5" id="4" class="Appe" appe="5.0"/>
+         <DbTest name="flAppe_0" id="5" class="Appe" appe="0."/>
+         <DbTest name="flAppe_1" id="6" class="Appe" appe="1.0"/>
+         <DbTest name="flAppe_0.1" id="7" class="Appe" appe="0.1"/>
+         <DbTest name="flAppe_0.01" id="8" class="Appe" appe="0.01"/>
+         <DbTest name="flAppe_2.5" id="9" class="Appe" appe="2.5"/>
+         <DbTest name="timer_1s" id="10" class="Timer" period="1000"/>
+         <DbTest name="timer_10s" id="10" class="Timer" period="10000"/>
+         <DbTest name="timer_30s" id="11" class="Timer" period="30000"/>
+         <DbTest name="level_250" id="13" class="Level" value="250" hist="2"/>
+         <DbTest name="range_1.2_0" id="12" class="Range" max_value="1.2" max_hist="0.02" min_value="-0.1" min_hist="0.02"/>
+         <DbTest name="range_0.2_-0.2" id="14" class="Range" max_value="0.2" max_hist="0.03" min_value="-0.2" min_hist="0.03"/>
+         <DbTest name="range_0.4_-0.4" id="15" class="Range" max_value="0.4" max_hist="0.04" min_value="-0.2" min_hist="0.03"/>
+         <DbTest name="range_4_2" id="16" class="Range" max_value="4" max_hist="0.5" min_value="2" min_hist="0.5"/>
+         <DbTest name="range_60.6_54.8" id="17" class="Range" max_value="60.6" max_hist="0.6" min_value="54.8" min_hist="0.6"/>
+         <DbTest name="range_63.5_51.9" id="18" class="Range" max_value="63.5" max_hist="0.6" min_value="51.9" min_hist="0.6"/>
+         <DbTest name="gate_F" id="19" class="Gate" ext_max_value="50.4" ext_max_hist="0.04" ext_min_value="49.6" ext_min_hist="0.04" int_max_value="50.2" int_max_hist="0.04" int_min_value="49.8" int_min_hist="0.04"/>
+         <DbTest name="gate_U57" id="20" class="Gate" ext_max_value="63.5" ext_max_hist="0.6" ext_min_value="51.9" ext_min_hist="0.6" int_max_value="60.6" int_max_hist="0.6" int_min_value="54.8" int_min_hist="0.6"/>
+         <DbTest name="Write" id="21" class="Write"/>
+      </ListDbTest>
+      <!-- Инициализация БД: параметры ячеек  -->
+      <ListConfig>
+         <Item name="ts" type="TS" format="DBOUT_INT" unit="" size="10"/>
+         <Item name="byte" type="TIT8U" format="DBOUT_INT" unit="" size="10"/>
+         <Item name="int" type="TIT32S" format="DBOUT_INT" unit="" size="10"/>
+         <Item name="uint" type="TII32U" format="DBOUT_UINT4" unit="" size="10"/>
+         <Item name="float.1" type="TITfl" format="DBOUT_FLT1" unit="" size="10"/>
+         <Item name="float.3" type="TITfl" format="DBOUT_FLT3" unit="" size="10"/>
+         <Item name="Voltage" type="TITfl" format="DBOUT_FLT3" unit="В" size="10"/>
+         <Item name="Current" type="TITfl" format="DBOUT_FLT3" unit="А" size="10"/>
+         <Item name="ActivePower" type="TITfl" format="DBOUT_FLT3" unit="Вт" size="10"/>
+         <Item name="ReactivePower" type="TITfl" format="DBOUT_FLT3" unit="вар" size="10"/>
+         <Item name="ApparentPower" type="TITfl" format="DBOUT_FLT3" unit="ВА" size="10"/>
+         <Item name="ActiveEnergy" type="TII32U" format="DBOUT_FLT3" unit="кВтч" size="10"/>
+         <Item name="ReactiveEnergy" type="TII32U" format="DBOUT_FLT3" unit="кварч" size="10"/>
+         <Item name="PowerFactor" type="TITfl" format="DBOUT_FLT3" unit="" size="10"/>
+         <Item name="Frequency" type="TITfl" format="DBOUT_FLT3" unit="Гц" size="10"/>
+         <Item name="Percentage" type="TITfl" format="DBOUT_FLT3" unit="%" size="10"/>
+         <Item name="Percentage500" type="TITfl" format="DBOUT_FLT3" unit="%" modify="div500" size="10"/>
+         <Item name="Billing" type="TITfl" format="DBOUT_FLT3" unit="к" size="10"/>
+         <Item name="Duration" type="TITfl" format="DBOUT_FLT3" unit="сек" size="10"/>
+         <!--     <Item name="Duration" type="TIT16U" format="DBOUT_INT" unit="мс"  size="10"/> -->
+         <Item name="ushort" type="TIT16U" format="DBOUT_INT" unit="" size="10"/>
+         <!--    <Item name="Test1" type="TITfl" format="DBOUT_FLT3" unit="" modify="test"  size="10"/>-->
+         <Item name="Test1" type="TITfl" format="DBOUT_FLT3" unit="" size="10"/>
+      </ListConfig>
+      <!-- каналы ввода БД -->
+		<ListInChans>
+			<InChan name="system" prm_type="system">
+				<Item name="Restart" cfg="int"/>
+				<Item name="termo.up" cfg="float.1"/>
+				<Item name="termo.down" cfg="float.1"/>
+			</InChan>
+			<InChan name="HTTP" prm_type="system">
+				<Item name="HTTP.close" cfg="uint"/>
+				<Item name="HTTP.open" cfg="uint"/>
+			</InChan>
+			<InChan name="WEB_TU" prm_type="system">
+				<Item name="TU.WEB_Cmd" cfg="uint"/>
+				<Item name="WEB.TU_Res" cfg="uint"/>
+			</InChan>
+			<InChan name="Link" prm_type="system">
+				<Item group="14" name_from="1" name="Link_%02i" cfg="ts"/>
+			</InChan>   
+			<InChan name="LinkErrors" prm_type="system">
+				<Item group="14" name_from="1" name="LiEr_%02i" cfg="byte"/>
+			</InChan>
+			<InChan name="Link104" prm_type="system">
+				<Item group="14" name_from="1" name="Link104_%i" cfg="ts"/>
+			</InChan>         
+		</ListInChans>
+		<ListOutChans>
+		</ListOutChans>
+	</DB>
+	<SportSyncDB>
+		<ListInDB>
+		</ListInDB>
+		<ListOutDB>
+		</ListOutDB>
+	</SportSyncDB>
+</KIPP_3>

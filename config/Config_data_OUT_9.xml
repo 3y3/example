@@ -1,0 +1,372 @@
+﻿<KIPP_3  prm_type="IEC104" prm_role="OUTPUT">
+   <RealTime>
+      <Limitation>0</Limitation>
+      <Shift>3600</Shift>
+      <LossTime>5</LossTime>
+      <SlavePeriod>0</SlavePeriod>
+      <Propagation>300</Propagation>
+      <PPS_source>GPS</PPS_source>
+      <TimeZone>4</TimeZone>
+      <SummerTimeEnable>0</SummerTimeEnable>
+      <EssentialShift>3</EssentialShift>
+   </RealTime>
+
+   <AdapterPPP>
+       <SPORT connect="0"/>
+   </AdapterPPP>
+   <AdapterPPP>
+       <SPORT connect="0"/>
+   </AdapterPPP>
+   <TCPIP>
+    <Ethernet>
+        <Enable>1</Enable>
+        <Address>172.16.152.180</Address>
+        <Mask>255.255.255.248</Mask>
+        <Gateway>172.16.152.177</Gateway>
+    </Ethernet>
+      <_Ethernet>
+         <Enable>1</Enable>
+         <Address>192.168.99.221</Address>
+         <Mask>255.255.255.0</Mask>
+         <Gateway>192.168.99.8</Gateway>
+      </_Ethernet>
+      
+        <Route>
+            <Item Addr="192.168.200.0" Mask="255.255.255.0" Gateway="172.16.152.177"/>
+        </Route>
+      
+      <SSL>
+         <Enable>0</Enable>
+         <CACert>sd:/SSL-1024/KIPP3-CA.cer</CACert>
+         <Cert>sd:/SSL-1024/server.cer</Cert>
+         <Key>sd:/SSL-1024/server.key</Key>
+      </SSL>
+      <PPP>
+         <Enable>1</Enable>
+         <List>
+            <Item>
+               <Name>ppp</Name>
+               <Device>_UART2_</Device>
+               <BaudRate>9600</BaudRate>
+               <Flags>0</Flags>
+               <Server>1</Server>
+               <Address>192.168.1.2</Address>
+               <DNS>0.0.0.0</DNS>
+               <Client>192.168.1.1</Client>
+            </Item>
+         </List>
+      </PPP>
+   </TCPIP>
+   <Console>
+      <Echo>1</Echo>
+      <Device>Telnet</Device>
+      <Flags>0</Flags>
+      <Timeout>0</Timeout>
+   </Console>
+   <Protocols>
+	<Protocol>
+         <Type>IEC104___________</Type>
+         <InputSynchro>Disabled</InputSynchro>
+         <LocalTime>1</LocalTime>
+         <Role>Server</Role>
+         <MyPort>2404</MyPort>
+         <ASDU_Addr>1</ASDU_Addr>
+         <ASDU_Size>253</ASDU_Size>
+         <AbonentList>
+            <Abonent>
+               <ChanAddress>1</ChanAddress>
+               <IECAddress>1</IECAddress>
+               <SynchroSlave>0</SynchroSlave>
+               <OutChans>
+                  <OutChan>
+                     <DataType>TIT_TYPE</DataType>
+                     <ASDU1>ASDU_36</ASDU1>
+                     <ASDU2>ASDU_13</ASDU2>
+                     <FirstChanNum>2048</FirstChanNum>
+                     <List>IEC104_TIT_MA</List>
+                  </OutChan>
+               </OutChans>
+            </Abonent>
+         </AbonentList>
+      </Protocol>
+   </Protocols>
+   <HTTP>
+      <Port>80</Port>
+      <SSL>0</SSL>
+      <MaxConnect>5</MaxConnect>
+      <ExtThread>1</ExtThread>
+      <KeepAlive>30</KeepAlive>
+      <WwwRoot>sd:/www/</WwwRoot>
+      <Auth>1</Auth>
+      <TimeSession>200</TimeSession>
+      <Passwords>
+         <Item>
+            <uid>0</uid>
+            <Login>user0</Login>
+            <Password>123</Password>
+         </Item>
+         <Item>
+            <uid>1</uid>
+            <Password>mas1</Password>
+            <WwwRoot>sd:/www/rd1/</WwwRoot>
+         </Item>
+         <Item>
+            <uid>2</uid>
+            <Password>mas2</Password>
+            <WwwRoot>sd:/www/rd2/</WwwRoot>
+         </Item>
+         <Item>
+            <uid>3</uid>
+            <Password>mas3</Password>
+            <WwwRoot>sd:/www/dp/</WwwRoot>
+         </Item>
+      </Passwords>
+      <Access>
+         <Item>
+            <Name>net</Name>
+            <List>0,1,2,3,4,5</List>
+         </Item>
+         <Item>
+            <Name>sys</Name>
+            <List>0,1,2,3,4,5</List>
+         </Item>
+         <Item>
+            <Name>db</Name>
+            <List>0,1,2,3,4,5</List>
+         </Item>
+         <Item>
+            <Name>svg</Name>
+            <List>0,1</List>
+         </Item>
+      </Access>
+   </HTTP>
+   <SVG>
+      <SvgFile>sd:/www/svg/RU600.svg</SvgFile>
+      <InfoFile>sd:/www/svg/corresp.xml</InfoFile>
+      <LinkFile>sd:/www/svg/info.xml</LinkFile>
+   </SVG>
+   <DB>
+      <ListDbModify>
+         <DbModify name="Ku1" priority="1" class="ScaleAscue" a="1." b="0."/>
+         <DbModify name="Ki1" priority="1" class="ScaleAscue" a="1." b="0."/>
+         <DbModify name="KuKi1" priority="1" class="ScaleAscue" a="1." b="0."/>
+         <DbModify name="div500" priority="1" class="Scale" a=".002" b="0."/>
+         <DbModify name="test" priority="1" class="Scale" a="100." b="1."/>
+      </ListDbModify>
+      <ListDbTest>
+         <DbTest name="intAppe_5" id="1" class="Appe" appe="5"/>
+         <DbTest name="intAppe_2" id="2" class="Appe" appe="2"/>
+         <DbTest name="intAppe_1" id="3" class="Appe" appe="1"/>
+         <DbTest name="flAppe_5" id="4" class="Appe" appe="5.0"/>
+         <DbTest name="flAppe_0" id="5" class="Appe" appe="0."/>
+         <DbTest name="flAppe_1" id="6" class="Appe" appe="1.0"/>
+         <DbTest name="flAppe_0.1" id="7" class="Appe" appe="0.1"/>
+         <DbTest name="flAppe_0.01" id="8" class="Appe" appe="0.01"/>
+         <DbTest name="flAppe_2.5" id="9" class="Appe" appe="2.5"/>
+         <DbTest name="timer_1s" id="10" class="Timer" period="1000"/>
+         <DbTest name="timer_10s" id="10" class="Timer" period="10000"/>
+         <DbTest name="timer_30s" id="11" class="Timer" period="30000"/>
+         <DbTest name="level_250" id="13" class="Level" value="250" hist="2"/>
+         <DbTest name="range_1.2_0" id="12" class="Range" max_value="1.2" max_hist="0.02" min_value="-0.1" min_hist="0.02"/>
+         <DbTest name="range_0.2_-0.2" id="14" class="Range" max_value="0.2" max_hist="0.03" min_value="-0.2" min_hist="0.03"/>
+         <DbTest name="range_0.4_-0.4" id="15" class="Range" max_value="0.4" max_hist="0.04" min_value="-0.2" min_hist="0.03"/>
+         <DbTest name="range_4_2" id="16" class="Range" max_value="4" max_hist="0.5" min_value="2" min_hist="0.5"/>
+         <DbTest name="range_60.6_54.8" id="17" class="Range" max_value="60.6" max_hist="0.6" min_value="54.8" min_hist="0.6"/>
+         <DbTest name="range_63.5_51.9" id="18" class="Range" max_value="63.5" max_hist="0.6" min_value="51.9" min_hist="0.6"/>
+         <DbTest name="gate_F" id="19" class="Gate" ext_max_value="50.4" ext_max_hist="0.04" ext_min_value="49.6" ext_min_hist="0.04" int_max_value="50.2" int_max_hist="0.04" int_min_value="49.8" int_min_hist="0.04"/>
+         <DbTest name="gate_U57" id="20" class="Gate" ext_max_value="63.5" ext_max_hist="0.6" ext_min_value="51.9" ext_min_hist="0.6" int_max_value="60.6" int_max_hist="0.6" int_min_value="54.8" int_min_hist="0.6"/>
+         <DbTest name="Write" id="21" class="Write"/>
+      </ListDbTest>
+      <ListConfig>
+         <Item name="ts" type="TS" format="DBOUT_INT" unit="" size="10"/>
+         <Item name="byte" type="TIT8U" format="DBOUT_INT" unit="" size="10"/>
+         <Item name="int" type="TIT32S" format="DBOUT_INT" unit="" size="10"/>
+         <Item name="uint" type="TII32U" format="DBOUT_UINT4" unit="" size="10"/>
+         <Item name="float.1" type="TITfl" format="DBOUT_FLT1" unit="" size="10"/>
+         <Item name="float.3" type="TITfl" format="DBOUT_FLT3" unit="" size="10"/>
+         <Item name="Voltage" type="TITfl" format="DBOUT_FLT3" unit="В" size="10"/>
+         <Item name="Current" type="TITfl" format="DBOUT_FLT3" unit="А" size="10"/>
+         <Item name="ActivePower" type="TITfl" format="DBOUT_FLT3" unit="Вт" size="10"/>
+         <Item name="ReactivePower" type="TITfl" format="DBOUT_FLT3" unit="вар" size="10"/>
+         <Item name="ApparentPower" type="TITfl" format="DBOUT_FLT3" unit="ВА" size="10"/>
+         <Item name="ActiveEnergy" type="TII32U" format="DBOUT_FLT3" unit="кВтч" size="10"/>
+         <Item name="ReactiveEnergy" type="TII32U" format="DBOUT_FLT3" unit="кварч" size="10"/>
+         <Item name="PowerFactor" type="TITfl" format="DBOUT_FLT3" unit="" size="10"/>
+         <Item name="Frequency" type="TITfl" format="DBOUT_FLT3" unit="Гц" size="10"/>
+         <Item name="Percentage" type="TITfl" format="DBOUT_FLT3" unit="%" size="10"/>
+         <Item name="Percentage500" type="TITfl" format="DBOUT_FLT3" unit="%" modify="div500" size="10"/>
+         <Item name="Billing" type="TITfl" format="DBOUT_FLT3" unit="к" size="10"/>
+         <Item name="Duration" type="TITfl" format="DBOUT_FLT3" unit="сек" size="10"/>
+         <!--     <Item name="Duration" type="TIT16U" format="DBOUT_INT" unit="мс" size="10"/> -->
+         <Item name="ushort" type="TIT16U" format="DBOUT_INT" unit="" size="10"/>
+         <!--    <Item name="Test1" type="TITfl" format="DBOUT_FLT3" unit="" modify="test" size="10"/>-->
+         <Item name="Test1" type="TITfl" format="DBOUT_FLT3" unit="" size="10"/>
+      </ListConfig>
+      <!-- каналы ввода БД -->
+      <ListInChans>
+         <InChan name="system">
+            <Item name="Restart" cfg="int"/>
+            <Item name="termo.up" cfg="float.1"/>
+            <Item name="termo.down" cfg="float.1"/>
+         </InChan>
+         <InChan name="HTTP">
+            <Item name="HTTP.close" cfg="uint"/>
+            <Item name="HTTP.open" cfg="uint"/>
+         </InChan>
+         <InChan name="Spare">
+            <Item name="SpareTIT" cfg="float.1"/>
+         </InChan>
+         
+		 <InChan name="From_CP_TIT">
+      <!-- КИПП-2М 1. IP=31 -->
+      <Item group="29" name_from="1" name="1_1_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_1_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_1_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=32 -->
+      <Item group="29" name_from="1" name="1_2_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_2_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_2_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=33 -->
+      <Item group="29" name_from="1" name="1_3_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_3_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_3_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=34 -->
+      <Item group="29" name_from="1" name="1_4_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_4_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_4_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=35 -->
+      <Item group="29" name_from="1" name="1_5_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_5_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_5_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=36 -->
+      <Item group="29" name_from="1" name="1_6_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_6_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_6_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=37 -->
+      <Item group="29" name_from="1" name="1_7_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_7_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_7_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=38 -->
+      <Item group="29" name_from="1" name="1_8_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_8_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_8_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=39 -->
+      <Item group="29" name_from="1" name="1_9_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_9_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_9_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=40 -->
+      <Item group="29" name_from="1" name="1_10_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_10_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_10_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=41 -->
+      <Item group="29" name_from="1" name="1_11_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_11_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_11_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=42 -->
+      <Item group="29" name_from="1" name="1_12_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_12_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_12_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=43 -->
+      <Item group="29" name_from="1" name="1_13_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_13_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_13_eTI_%i" cfg="uint"/>
+
+      <!-- КИПП-2М 1. IP=44 -->
+      <Item group="29" name_from="1" name="1_14_mTI_%i" cfg="float.3"/>
+      <Item group="6" name_from="24" name="1_14_aTI_%i" cfg="float.3"/>
+      <Item group="4" name_from="1" name="1_14_eTI_%i" cfg="uint"/>
+         </InChan>
+	 <InChan name="From_CP_Link">
+            <Item group="14" name_from="1" name="1_L104_%i" cfg="ts"/>
+            <Item group="14" name_from="1" name="2_L104_%i" cfg="ts"/>
+            <Item group="14" name_from="1" name="3_L104_%i" cfg="ts"/>
+            <Item group="14" name_from="1" name="4_L104_%i" cfg="ts"/>
+            <Item group="14" name_from="1" name="5_L104_%i" cfg="ts"/>
+            <Item group="14" name_from="1" name="6_L104_%i" cfg="ts"/>
+            <Item group="14" name_from="1" name="7_L104_%i" cfg="ts"/>
+            <Item group="14" name_from="1" name="8_L104_%i" cfg="ts"/>
+         </InChan>
+      </ListInChans>
+      <ListOutChans>        
+        <OutChan name="IEC104_TIT_MA" sign="Write">
+            <Item group="25" name_from="1" name="1_1_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_1_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_1_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_2_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_2_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_2_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_3_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_3_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_3_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_4_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_4_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_4_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_5_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_5_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_5_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_6_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_6_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_6_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_7_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_7_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_7_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_8_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_8_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_8_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_9_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_9_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_9_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_10_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_10_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_10_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_11_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_11_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_11_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_12_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_12_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_12_mTI_%i"/>
+            <Item group="25" name_from="1" name="1_13_mTI_%i"/>
+            <Item group="6" name_from="24" name="1_13_aTI_%i"/>
+            <Item group="4" name_from="26" name="1_13_mTI_%i"/>
+        </OutChan>
+
+	      <OutChan name="IEC104_TIT_E">
+            <Item group="4" name_from="1" name="1_1_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_2_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_3_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_4_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_5_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_6_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_7_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_8_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_9_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_10_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_11_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_12_eTI_%i"/>
+            <Item group="4" name_from="1" name="1_13_eTI_%i"/>
+
+         </OutChan>
+		 
+</ListOutChans>
+   </DB>
+   <SportSyncDB>
+      <ListInDB>
+         <Item name="InSync1">
+			<ItemSportIn DBChan="From_CP_TIT" cmd="128" sport="0"/>
+			<ItemSportIn DBChan="From_CP_Link" cmd="129" sport="0"/>
+         </Item>
+      </ListInDB>
+   </SportSyncDB>
+</KIPP_3>

@@ -1,0 +1,12 @@
+<div class="coproc-types">
+  <div class="coproc-types-section {{section.state}}" ng-repeat="section in sections">
+    <div class="coproc-types-section-title" ng-click="toggleSectionsState(section)">{{section.title}}</div>
+    <div class="coproc-types-section-body" ng-style="section.style">
+      <div class="coproc-types-type {{isAllowed(type)? 'enabled' : 'disabled'}}"
+          ng-repeat="type in section.types"
+          ng-click="typeActivated($event, type, section.role)">
+        <div class="coproc-types-type-logo">{{type}}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+.app-window {
+  position: fixed;
+  font-family: Arial;
+  overflow: hidden;
+}
+.app-window-content {
+  background: white;
+  border: solid 1px #aaa;
+}
+.app-window-content-header {
+  text-align: center;
+  overflow: hidden;
+  background: #fff;
+}
+.app-window-content-header-button-back {
+  float: left;
+  border: solid 2px #ff7d00;
+  border-radius: 50%;
+  color: #ff7d00;
+  font-size: 1.1em;
+  padding: .3em;
+  margin: .3em -.5em .3em .4em;
+  opacity: 0.25;
+  background: #fff;
+}
+.app-window-content-header-button-back.active {
+  opacity: 1;
+  cursor: pointer;
+}
+.app-window-content-header-info,
+.app-window-content-header-title {
+  color: #bbb;
+  float: left;
+  margin: .5em .4em 0;
+  font-size: .9em;
+}
+.app-window-content-header-info {
+  clear: left;
+  margin: 0 .4em;
+}
+.app-window-title:first-of-type .app-window-content-header-title {
+  font-size: 1.6em;
+  padding: .3em .3em .2em .6em;
+  margin: 0;
+  color: #555;
+  user-select: none;
+  cursor: default;
+  float: left;
+  color: #ff7d00;
+}
+.app-window-content-header-box {
+  float: left;
+  overflow: hidden;
+}
+.app-window-content-header-title-delimiter {
+  color: #bbb;
+  float: left;
+  font-size: 2.2em;
+  padding: .1em 0 0 0;
+  margin: 0 0 -.11em 0;
+}
+.app-window-title:first-of-type .app-window-content-header-title-delimiter {
+  display: none;
+}
+.app-window-content-header-button {
+  color: #555;
+  font-size: 1em;
+  margin: .4em .4em .2em 0;
+  float: right;
+}
+.app-window-content-header-button:hover {
+  cursor: pointer;
+  color: #ee7d00;
+  text-shadow: 0 0 .1em #fff, 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff;
+}

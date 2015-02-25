@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><KIPP_3 prm_type="TYPEDEVICES" prm_role="INPUT">
+	<Protocols>
+		<Protocol type="IEC101" role="Master">
+			<Device>UART0</Device>
+			<BaudRate>9600</BaudRate>
+			<ChanAddr/>
+		</Protocol>
+		<Protocol name="11_IEC104_1" type="IEC104" role="Client" desc="Тестовое" typedevice="">
+			<RemoteIP/>
+			<RemotePort>2404</RemotePort>
+			<ASDU_Addr/>
+			<AbonentList>
+				<Abonent>
+					<InChans>
+						<InChan desc="Чистый канал" data-type="TI">
+							<List>11_IEC104_1_1</List>
+							<FirstObjAddr>0</FirstObjAddr>
+							<GroupNumber>1</GroupNumber>
+							<FirstChanNum>0</FirstChanNum>
+						</InChan>
+						<InChan desc="Комбинированный канал" data-type="TI">
+							<List>11_IEC104_1_2</List>
+							<FirstObjAddr>128</FirstObjAddr>
+							<GroupNumber>2</GroupNumber>
+							<FirstChanNum>0</FirstChanNum>
+						</InChan>
+					</InChans>
+					<IECAddress/>
+					<SynchroSlave>0</SynchroSlave>
+				</Abonent>
+			</AbonentList>
+			<ASDU_Size>253</ASDU_Size>
+			<LocalTime>1</LocalTime>
+			<UsePulsSync>0</UsePulsSync>
+		</Protocol>
+	</Protocols>
+	<DB>
+		<ListDbModify/>
+		<ListDbTest>
+			<DbTest name="intAppe_5" id="1" class="Appe" appe="5"/>
+			<DbTest name="intAppe_2" id="2" class="Appe" appe="2"/>
+			<DbTest name="intAppe_1" id="3" class="Appe" appe="1"/>
+			<DbTest name="flAppe_5" id="4" class="Appe" appe="5.0"/>
+			<DbTest name="flAppe_0" id="5" class="Appe" appe="0."/>
+			<DbTest name="flAppe_1" id="6" class="Appe" appe="1.0"/>
+			<DbTest name="flAppe_0.1" id="7" class="Appe" appe="0.1"/>
+			<DbTest name="flAppe_0.01" id="8" class="Appe" appe="0.01"/>
+			<DbTest name="flAppe_2.5" id="9" class="Appe" appe="2.5"/>
+			<DbTest name="timer_1s" id="10" class="Timer" period="1000"/>
+			<DbTest name="timer_10s" id="10" class="Timer" period="10000"/>
+			<DbTest name="timer_30s" id="11" class="Timer" period="30000"/>
+			<DbTest name="level_250" id="13" class="Level" value="250" hist="2"/>
+			<DbTest name="range_1.2_0" id="12" class="Range" max_value="1.2" max_hist="0.02" min_value="-0.1" min_hist="0.02"/>
+			<DbTest name="range_0.2_-0.2" id="14" class="Range" max_value="0.2" max_hist="0.03" min_value="-0.2" min_hist="0.03"/>
+			<DbTest name="range_0.4_-0.4" id="15" class="Range" max_value="0.4" max_hist="0.04" min_value="-0.2" min_hist="0.03"/>
+			<DbTest name="range_4_2" id="16" class="Range" max_value="4" max_hist="0.5" min_value="2" min_hist="0.5"/>
+			<DbTest name="range_60.6_54.8" id="17" class="Range" max_value="60.6" max_hist="0.6" min_value="54.8" min_hist="0.6"/>
+			<DbTest name="range_63.5_51.9" id="18" class="Range" max_value="63.5" max_hist="0.6" min_value="51.9" min_hist="0.6"/>
+			<DbTest name="gate_F" id="19" class="Gate" ext_max_value="50.4" ext_max_hist="0.04" ext_min_value="49.6" ext_min_hist="0.04" int_max_value="50.2" int_max_hist="0.04" int_min_value="49.8" int_min_hist="0.04"/>
+			<DbTest name="gate_U57" id="20" class="Gate" ext_max_value="63.5" ext_max_hist="0.6" ext_min_value="51.9" ext_min_hist="0.6" int_max_value="60.6" int_max_hist="0.6" int_min_value="54.8" int_min_hist="0.6"/>
+			<DbTest name="Write" id="21" class="Write"/>
+			<DbTest name="Validity" id="22" class="Quality" bits="128"/>
+		</ListDbTest>
+		<ListConfig>
+			<Item name="ts" type="TS" format="DBOUT_INT" unit="" size="20" desc="ts"/>
+			<Item name="byte" type="TIT8U" format="DBOUT_INT" unit="" size="20" desc="byte"/>
+			<Item name="int" type="TIT32S" format="DBOUT_INT" unit="" size="20" desc="int"/>
+			<Item name="uint" type="TII32U" format="DBOUT_UINT4" unit="" size="20" desc="uint"/>
+			<Item name="float.0" type="TITfl" format="DBOUT_FLT0" unit="" size="20" desc="float.0"/>
+			<Item name="float.1" type="TITfl" format="DBOUT_FLT1" unit="" size="20" desc="float.1"/>
+			<Item name="float.2" type="TITfl" format="DBOUT_FLT2" unit="" size="20" desc="float.2"/>
+			<Item name="float.3" type="TITfl" format="DBOUT_FLT3" unit="" size="20" desc="float.3"/>
+			<Item name="Voltage" type="TITfl" format="DBOUT_FLT3" unit="В" size="20" desc="Voltage"/>
+			<Item name="Current" type="TITfl" format="DBOUT_FLT3" unit="А" size="20" desc="Current"/>
+			<Item name="ActivePower" type="TITfl" format="DBOUT_FLT3" unit="Вт" size="20" desc="ActivePower"/>
+			<Item name="ReactivePower" type="TITfl" format="DBOUT_FLT3" unit="вар" size="20" desc="ReactivePower"/>
+			<Item name="ApparentPower" type="TITfl" format="DBOUT_FLT3" unit="ВА" size="20" desc="ApparentPower"/>
+			<Item name="PowerFactor" type="TITfl" format="DBOUT_FLT3" unit="" size="20" desc="PowerFactor"/>
+			<Item name="Frequency" type="TITfl" format="DBOUT_FLT3" unit="Гц" size="20" desc="Frequency"/>
+			<Item name="Percentage" type="TITfl" format="DBOUT_FLT3" unit="%" size="20" desc="Percentage"/>
+			<Item name="Duration" type="TITfl" format="DBOUT_FLT3" unit="сек" size="20" desc="Duration"/>
+			<Item name="ushort" type="TIT16U" format="DBOUT_INT" unit="" size="20" desc="ushort"/>
+		</ListConfig>
+		<ListInChans>
+			<InChan name="11_IEC104_1_1">
+				<Item desc="Переменная %i" name="11_IEC104_1_1_%i" group="12" name_from="1" cfg="float.3" sign=""></Item>
+			</InChan>
+			<InChan name="11_IEC104_1_2">
+				<Item desc="%s" desc_string="Переменная 1;Переменная 2;Переменная 3;Переменная 4;Переменная 5" name="11_IEC104_1_2_%i" group="5" name_from="1" cfg="qe" sign=""></Item>
+				<Item desc="%s" desc_string="asd" name="11_IEC104_1_2_%i" group="1" name_from="6" cfg="qr" sign=""></Item>
+			</InChan>
+		</ListInChans>
+		<ListOutChans/>
+	</DB>
+	<Coprocessor>
+		<Config sport="11" load="sd:\undefined" config="sd:\Config11.xml"/>
+	</Coprocessor>
+</KIPP_3>

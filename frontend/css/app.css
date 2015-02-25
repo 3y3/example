@@ -1,0 +1,112 @@
+.app-item {
+  position: relative;
+}
+.app-section {
+  padding: .2em;
+}
+.app-module {
+  float: left;
+  margin: .2em;
+}
+.app-module-header {
+  color: #fff;
+  background: #ee7d00;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0px 4px 10px -3px rgba(255,255,255,.6) inset;
+  padding: .2em .5em .1em;
+  letter-spacing: .1em;
+}
+.app-module-body {
+  padding: .2em;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px -1px 10px -3px rgba(0,0,0,.6) inset;
+  border-radius: 0 0 4px 4px;
+}
+.app-form-container {
+  padding: .3em;
+}
+.app-form-option {
+  overflow: hidden;
+  margin: 0 .2em .5em;
+  float: left;
+}
+.app-form-option[type="breaker"] {
+  clear: both;
+  margin: 0;
+} 
+.app-form-option-title {
+  float: left;
+  text-align: right;
+  padding: .2em 0 .25em 0;
+}
+.app-form-option-value {
+  float: left;
+}
+select.app-form-option-value {
+  width: 8em;
+}
+input.app-form-option-value[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  margin: .3em 3.5em .2em;
+}
+
+.tm3com-nav {
+  position: relative;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: visible;
+}
+.tm3com-nav object {
+  width: 100%;
+  height: 100%;
+}
+.tm3com-nav-cfg {
+  width: 12vh;
+  height: 12vh;
+  bottom: 2%;
+  border: dashed rgba(0, 0, 0, .4) 2px;
+  background: rgba(0, 0, 0, .1);
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+}
+.tm3com-nav-cfg:hover {
+  border: dashed rgba(180, 130, 60, .9);
+  background: rgba(255, 200, 100, .5);
+}
+
+.tm3com-nav-cfg-0 {
+  width: 31%;
+  height: 57%;
+  top: -1%;
+  left: 8%;
+}
+.tm3com-nav-cfg-9 { left: 4.7%; }
+.tm3com-nav-cfg-10 { left: 14%; }
+.tm3com-nav-cfg-1 { left: 23.3%; }
+.tm3com-nav-cfg-2 { left: 32.6%; }
+.tm3com-nav-cfg-3 { left: 42%; }
+.tm3com-nav-cfg-4 { left: 50.6%; }
+.tm3com-nav-cfg-5 { left: 59%; }
+.tm3com-nav-cfg-6 { left: 67.3%; }
+.tm3com-nav-cfg-7 { left: 75.6%; }
+.tm3com-nav-cfg-8 { left: 84%; }
+.tm3com-nav-cfg-add {
+  display: none;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  font-size: 3em;
+  text-align: center;
+  margin: .4em 0 .4em;
+  color: #ee7d00;
+  text-shadow: 0 0 5px #000;
+}
+.tm3com-nav-cfg-empty .tm3com-nav-cfg-add {
+  display: block;
+}

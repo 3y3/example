@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><KIPP_3 prm_type="IEC101" prm_role="INPUT">
+	<Protocols>
+		<Protocol type="IEC101" role="Master">
+			<Device>UART0</Device>
+			<BaudRate>9600</BaudRate>
+			<ChanAddr/>
+		</Protocol>
+	</Protocols>
+</KIPP_3>

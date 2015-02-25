@@ -1,0 +1,76 @@
+.coproc-types {
+  padding: .5em 0 1em 0;
+  width: 23em
+}
+.coproc-types-section {
+  border-top: solid #ddd 1px;
+}
+.coproc-types-section-title {
+  font-size: 1.2em;
+  text-align: center;
+  padding: .3em 0;
+  color: #555;
+  user-select: none;
+  cursor: pointer;
+}
+.coproc-types-section-body {
+  height: 0;
+  background: #bbb;
+  box-shadow: 0 6px 3px -2px rgba(0,0,0,.2) inset;
+  transition: height .5s;
+  overflow: hidden;
+}
+.coproc-types-type {
+  width: 7em;
+  height: 7em;
+  float: left;
+  background: #fff;
+  margin: .5em 0 0 .5em;
+  box-sizing: border-box;
+  border: solid 1px #ccc;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.coproc-types-type.disabled {
+  opacity: .5;
+}
+.coproc-types-type:hover {
+  border-color: #ff7d00;
+}
+.coproc-types-type-logo {
+  margin-top: 3em;
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 1em;
+  color: #555;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: inherit;
+}
+
+.coproc-menu-title {
+  font-size: 1.4em;
+  padding: .4em;
+}
+
+.coproc-menu-item {
+  overflow: hidden;
+}
+.coproc-menu-button {
+  border: solid 1px #999;
+  padding: .65em;
+  margin: 0 .3em .3em 0;
+  float: left;
+  background: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #333;
+}
+.coproc-menu-button-icon {
+  font-size: 1.6em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+}

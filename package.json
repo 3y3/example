@@ -1,0 +1,43 @@
+{
+  "name": "node-git",
+  "version": "0.0.1",
+  "description": "Git Client",
+  "author": "3y3 Ghoti 3y3@bk.ru",
+  "keywords": [
+    "git",
+    "client"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/3y3/node-git.git"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "bin": {},
+  "dependencies": {
+    "async": "latest",
+    "browserify": "latest",
+    "connect-multiparty": "latest",
+    "express": "latest",
+    "gulp": "latest",
+    "gulp-angular-templatecache": "latest",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "latest",
+    "gulp-insert": "latest",
+    "gulp-rename": "latest",
+    "gulp-streamify": "latest",
+    "gulp-uglify": "latest",
+    "vinyl-source-stream": "latest"
+  },
+  "devDependencies": {
+    "lodash": "latest"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "pretest": "jshint .",
+    "test": "mocha",
+    "server": "gulp server",
+    "start": "gulp server"
+  }
+}

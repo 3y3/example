@@ -1,0 +1,3 @@
+﻿<div class="html-view">
+  <app-coproc ng-if="state.activeCoproc"></app-coproc>
+</div>

@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?><KIPP_3 prm_type="TM3COM" prm_role="OUTPUT" desc="Центральный процессор">
+	<RealTime>
+		<Limitation>0</Limitation>
+		<Shift>3600</Shift>
+		<LossTime>5</LossTime>
+		<SlavePeriod>60</SlavePeriod>
+		<Propagation>300</Propagation>
+		<PPS_source>GPS</PPS_source>
+		<TimeZone>4</TimeZone>
+		<SummerTimeEnable>0</SummerTimeEnable>
+		<EssentialShift>3</EssentialShift>
+	</RealTime>
+	<Generator>
+		<Data process="gen1" dbin="1_InChan1" time="206" step="5" item="14" imul="10" fmul="1"/>
+		<Data process="gen2" dbin="1_InChan2" time="205" step="5" item="22" imul="10" fmul="1"/>
+		<Data process="gen3" dbin="1_InChan3" time="204" step="5" item="14" imul="10" fmul="1"/>
+		<Data process="gen4" dbin="1_InChan4" time="203" step="5" item="22" imul="10" fmul="1"/>
+		<Data process="gen5" dbin="1_InChan5" time="202" step="5" item="14" imul="10" fmul="1"/>
+		<Data process="gen6" dbin="1_InChan6" time="201" step="5" item="22" imul="10" fmul="1"/>
+		<Data process="gen7" dbin="KP_TIT" time="202" step="5" item="14" imul="10" fmul="1"/>
+		<Data process="gen8" dbin="KP_TS" time="1000" step="180" item="8" imul="1" fmul="1"/>
+		<Data process="gen9" dbin="KP_TIT_OTHER" time="1000" step="5" item="1" imul="10" fmul="1"/>
+		<Data process="gen10" dbin="KP_TS_OTHER" time="3000" step="5" item="1" imul="10" fmul="1"/>
+		<Data process="gen11" dbin="KP_POWER" time="500" step="5" item="10" imul="10" fmul="1"/>
+		<Data process="gen12" dbin="KP_TERMO" time="1000" step="5" item="2" imul="10" fmul="1"/>
+	</Generator>
+	<FTP>
+		<Server Addr="192.168.200.1" Port="21"/>
+		<Auth Login="disp" Password="zaq12345"/>
+		<Param MaxFtpConnect="10" Timeout="5" PeriodKeepAlive="2"/>
+	</FTP>
+	<SVG>
+		<Files>ftp:/www_restruct/svg/</Files>
+		<Timeout>100</Timeout>
+	</SVG>
+	<Coprocessor>
+		<WDT>2</WDT>
+		<StartDelayWDT>5</StartDelayWDT>
+		<ShiftLed>2</ShiftLed>
+		<Config sport="1" load="sd:\PRJ_TC04.ldr" config="sd:\Config1.xml"></Config>
+		<Config sport="2" load="sd:\PRJ_TC05.ldr" config="sd:\Config2.xml"></Config>
+		<Config sport="3" load="sd:\PRJ_TC04.ldr" config="sd:\Config3.xml"></Config>
+		<Config sport="9" load="sd:\PRJ_TC04.ldr" config="sd:\Config9.xml"></Config>
+	</Coprocessor>
+	<AdapterPPP>
+		<SPORT AddrIP="10.0.0.100" DnsIP="10.0.0.100">
+			<Item sport="1" AddrIP="10.0.0.1"/>
+			<Item sport="2" AddrIP="10.0.0.2"/>
+			<Item sport="3" AddrIP="10.0.0.3"/>
+			<Item sport="4" AddrIP="10.0.0.4"/>
+			<Item sport="5" AddrIP="10.0.0.5"/>
+			<Item sport="6" AddrIP="10.0.0.6"/>
+			<Item sport="7" AddrIP="10.0.0.7"/>
+			<Item sport="8" AddrIP="10.0.0.8"/>
+			<Item sport="9" AddrIP="10.0.0.9"/>
+			<Item sport="10" AddrIP="10.0.0.10"/>
+		</SPORT>
+	</AdapterPPP>
+	<TCPIP>
+		<Ethernet>
+			<Enable>1</Enable>
+			<Address>192.168.200.252</Address>
+			<Mask>255.255.255.0</Mask>
+			<Gateway>192.168.1.1</Gateway>
+		</Ethernet>
+		<Route>
+			<Item Addr="192.168.150.0" Mask="255.255.255.0" Gateway="10.0.0.9"/>
+		</Route>
+		<SSL>
+			<Enable>1</Enable>
+			<CACert>sd:/SSL-1024/KIPP3-CA.cer</CACert>
+			<Cert>sd:/SSL-1024/server.cer</Cert>
+			<Key>sd:/SSL-1024/server.key</Key>
+		</SSL>
+		<PPP>
+			<Enable>1</Enable>
+		</PPP>
+	</TCPIP>
+	<Console>
+		<Echo>1</Echo>
+		<Device>Telnet</Device>
+		<BaudRate>57600</BaudRate>
+		<Flags>0</Flags>
+		<Timeout>0</Timeout>
+	</Console>
+	<GPS>
+		<Protocol>NMEA</Protocol>
+		<Device>UART1</Device>
+		<BaudRate>9600</BaudRate>
+		<SynWithoutPPS>60</SynWithoutPPS>
+		<IgnoreValidity>1</IgnoreValidity>
+	</GPS>
+	<Protocols/>
+	<Accumulator/>
+	<HTTP>
+		<Port>80</Port>
+		<SSL>0</SSL>
+		<MaxConnect>8</MaxConnect>
+		<ExtThread>4</ExtThread>
+		<KeepAlive>30</KeepAlive>
+		<WwwRoot>ftp:/www_other/</WwwRoot>
+		<Auth>1</Auth>
+		<TimeSession>120</TimeSession>
+	</HTTP>
+	<Display>
+		<IndicTime>5</IndicTime>
+		<Language>Russian</Language>
+	</Display>
+	<ASKUE>
+		<NumOfChans>8</NumOfChans>
+		<CommercialInterval>30</CommercialInterval>
+		<TechnicalInterval>3</TechnicalInterval>
+		<Delay>5</Delay>
+		<Tariff>
+			<SeasonSwitches>
+				<Switch>
+					<Date>01.01.0000</Date>
+					<Season>0</Season>
+				</Switch>
+				<Switch>
+					<Date>15.04.0000</Date>
+					<Season>1</Season>
+				</Switch>
+				<Switch>
+					<Date>15.05.0000</Date>
+					<Season>1</Season>
+				</Switch>
+				<Switch>
+					<Date>01.08.0000</Date>
+					<Season>1</Season>
+				</Switch>
+			</SeasonSwitches>
+			<TariffSeasons>
+				<Season>
+					<Monday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Monday>
+					<Tuesday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Tuesday>
+					<Wednesday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Wednesday>
+					<Thursday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Thursday>
+					<Friday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Friday>
+					<Saturday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Saturday>
+					<Sunday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Sunday>
+					<Holiday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Holiday>
+				</Season>
+				<Season>
+					<Monday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Monday>
+					<Tuesday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Tuesday>
+					<Wednesday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Wednesday>
+					<Thursday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Thursday>
+					<Friday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Friday>
+					<Saturday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Saturday>
+					<Sunday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Sunday>
+					<Holiday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Holiday>
+				</Season>
+				<Season>
+					<Monday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Monday>
+					<Tuesday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Tuesday>
+					<Wednesday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Wednesday>
+					<Thursday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Thursday>
+					<Friday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Friday>
+					<Saturday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Saturday>
+					<Sunday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Sunday>
+					<Holiday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Holiday>
+				</Season>
+				<Season>
+					<Monday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Monday>
+					<Tuesday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Tuesday>
+					<Wednesday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Wednesday>
+					<Thursday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Thursday>
+					<Friday>
+						<Morning>89478485</Morning>
+						<Midday>43680</Midday>
+						<Evening>1342876330</Evening>
+					</Friday>
+					<Saturday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Saturday>
+					<Sunday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Sunday>
+					<Holiday>
+						<Morning>4116010325</Morning>
+						<Midday>4294967295</Midday>
+						<Evening>1610612735</Evening>
+					</Holiday>
+				</Season>
+			</TariffSeasons>
+			<SpecialDays>
+				<SpecDay>
+					<Date>28.04.2009</Date>
+					<Type>Friday</Type>
+				</SpecDay>
+				<SpecDay>
+					<Date>01.05.0000</Date>
+					<Type>Holiday</Type>
+				</SpecDay>
+				<SpecDay>
+					<Date>07.05.2009</Date>
+					<Type>Holiday</Type>
+				</SpecDay>
+			</SpecialDays>
+		</Tariff>
+	</ASKUE>
+	<InternalMeters>
+		<Meter>
+			<plusWa>
+				<Num>0</Num>
+				<Name>+Wa</Name>
+			</plusWa>
+			<minusWa>
+				<Num>1</Num>
+				<Name>-Wa</Name>
+			</minusWa>
+			<plusWr>
+				<Num>2</Num>
+				<Name>+Wr</Name>
+			</plusWr>
+			<minusWr>
+				<Num>3</Num>
+				<Name>-Wr</Name>
+			</minusWr>
+			<plusWaloss>
+				<Num>4</Num>
+				<Name>+Waп</Name>
+			</plusWaloss>
+			<minusWaloss>
+				<Num>5</Num>
+				<Name>-Waп</Name>
+			</minusWaloss>
+			<plusWrloss>
+				<Num>6</Num>
+				<Name>+Wrп</Name>
+			</plusWrloss>
+			<minusWrloss>
+				<Num>7</Num>
+				<Name>-Wrп</Name>
+			</minusWrloss>
+			<Ku>1000.</Ku>
+			<Ki>1000.</Ki>
+			<KPlineA>0.05</KPlineA>
+			<KPlineB>0.05</KPlineB>
+			<KPlineC>0.05</KPlineC>
+			<KQlineA>0.05</KQlineA>
+			<KQlineB>0.05</KQlineB>
+			<KQlineC>0.05</KQlineC>
+			<KPtranA>0.05</KPtranA>
+			<KPtranB>0.05</KPtranB>
+			<KPtranC>0.05</KPtranC>
+			<KQtranA>0.05</KQtranA>
+			<KQtranB>0.05</KQtranB>
+			<KQtranC>0.05</KQtranC>
+			<KPUtranA>0.1</KPUtranA>
+			<KPUtranB>0.1</KPUtranB>
+			<KPUtranC>0.1</KPUtranC>
+			<KQUtranA>0.1</KQUtranA>
+			<KQUtranB>0.1</KQUtranB>
+			<KQUtranC>0.1</KQUtranC>
+		</Meter>
+	</InternalMeters>
+	<DB>
+		<ListDbModify>
+			<DbModify name="Ku1" priority="1" class="ScaleAscue" a="1." b="0."/>
+			<DbModify name="Ki1" priority="1" class="ScaleAscue" a="1." b="0."/>
+			<DbModify name="KuKi1" priority="1" class="ScaleAscue" a="1." b="0."/>
+		</ListDbModify>
+		<ListDbTest>
+			<DbTest name="intAppe_5" id="1" class="Appe" appe="5"/>
+			<DbTest name="intAppe_2" id="2" class="Appe" appe="2"/>
+			<DbTest name="intAppe_1" id="3" class="Appe" appe="1"/>
+			<DbTest name="flAppe_5" id="4" class="Appe" appe="5.0"/>
+			<DbTest name="flAppe_0" id="5" class="Appe" appe="0."/>
+			<DbTest name="flAppe_1" id="6" class="Appe" appe="1.0"/>
+			<DbTest name="flAppe_0.1" id="7" class="Appe" appe="0.1"/>
+			<DbTest name="flAppe_0.2" id="8" class="Appe" appe="0.2"/>
+			<DbTest name="flAppe_0.6" id="9" class="Appe" appe="0.6"/>
+			<DbTest name="flAppe_1.8" id="10" class="Appe" appe="1.8"/>
+			<DbTest name="flAppe_0.005" id="11" class="Appe" appe="0.005"/>
+			<DbTest name="timer_1s" id="12" class="Timer" period="1000"/>
+			<DbTest name="timer_10s" id="13" class="Timer" period="10000"/>
+			<DbTest name="timer_30s" id="14" class="Timer" period="30000"/>
+			<DbTest name="timer_200ms" id="15" class="Timer" period="200"/>
+			<DbTest name="Write" id="16" class="Write"/>
+			<DbTest name="Validity" id="17" class="Quality" bits="128"/>
+		</ListDbTest>
+		<ListConfig>
+			<Item name="ts" type="TS" format="DBOUT_INT" unit="" size="30"/>
+			<Item name="byte" type="TIT8U" format="DBOUT_INT" unit="" size="30"/>
+			<Item name="int" type="TIT32S" format="DBOUT_INT" unit="" size="30"/>
+			<Item name="uint" type="TII32U" format="DBOUT_UINT4" unit="" size="30"/>
+			<Item name="float.1" type="TITfl" format="DBOUT_FLT1" unit="" size="30"/>
+			<Item name="float.3" type="TITfl" format="DBOUT_FLT3" unit="" size="30"/>
+			<Item name="Voltage" type="TITfl" format="DBOUT_FLT3" unit="В" size="30"/>
+			<Item name="Current" type="TITfl" format="DBOUT_FLT3" unit="А" size="30"/>
+			<Item name="ActivePower" type="TITfl" format="DBOUT_FLT3" unit="Вт" size="30"/>
+			<Item name="ReactivePower" type="TITfl" format="DBOUT_FLT3" unit="вар" size="30"/>
+			<Item name="ApparentPower" type="TITfl" format="DBOUT_FLT3" unit="ВА" size="30"/>
+			<Item name="ActiveEnergy" type="TII32U" format="DBOUT_FLT3" unit="кВтч" size="30"/>
+			<Item name="ReactiveEnergy" type="TII32U" format="DBOUT_FLT3" unit="кварч" size="30"/>
+			<Item name="PowerFactor" type="TITfl" format="DBOUT_FLT3" unit="" size="30"/>
+			<Item name="Frequency" type="TITfl" format="DBOUT_FLT3" unit="Гц" size="30"/>
+			<Item name="Percentage" type="TITfl" format="DBOUT_FLT3" unit="%" size="30"/>
+			<Item name="Percentage500" type="TITfl" format="DBOUT_FLT3" unit="%" size="30"/>
+			<Item name="Billing" type="TITfl" format="DBOUT_FLT3" unit="к" size="30"/>
+			<Item name="Duration" type="TIT16U" format="DBOUT_INT" unit="мс" size="30"/>
+		</ListConfig>
+		<ListInChans/>
+		<ListOutChans/>
+	</DB>
+	<SportSyncDB/>
+	<Arbitration>
+		<PeerIP>192.168.150.209</PeerIP>
+		<Port>7021</Port>
+		<Role>Main</Role>
+	</Arbitration>
+	<Archives>
+		<Disk>ftp</Disk>
+		<Path>/www_restruct/config/</Path>
+		<Archiv desc="схема архив">
+			<Name>Arc10</Name>
+			<ChannelData>Upper_Data</ChannelData>
+			<FileName>arch</FileName>
+			<MaxTimeFile>10</MaxTimeFile>
+			<MaxFile>100</MaxFile>
+			<MaxRecordFile>100000</MaxRecordFile>
+			<MaxEvent>50</MaxEvent>
+		</Archiv>
+	</Archives>
+</KIPP_3>

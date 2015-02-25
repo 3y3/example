@@ -1,0 +1,191 @@
+.device {
+  display: flex;
+  flex-flow: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #777;
+  transition: transform .5s, left .5s, opacity .5s;
+  transform-origin: left center;
+}
+.exit.device {
+  left: 100%;
+  opacity: 0; 
+}
+
+.device-type {
+  display: flex;
+  flex-flow: row nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  border-top: solid 1px #ddd;
+  transition: transform .3s, left .5s, opacity .5s;
+  transform-origin: left center;
+}
+.next.device-type {
+  transition: transform .3s;
+  transform: scale(0, 0);
+}
+
+.device-options {
+  flex: 0 0 auto;
+}
+.device-channels {
+  flex: 1 1;
+  margin: 1em 1em 1em 2em;
+  float: left;
+  height: calc(100% - 2em);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.device-channels-title {
+  font-size: 1.4em;
+  cursor: default;
+}
+
+.device-channels-navigation {
+  padding: 0 0 .3em 0;
+  overflow: hidden;
+}
+
+.device-channels-table-header {
+  width: 100%;
+}
+.device-channels-table-header-column {
+  text-align: center;
+  border: solid 1px #ddd;
+  padding: .3em;
+  background: #999;
+  color: #fff;
+}
+.device-channels-table-body #GroupNumber,
+.device-channels-table-header #GroupNumber {
+  text-align: center;
+  width: 3em;
+}
+.device-channels-table-body #Desc,
+.device-channels-table-header #Desc {
+  width: 20em;
+}
+.device-channels-table-body #DataType,
+.device-channels-table-header #DataType {
+  text-align: center;
+  width: 10em;
+}
+.device-channels-table-body #FirstChanNum,
+.device-channels-table-header #FirstChanNum {
+  text-align: center;
+  width: 5em;
+}
+.device-channels-table-body .small-text ,
+.device-channels-table-header .small-text {
+  font-size: .7em;
+}
+
+.device-channels-table-body-box {
+  height: 23em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.device-channels-table-body {
+  display: table;
+  width: 100%;
+}
+
+.device-channels-table-item {
+  display: table-row;
+}
+
+.device-channels-table-item-cell {
+  padding: .4em .4em;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: table-cell;
+}
+.device-channels-table-item:nth-child(odd) {
+  background: #eee;
+}
+.device-channels-table-item.selected {
+  color: #fff;
+  background: #ff7d00;
+}
+
+.device-controls {
+  width: 43.3em;
+  margin: 0 0 0 2em;
+  position: absolute;
+  bottom: 1em;
+  right: 2em;
+}
+
+.device-controls-button {
+  border: solid 1px #ddd;
+  padding: .4em .6em;
+  margin: .3em;
+  float: right;
+  cursor: pointer;
+}
+.device-controls-button-icon {
+  margin: .2em .2em 0 0;
+  vertical-align: text-bottom;
+}
+
+
+
+
+.device-items-navigation-container {
+  line-height: 1.6em;
+  height: 1.6em;
+  padding: .2em 0 .4em 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.device-items-navigation {
+  height: 100%;
+  position: relative;
+  transition: left .5s, opacity .4s;
+}
+.exit.device-items-navigation {
+  left: 100%;
+  opacity: 0;
+}
+.enter.device-items-navigation {
+  left: 0;
+}
+
+.device-nav-button {
+  float: left;
+  line-height: 1.6em;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+}
+.device-nav-button-icon {
+  float: left;
+  margin: 0 .5em 0 0;
+  padding: .4em;
+  cursor: pointer;
+  border: solid .15em #ee7d00;
+  color: #ee7d00;
+  border-radius: 50%;
+  font-size: .8em;
+}
+.device-nav-button-title {
+  white-space: nowrap;
+  font-size: .8em;
+  float: left;
+  color: #ee7d00;
+}

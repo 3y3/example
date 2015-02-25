@@ -1,0 +1,17 @@
+<samples>
+    <sample name="conf1">
+        <item chn="system" indx="1" cell="termo0"/>
+        <item chn="system" indx="0" cell="Restart"/>
+        <item chn="system" indx="2" cell="termo1"/>
+    </sample>
+    <sample name="conf2">
+        <item chn="system" indx="1" cell="termo0"/>
+        <item chn="system" indx="0" cell="Restart"/>
+        <item chn="system" indx="2" cell="termo1"/>
+    </sample>
+    <sample name="conf3">
+        <item chn="system" indx="1" cell="termo0"/>
+        <item chn="system" indx="0" cell="Restart"/>
+        <item chn="system" indx="2" cell="termo1"/>
+    </sample>
+</samples>
